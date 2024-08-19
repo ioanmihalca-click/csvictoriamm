@@ -9,7 +9,7 @@
     <title>Kickboxing și Pregatire Fizica în Baia Mare | Clubul Victoria Maramureș</title>
     <meta name="description"
         content="Clubul Sportiv Victoria Maramureș - Antrenamente Kickboxing  în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
-
+    <link rel="canonical" href="https://csvictoriamm.ro/" />
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon" />
 
@@ -250,12 +250,12 @@
 <!-- Prietenii nostri Carusel-->
 <section class="py-16 bg-white" x-data="carousel()">
     <div class="container max-w-2xl px-4 mx-auto">
-        <h2 class="mb-12 text-3xl font-bold text-center text-red-900 font-roboto-condensed">Prietenii nostri</h2>
+        <h2 class="mb-4 text-3xl font-bold text-center text-red-900 font-roboto-condensed">Prietenii nostri</h2>
         
        <div class="relative overflow-hidden">
             <div class="flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(-${currentTranslate}%)` }">
                 <template x-for="image in displayImages">
-                    <div class="flex-shrink-0 w-full md:w-1/5">
+                    <div class="flex-shrink-0 w-1/3 md:w-1/5">
                         <div class="flex items-center justify-center bg-white aspect-square">
                             <img :src="image" alt="Logo prieten" class="object-contain max-w-full max-h-full p-2">
                         </div>
@@ -271,15 +271,15 @@ function carousel() {
     return {
         currentIndex: 0,
         currentTranslate: 0,
-        itemsToShow: window.innerWidth < 768 ? 1 : 5,
+       itemsToShow: window.innerWidth < 768 ? 3 : 5,
         images: [
             '/assets/logouri/ARMURA.webp',
             '/assets/logouri/Federatia-Romana-de-Freestyle-Kickboxing.webp',
-            '/assets/logouri/Click-Music-Romania.webp',
-            '/assets/logouri/Plai-Morosenesc.webp',
+            '/assets/logouri/Click-Music-Romania.jpg',
+            '/assets/logouri/Plai-Morosenesc.jpg',
             '/assets/logouri/acs-kickbox-.webp',
             '/assets/logouri/cs-dragonul-baia-mare.webp',
-            '/assets/logouri/clickstudiosdigital.webp',
+            '/assets/logouri/clickstudiosdigital.jpg',
        ],
         get displayImages() {
             return [...this.images, ...this.images.slice(0, this.itemsToShow)];
@@ -301,7 +301,7 @@ function carousel() {
         init() {
             setInterval(() => this.next(), 3000);
             window.addEventListener('resize', () => {
-                const newItemsToShow = window.innerWidth < 768 ? 1 : 5;
+               const newItemsToShow = window.innerWidth < 768 ? 3 : 5;
                 if (newItemsToShow !== this.itemsToShow) {
                     this.itemsToShow = newItemsToShow;
                     this.currentIndex = 0;
@@ -313,7 +313,7 @@ function carousel() {
 }
 </script>
 
-
+<livewire:footer />
 </body>
 
 </html>
