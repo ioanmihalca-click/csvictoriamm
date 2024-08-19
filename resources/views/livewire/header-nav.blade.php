@@ -1,8 +1,8 @@
- <header class="fixed top-0 left-0 z-50 w-full bg-white bg-opacity-75 shadow">
+ <header class="top-0 left-0 z-50 w-full bg-white bg-opacity-75 shadow">
     
         
  <!-- Navigation -->
-      <nav x-data="{ isOpen: false }" class="fixed top-0 left-0 z-50 w-full bg-white bg-opacity-95">
+      <nav x-data="{ isOpen: false }" class="top-0 left-0 z-50 w-full bg-white bg-opacity-95">
      
     <div class="container flex items-center justify-between px-4 py-2 mx-auto">
 <a href="/" class="flex items-center">
