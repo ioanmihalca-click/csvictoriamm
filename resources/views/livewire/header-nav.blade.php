@@ -8,11 +8,17 @@
 <a href="/" class="flex items-center">
             <img src="/assets/CS-Victoria-Maramures.webp" alt="Logo Click Music" class="w-auto h-28">
         </a>        
-      <!-- Hamburger menu button (visible on mobile) -->
-<button @click="isOpen = !isOpen" class="text-black md:hidden">
-    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    <!-- Hamburger menu button (visible on mobile) -->
+<button @click="isOpen = !isOpen" class="relative w-8 h-8 text-black md:hidden">
+    <svg class="absolute w-8 h-8 transition-all duration-300 ease-in-out transform"
+         :class="{'rotate-0 opacity-100': !isOpen, '-rotate-90 opacity-0': isOpen}"
+         fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+    <svg class="absolute w-8 h-8 transition-all duration-300 ease-in-out transform"
+         :class="{'rotate-90 opacity-0': !isOpen, 'rotate-0 opacity-100': isOpen}"
+         fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
     </svg>
 </button>
 

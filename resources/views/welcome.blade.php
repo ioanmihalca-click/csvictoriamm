@@ -140,7 +140,7 @@
     <div class="container relative z-10 px-4 py-8 mx-auto">
         <h1 class="mb-4 text-4xl font-bold text-center text-black md:text-6xl md:text-left font-roboto-condensed">Club Sportiv <br class="md:hidden"> Victoria
             Maramureș</h1>
-        <h2 class="max-w-2xl p-2 mb-8 text-xl text-center text-black md:text-left md:text-2xl">Promovăm sportul de
+        <h2 class="max-w-2xl p-2 mb-8 text-xl font-semibold text-center text-black md:text-left md:text-2xl">Promovăm sportul de
             performanță și sportul pentru toți în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de
             Freestyle Kickboxing și Fitness Funcțional în Baia Mare | Grupe de copii si adulti.</h2>
 
