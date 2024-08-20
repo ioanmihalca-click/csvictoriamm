@@ -174,8 +174,8 @@
         <div class="flex flex-col items-center md:flex-row">
             <!-- Image Column -->
             <div class="w-full mb-8 md:w-1/3 md:mb-0">
-                <img src="/assets/antrenamente.webp" alt="Antrenamente" class="object-cover w-full h-auto mb-8 rounded-lg shadow-lg aspect-square">
-                <img src="/assets/antrenamente-copii.webp" alt="Antrenamente" class="object-cover w-full h-auto rounded-lg shadow-lg aspect-square">
+                <img src="/assets/antrenamente.webp" alt="Antrenamente Kickbox Baia Mare" class="object-cover w-full h-auto mb-8 rounded-lg shadow-lg aspect-square">
+                <img src="/assets/antrenamente-copii.webp" alt="Antrenamente Kickbox Baia Mare" class="object-cover w-full h-auto rounded-lg shadow-lg aspect-square">
             </div>
             
             <!-- Text Column -->
@@ -188,6 +188,8 @@
                 <p class="mb-4 text-xl">Suntem profesioniști dedicați, cu experiență în domeniu si certificări naționale relevante. Ne concentram pe furnizarea celor mai bune sesiuni de antrenament pentru toți membrii clubului, indiferent de vârstă sau nivel.</p>
                 <p class="mb-4 text-xl">Promovăm <strong>kickboxingul</strong> de <strong>performanță</strong> și <strong>sportul pentru toți</strong>, promovăm in comunitatea noastra un stil de viață mai sănătos și activ prin antrenamente de autoaparare. Ne gasesti in Baia-Mare, Poienile de sub Munte si Petrova.</p>
                 
+                <p class="mb-4 text-xl">Organizăm sesiuni de probă gratuite în fiecare zi.</p>
+
                 <h3 class="mt-8 mb-4 text-2xl font-bold">Orar</h3>
                 <h4 class="mb-2 text-xl font-semibold">Baia Mare:</h4>
                 <ul class="pl-5 mb-4 text-xl list-disc">
