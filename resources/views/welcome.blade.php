@@ -18,8 +18,8 @@
     <meta property="og:site_name" content="Club Sportiv Victoria Maramures Baia Mare">
     <meta property="og:description"
         content="Clubul Sportiv Victoria Maramureș - Antrenamente Kickboxing  în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
-    <meta property="og:image" content="{{ asset('img/*.jpg') }}" />
-    <meta property="og:image:type" content="image/jpg" />
+    <meta property="og:image" content="{{ asset('assets/OG-VictoriaMM.webp') }}" />
+    <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:alt" content="Clubul Sportiv Victoria Maramureș" />
     <meta property="og:url" content="https://csvictoriamm.ro/">
     <meta property="og:type" content="website">
@@ -186,8 +186,9 @@
                 </ul>
                 <p class="mb-2 text-xl">Vineri, ora 18:30 - <strong>Sala de sport Petrova</strong> - Grupa mixta</p>
                 <p class="mb-4 text-xl">Sambata, ora 13:00 - <strong>Sala de sport Poienile de sub Munte</strong> - Grupa mixta</p>
+
                 
-                <p class="mt-8 italic">Ioan Mihalca,<br>antrenor</p>
+                <p class="mt-8 text-lg italic">Ioan Mihalca,<br>antrenor</p>
             </div>
         </div>
     </div>
@@ -195,7 +196,7 @@
 
 <!--De ce noi? Section -->
 
-<div class="relative w-full bg-fixed bg-center bg-no-repeat bg-cover h-96" style="background-image: url('assets/csvictoriamm.webp')">
+<div class="relative w-full bg-fixed bg-center bg-no-repeat bg-cover h-96" style="background-image: url('assets/OG-VictoriaMM.webp')">
  
   
 </div>
