@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect from http:// and https://www to https://csvictoriamm.ro (non-www)
+    RewriteCond %{HTTP_HOST} ^(www\.)?csvictoriamm\.ro [NC]
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://csvictoriamm.ro/$1 [L,R=301]
+
+    # Redirect https://www to https://csvictoriamm.ro (non-www)
+    RewriteCond %{HTTP_HOST} ^www\.csvictoriamm\.ro [NC]
+    RewriteRule ^(.*)$ https://csvictoriamm.ro/$1 [L,R=301]
+
+    # Internal rewrite to public directory
+    RewriteRule ^$ public/ [L]
+    RewriteRule (.*) public/$1 [L]
+</IfModule>

@@ -106,7 +106,7 @@
 
                <div class="grid grid-cols-1 gap-8 mt-8 md:grid-cols-2">
                 <div>
-        <img src="/assets/antrenamente.jpg" alt="Kickboxing in Baia Mare" class="w-full h-auto rounded-lg shadow-lg">
+        <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724149060/352381441_252217514085499_5107195744692959078_n-lo646b69_qgeob3.jpg" alt="Kickboxing in Baia Mare" class="w-full h-auto rounded-lg shadow-lg">
     </div>
     <div>
         <h3 class="mb-2 text-2xl font-bold text-red-900 font-roboto-condensed">Antrenor: Ioan Mihalca</h3>
