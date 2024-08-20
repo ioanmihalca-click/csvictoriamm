@@ -75,6 +75,10 @@
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149088/IMG_20240409_175353-lxj5ei6d_xotezo.jpg',
                 'alt': 'Kickboxing Baia Mare'
             },
+             {
+                'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724157043/IMG_20240810_205941_233_wqlllx.webp',
+                'alt': 'Kickboxing Baia Mare'
+            },
                {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724151699/Design_f%C4%83r%C4%83_titlu_4_khzssc.jpg',
                 'alt': 'Kickbox Baia Mare Maramures'
@@ -85,6 +89,10 @@
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149021/IMG-20231119-WA0006_edit_117800499320686-lpb55ctg_cqxfoc.jpg',
+                'alt': 'Kickbox Baia Mare Maramures'
+            },
+            {
+                'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724157041/IMG-20240810-WA0254_jqdvq9.jpg',
                 'alt': 'Kickbox Baia Mare Maramures'
             },
              {
