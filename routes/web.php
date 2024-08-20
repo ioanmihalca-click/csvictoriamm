@@ -17,3 +17,9 @@ Route::get('/competitii', function () {
 Route::get('/sponsori', function () {
     return view('sponsori');
 });
+Route::get('/echipa', function () {
+    return view('echipa');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
