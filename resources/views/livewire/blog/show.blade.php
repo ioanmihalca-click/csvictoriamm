@@ -1,10 +1,10 @@
 
 <div class="py-16">
 <article class="max-w-4xl p-4 mx-auto bg-white rounded-lg shadow-md">
-    <h1 class="mb-4 text-2xl font-bold text-gray-800 md:text-4xl">{{ $post->title }}</h1>
+    <h1 class="mb-4 text-2xl font-bold text-red-900 md:text-4xl">{{ $post->title }}</h1>
 
     <div class="mb-4 text-gray-600">
-        Publicat la data de {{ $post->published_at->format('F j, Y') }} de Click
+        Publicat la data de {{ $post->published_at->format('F j, Y') }} de CS Victoria MM
     </div>
 
     @if ($post->featured_image)
