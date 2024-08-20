@@ -5,10 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
- 
+
     <title>{{ $post->meta['title'] ?? $post->title }} | Club Sportiv Victoria Maramureș</title>
     <meta name="description" content="{{ $post->meta['description'] ?? '' }}">
-    <meta name="keywords" content="{{ $post->meta['keywords'] ?? 'Club Sportiv Victoria Maramureș, blog, kickbox, freestyle kickbox, box, Maramures, Baia Mare, Arte Martiale, Romania, sala de kickbox, antrenamente de kickbox' }}">
+    <meta name="keywords"
+        content="{{ $post->meta['keywords'] ?? 'Club Sportiv Victoria Maramureș, blog, kickbox, freestyle kickbox, box, Maramures, Baia Mare, Arte Martiale, Romania, sala de kickbox, antrenamente de kickbox' }}">
 
     <link rel="canonical" href="{{ url()->current() }}">
 
@@ -19,9 +20,10 @@
     <meta property="og:title" content="{{ $post->title }}">
     <meta property="og:description" content="{{ $post->meta['description'] ?? '' }}">
     <meta property="og:image" content="{{ asset('storage/' . $post->featured_image) }}">
-    <meta property="og:image:width" content="1200">  <meta property="og:image:height" content="630"> 
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="{{ route('blog.show', $post->slug) }}">
-    <meta property="og:type" content="article"> 
+    <meta property="og:type" content="article">
     <meta property="og:locale" content="ro_RO">
     <meta property="og:site_name" content="Club Sportiv Victoria Maramureș">
 
@@ -57,7 +59,7 @@
         }
     </style>
 
-   <script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -81,6 +83,19 @@
     }
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BHQPK0P11"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5BHQPK0P11');
+    </script>
+
 </head>
 
 <body class="font-sans antialiased bg-white">
@@ -88,11 +103,11 @@
         <livewire:header-nav />
     </div>
 
-<main class="container px-4 py-8 mx-auto">
+    <main class="container px-4 py-8 mx-auto">
         {{ $slot }}
     </main>
 
-<livewire:footer />
+    <livewire:footer />
 
 </body>
 

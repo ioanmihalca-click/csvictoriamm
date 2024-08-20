@@ -56,7 +56,15 @@
         }
     </style>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5BHQPK0P11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-5BHQPK0P11');
+</script>
 
 </head>
 
@@ -71,7 +79,7 @@
 
     <!--Card-->
 
-    <article class="flex flex-col max-w-sm overflow-hidden rounded-none rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+    <article class="flex flex-col max-w-sm overflow-hidden rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
     <div class="overflow-hidden h-44 md:h-64"> 
         <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724154884/DSC00252_075845_vmckmk.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="kickbox baia mare maramures" />
     </div>
@@ -100,7 +108,7 @@
 
     <!-- Card-->
 
-    <article class="flex flex-col max-w-sm overflow-hidden rounded-none rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+    <article class="flex flex-col max-w-sm overflow-hidden rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
     <div class="overflow-hidden h-44 md:h-64"> 
         <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724153921/432680872_405459635427952_1987417501116602711_n_ztx0se.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="kickbox baia mare maramures" />
     </div>
@@ -124,7 +132,7 @@
 
     <!-- Card-->
 
-    <article class="flex flex-col max-w-sm overflow-hidden rounded-none rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+    <article class="flex flex-col max-w-sm overflow-hidden rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
     <div class="overflow-hidden h-44 md:h-64"> 
         <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724149021/IMG-20231119-WA0006_edit_117800499320686-lpb55ctg_cqxfoc.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="kickbox baia mare maramures" />
     </div>
@@ -151,7 +159,7 @@
 
     <!-- Card-->
 
-    <article class="flex flex-col max-w-sm overflow-hidden rounded-none rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+    <article class="flex flex-col max-w-sm overflow-hidden rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
     <div class="overflow-hidden h-44 md:h-64"> 
         <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724153705/401616708_334424075864842_4310761090375986039_n_yyognq.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="kickbox baia mare maramures" />
     </div>
@@ -170,7 +178,7 @@
 
     <!--Card-->
 
-<article class="flex flex-col max-w-sm overflow-hidden rounded-none rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+<article class="flex flex-col max-w-sm overflow-hidden rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
     <div class="overflow-hidden h-44 md:h-64"> 
         <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724149091/IMG_20231119_122854-lpb4q4vm_rnsbzc.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="kickbox baia mare maramures" />
     </div>
@@ -198,7 +206,7 @@
 
                 <!-- Card  -->
 
- <article class="flex flex-col max-w-sm overflow-hidden rounded-none rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+ <article class="flex flex-col max-w-sm overflow-hidden rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
     <div class="overflow-hidden h-44 md:h-64"> 
         <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724153099/343929636_647152483915278_2981896038198312159_n_bvnnuh.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="kickbox baia mare maramures" />
     </div>
@@ -221,7 +229,7 @@
 
             <!-- Card  -->
 
- <article class="flex flex-col max-w-sm overflow-hidden rounded-none rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+ <article class="flex flex-col max-w-sm overflow-hidden rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
     <div class="overflow-hidden h-44 md:h-64"> 
         <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724152763/335007122_6067910739930979_3187511036522481575_n_qgv7tc.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="kickbox baia mare maramures" />
     </div>
@@ -247,7 +255,7 @@
 
         <!-- Card  -->
 
-    <article class="flex flex-col max-w-sm overflow-hidden rounded-none rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
+    <article class="flex flex-col max-w-sm overflow-hidden rounded-lg shadow-lg group bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
     <div class="overflow-hidden h-44 md:h-64"> 
         <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724149021/105A0324-lnx22vey_tafdvm.jpg" class="object-cover transition duration-700 ease-out group-hover:scale-105" alt="kickbox baia mare maramures" />
     </div>
