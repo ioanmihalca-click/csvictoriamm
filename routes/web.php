@@ -11,3 +11,6 @@ Route::get('/antrenamente', function () {
 Route::get('/galerie', function () {
     return view('galerie');
 });
+Route::get('/competitii', function () {
+    return view('competitii');
+});

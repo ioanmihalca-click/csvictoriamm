@@ -76,12 +76,16 @@
                 'alt': 'Kickboxing Baia Mare'
             },
                {
-                'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149060/352974994_252240257416558_6335403517502634844_n-lo646eo0_m5tpso.jpg',
-                'alt': 'Photo of Mountains 10'
+                'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724151699/Design_f%C4%83r%C4%83_titlu_4_khzssc.jpg',
+                'alt': 'Kickbox Baia Mare Maramures'
+            },
+             {
+                'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724154884/DSC00252_075845_vmckmk.jpg',
+                'alt': 'Kickbox Baia Mare Maramures'
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149021/IMG-20231119-WA0006_edit_117800499320686-lpb55ctg_cqxfoc.jpg',
-                'alt': 'Photo of Mountains 02'
+                'alt': 'Kickbox Baia Mare Maramures'
             },
              {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149060/352381441_252217514085499_5107195744692959078_n-lo646b69_qgeob3.jpg',
@@ -89,60 +93,60 @@
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149021/105A0073-lnx22s8l_anpirx.jpg',
-                'alt': 'Photo of Mountains 03'
+                'alt': 'Kickbox Baia Mare Maramures 03'
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724148556/Kickboxing-Baia-Mare_au2vmp.jpg',
-                'alt': 'Photo of Mountains 04'
+                'alt': 'Kickbox Baia Mare Maramures 04'
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149021/105A0324-lnx22vey_tafdvm.jpg',
-                'alt': 'Photo of Mountains 05'
+                'alt': 'Kickbox Baia Mare Maramures 05'
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149022/105A0350-lnx22zik_ny15yc.jpg',
-                'alt': 'Photo of Mountains 06'
+                'alt': 'Kickbox Baia Mare Maramures 06'
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149024/105A0610-lnx23ccc_rsqadk.jpg',
-                'alt': 'Photo of Mountains 07'
+                'alt': 'Kickbox Baia Mare Maramures 07'
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149024/105A0433-lnx237tb_sf4ki0.jpg',
-                'alt': 'Photo of Mountains 08'
+                'alt': 'Kickbox Baia Mare Maramures 08'
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149027/IMG_20240408_205701-lus2j5ql_bxtgai.jpg',
-                'alt': 'Photo of Mountains 09'
+                'alt': 'Kickbox Baia Mare Maramures 09'
             },
             {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149025/136620224_3647344278696758_3003833114003523746_n-lo650t79_dx60pk.jpg',
-                'alt': 'Photo of Mountains 10'
+                'alt': 'Kickbox Baia Mare Maramures'
             },
               {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149033/154105428_3510923319131877_1815913397909330049_n-lnx5z2yg_cucw3n.jpg',
-                'alt': 'Photo of Mountains 10'
+                'alt': 'Kickbox Baia Mare Maramures'
             },
               {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149060/326176530_679660610565683_7582846626327639836_n-lo651189_eraahy.jpg',
-                'alt': 'Photo of Mountains 10'
+                'alt': 'Kickbox Baia Mare Maramures'
             },
               {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149060/325673970_1330609744383879_1948598055105061611_n-lo6512y4_eqhjpg.jpg',
-                'alt': 'Photo of Mountains 10'
+                'alt': 'Kickbox Baia Mare Maramures'
             },
            
               {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149062/392940688_6718679744896514_1996366525237976166_n-lo650zb3_xzrtwf.jpg',
-                'alt': 'Photo of Mountains 10'
+                'alt': 'Kickbox Baia Mare Maramures'
             },
               {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149062/DSC00266_075808-lxsr3c2g_e3qtkr.jpg',
-                'alt': 'Photo of Mountains 10'
+                'alt': 'Kickbox Baia Mare Maramures'
             },
               {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149064/DSC00260_075755-lxsqz2n1_yxi8jr.jpg',
-                'alt': 'Photo of Mountains 10'
+                'alt': 'Kickbox Baia Mare Maramures'
             },
               {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149069/DSC00278_075858-lxsr524i_e9lthi.jpg',
@@ -168,10 +172,7 @@
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149068/DSC00316_075951-lxsra8ak_exrw0p.jpg',
                 'alt': 'Kickbox Baia Mare Maramures'
             },
-            {
-                'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149079/IMG_20231119_131925-lpb4qavi_xnc0pd.jpg',
-                'alt': 'Kickbox Baia Mare Maramures'
-            },
+         
              {
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149087/IMG_20231028_144557_edit_19239357465211-loe5bb4b_md2obv.jpg',
                 'alt': 'Kickbox Baia Mare Maramures'
@@ -180,10 +181,7 @@
                 'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149091/IMG_20231119_122854-lpb4q4vm_rnsbzc.jpg',
                 'alt': 'Kickbox Baia Mare Maramures'
             },
-             {
-                'photo': 'https://res.cloudinary.com/dpxess5iw/image/upload/v1724149092/IMG_20231119_103443-lpb4pysc_od8glo.jpg',
-                'alt': 'Kickbox Baia Mare Maramures'
-            },
+            
              
 
         ],
