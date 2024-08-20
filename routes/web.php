@@ -14,3 +14,6 @@ Route::get('/galerie', function () {
 Route::get('/competitii', function () {
     return view('competitii');
 });
+Route::get('/sponsori', function () {
+    return view('sponsori');
+});

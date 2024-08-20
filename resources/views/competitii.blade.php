@@ -21,7 +21,7 @@
     <meta property="og:image" content="{{ asset('assets/OG-VictoriaMM.webp') }}" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:alt" content="Clubul Sportiv Victoria Maramureș" />
-    <meta property="og:url" content="https://csvictoriamm.ro/antrenamente">
+    <meta property="og:url" content="https://csvictoriamm.ro/competitii">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ro_RO">
 
