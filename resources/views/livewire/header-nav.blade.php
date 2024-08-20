@@ -28,7 +28,7 @@
             <a href="/" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Prima pagină
 </a>
            <a href="/antrenamente" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Antrenamente</a>
-            <a href="#" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Galerie</a>
+            <a href="/galerie" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Galerie</a>
             <a href="#" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Competitii</a>
             <a href="#" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Sponsori</a>
             <a href="/blog" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Blog</a>
@@ -42,7 +42,7 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="/" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Prima pagină</a>
             <a href="/antrenamente" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Antrenamente</a>
-            <a href="#" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Galerie</a>
+            <a href="/galerie" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Galerie</a>
             <a href="#" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Competitii</a>
              <a href="#" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Sponsori</a>
             <a href="/blog" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Blog</a>
