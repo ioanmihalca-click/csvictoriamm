@@ -18,7 +18,7 @@
 
                     <div class="p-6">
                         <h2
-                            class="text-2xl font-bold text-red-900 transition-colors duration-300 group-hover:text-gray-500">
+                            class="text-2xl font-bold text-red-900 transition-colors duration-300 line-clamp-3 group-hover:text-gray-500">
                             {{ $post->title }}
                         </h2>
                         <time datetime="{{ $post->published_at->toDateString() }}"
