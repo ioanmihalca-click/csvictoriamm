@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-    <title>Kickboxing și Pregatire Fizica în Baia Mare | Clubul Victoria Maramureș</title>
+    <title>Kickboxing în Baia Mare | Club Sportiv Victoria Maramureș</title>
     <meta name="description"
-        content="Clubul Sportiv Victoria Maramureș - Antrenamente Kickboxing  în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
+        content="Club Sportiv Victoria Maramureș - Antrenamente Kickboxing în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
     <link rel="canonical" href="https://csvictoriamm.ro/" />
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon" />
