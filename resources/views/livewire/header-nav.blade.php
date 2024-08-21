@@ -25,29 +25,29 @@
 
         <!-- Desktop menu -->
         <div class="hidden space-x-8 md:flex">
-            <a href="/" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Prima pagină
+            <a href="/" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Prima pagină
 </a>
-           <a href="/antrenamente" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Antrenamente</a>
-            <a href="/galerie" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Galerie</a>
-            <a href="/competitii" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Competitii</a>
-            <a href="/sponsori" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Sponsori</a>
-            <a href="/blog" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Blog</a>
-            <a href="/echipa" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Echipa</a>
-            <a href="/contact" class="font-semibold text-black hover:text-red-900 font-roboto-condensed">Contact</a>
+           <a href="/antrenamente" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Antrenamente</a>
+            <a href="/galerie" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Galerie</a>
+            <a href="/competitii" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Competitii</a>
+            <a href="/sponsori" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Sponsori</a>
+            <a href="/blog" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Blog</a>
+            <a href="/echipa" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Echipa</a>
+            <a href="/contact" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Contact</a>
         </div>
     </div>
 
     <!-- Mobile menu -->
     <div x-show="isOpen" @click.away="isOpen = false" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Prima pagină</a>
-            <a href="/antrenamente" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Antrenamente</a>
-            <a href="/galerie" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Galerie</a>
-            <a href="/competitii" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Competitii</a>
-             <a href="/sponsori" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Sponsori</a>
-            <a href="/blog" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Blog</a>
-             <a href="/echipa" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Echipa</a>
-            <a href="/contact" @click="isOpen = false" class="block px-3 py-2 text-black font-roboto-condensed">Contact</a>
+            <a href="/" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Prima pagină</a>
+            <a href="/antrenamente" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Antrenamente</a>
+            <a href="/galerie" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Galerie</a>
+            <a href="/competitii" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Competitii</a>
+             <a href="/sponsori" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Sponsori</a>
+            <a href="/blog" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Blog</a>
+             <a href="/echipa" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Echipa</a>
+            <a href="/contact" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Contact</a>
         </div>
     </div>
 </nav>
