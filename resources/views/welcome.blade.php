@@ -137,6 +137,8 @@
   gtag('config', 'G-5BHQPK0P11');
 </script>
 
+<meta name="google-site-verification" content="Nh4bYEQOuTIi3Xms3pkbl8zuf9UC_YHnYsBjWMhrmy0" />
+
 </head>
 
 <body class="font-sans antialiased bg-white">
