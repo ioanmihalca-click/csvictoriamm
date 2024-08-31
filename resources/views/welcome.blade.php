@@ -57,13 +57,49 @@
     </style>
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsClub",
+  "name": "Club Sportiv Victoria Maramureș",
+  "description": "Clubul Sportiv Victoria Maramureș este un club de kickboxing și fitness funcțional din Baia Mare, Poienile de sub Munte, Petrova, Maramureș, dedicat promovării unui stil de viață sănătos și activ prin sport.",
+  "image": "https://csvictoriamm.ro/lib/g96fty/CS-Victoria-Maramures-lnwzqw16.png",
+  "url": "https://csvictoriamm.ro",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Str. Vasile Lucaciu",
+    "addressLocality": "Baia Mare",
+    "postalCode": "430341",
+    "addressRegion": "Maramureș",
+    "addressCountry": "România"
+  },
+  "telephone": "+40734411115",
+  "email": "csvictoriamm@gmail.com",
+  "sameAs": [
+    "https://www.facebook.com/victoriamaramures",
+    "https://www.instagram.com/csvictoriamm/"
+  ],
+  "sportingDiscipline": [
     {
-      "@context": "https://schema.org",
-      "@type": "SportsClub",
-      "name": "Club Sportiv Victoria Maramureș",
-      "description": "Clubul Sportiv Victoria Maramureș este un club de kickboxing și fitness funcțional din Baia Mare, Poienile de sub Munte, Petrova, Maramureș, dedicat promovării unui stil de viață sănătos și activ prin sport.",
-      "image": "https://csvictoriamm.ro/lib/g96fty/CS-Victoria-Maramures-lnwzqw16.png",
-      "url": "https://csvictoriamm.ro",
+      "@type": "DefinedTerm",
+      "name": "Freestyle Kickboxing"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Muay Thai"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Fitness Functional"
+    }
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Ioan Mihalca"
+  },
+  "location": [
+    {
+      "@type": "Place",
+      "name": "Sala de Kickboxing Baia Mare",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Str. Vasile Lucaciu",
@@ -71,60 +107,24 @@
         "postalCode": "430341",
         "addressRegion": "Maramureș",
         "addressCountry": "România"
-      },
-      "telephone": "+40734411115",
-      "email": "csvictoriamm@gmail.com", //
-      "sameAs": [
-        "https://www.facebook.com/victoriamaramures",
-        "https://www.instagram.com/csvictoriamm/"
-      ],
-     "sportingDiscipline": [
-  {
-    "@type": "DefinedTerm",
-    "name": "Freestyle Kickboxing"
-  },
-  {
-    "@type": "DefinedTerm",
-    "name": "Muay Thai"
-  },
-  {
-    "@type": "DefinedTerm",
-    "name": "Fitness Functional"
-  }
-]
-      "founder": {
-        "@type": "Person",
-        "name": "Ioan Mihalca"
-      },
-      "location": [
-  {
-    "@type": "Place",
-    "name": "Sala de Kickboxing Baia Mare",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Str. Vasile Lucaciu",
-      "addressLocality": "Baia Mare",
-      "postalCode": "430341",
-      "addressRegion": "Maramureș",
-      "addressCountry": "România"
+      }
     }
-  }
-],
-"areaServed": [
-  {
-    "@type": "City",
-    "name": "Baia Mare"
-  },
-  {
-    "@type": "City",
-    "name": "Poienile de sub Munte"
-  },
-  {
-    "@type": "City",
-    "name": "Petrova"
-  }
-]
+  ],
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Baia Mare"
+    },
+    {
+      "@type": "City",
+      "name": "Poienile de sub Munte"
+    },
+    {
+      "@type": "City",
+      "name": "Petrova"
     }
+  ]
+}
     </script>
 
     <!-- Google tag (gtag.js) -->
@@ -153,8 +153,8 @@
         <h1 class="mb-4 text-4xl font-bold text-center text-black md:text-6xl md:text-left font-roboto-condensed">Club Sportiv <br class="md:hidden"> Victoria
             Maramureș</h1>
         <h2 class="max-w-2xl p-2 mb-8 text-xl font-semibold text-center text-black md:text-left md:text-2xl">Promovăm sportul de
-            performanță și sportul pentru toți în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de
-            Freestyle Kickboxing și Fitness Funcțional în Baia Mare | Grupe de copii si adulti.</h2>
+            <span class="font-bold">performanță</span> și sportul pentru toți în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de
+            <span class="font-bold">Freestyle Kickboxing</span> și Fitness Funcțional în Baia Mare | Grupe de copii si adulti.</h2>
 
         <div class="flex justify-center px-4 space-x-8 md:justify-start">
             <a href="https://www.tiktok.com/@csvictoriamm" target="_blank" rel="noopener noreferrer"
