@@ -1,8 +1,8 @@
 <div>
 <!-- Hero Section -->
-<section class="relative flex items-center h-screen bg-center bg-cover" style="background-image: url('assets/unsplash-image.webp')">
+<section class="relative flex items-start h-screen pt-24 bg-center bg-cover" style="background-image: url('assets/unsplash-image.webp')">
     <div class="absolute inset-0 bg-white opacity-50"></div>
-    <div class="container relative z-10 px-4 mx-auto mt-8">
+    <div class="container relative z-10 px-4 mx-auto">
         <div class="max-w-3xl">
             <h1 class="mb-4 text-5xl font-bold text-black md:text-7xl font-roboto-condensed">Club Sportiv Victoria Maramureș</h1>
             <h2 class="mb-8 text-xl font-semibold text-black md:text-2xl">Promovăm sportul de <span class="font-bold text-red-900">performanță</span> și sportul pentru toți în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de <span class="font-bold text-red-900">Freestyle Kickboxing</span> și Fitness Funcțional | Grupe de copii si adulti.</h2>
@@ -35,9 +35,17 @@
             <div class="w-full mt-8 md:w-2/3 md:mt-0">
                 <h2 class="mb-6 text-4xl font-bold text-red-900 font-roboto-condensed">Despre noi</h2>
                 <div class="space-y-4 text-lg">
-                    <p><strong>Clubul Sportiv Victoria Maramureș</strong>, înființat în 2021, își desfășoară activitatea în Baia Mare, Poienile de Sub Munte și Petrova, cu scopul de a promova sportul și un stil de viață sănătos în comunitatea locală.</p>
-                    <p>Suntem afiliați ai <strong>Federatiei Romane de Freestyle Kickboxing</strong> și participăm anual la competiții naționale și internaționale, câștigând numeroase medalii și trofee.</p>
-                    <p>Promovăm valorile <strong>respectului</strong> și ale <strong>disciplinei personale</strong>, oferind sesiuni de antrenament profesioniste pentru toate vârstele și nivelurile.</p>
+           
+                <p class="mb-4 text-xl"><strong>Clubul Sportiv Victoria Maramureș</strong> a fost înființat în 2021 și își desfășoară activitatea în Baia Mare, Poienile de Sub Munte și Petrova, având scopul de a promova sportul și un stil de viață sănătos în comunitatea locală.</p>
+                <p class="mb-4 text-xl">Ceea ce a început ca un club mic, pasionat de artele marțiale, a evoluat rapid într-o comunitate puternică de atleți dedicați, cuprinzând atât copii, cât și adulți.</p>
+                <p class="mb-4 text-xl">Suntem afiliati ai <strong>Federatiei Romane de Freestyle Kickboxing</strong> si participam anual la competitii nationale si internationale. Am castigat multe medalii și trofee prețioase, dar cea mai mare realizare a noastră rămâne impactul pozitiv asupra vieților tinerilor și adulților care s-au alăturat clubului de-a lungul timpului.</p>
+                <p class="mb-4 text-xl">Clubul nostru promovează valorile <strong>respectului</strong> și ale <strong>disciplinei personale.</strong></p>
+                <p class="mb-4 text-xl">Suntem profesioniști dedicați, cu experiență în domeniu si certificări naționale relevante. Ne concentram pe furnizarea celor mai bune sesiuni de antrenament pentru toți membrii clubului, indiferent de vârstă sau nivel.</p>
+                <p class="mb-4 text-xl">Promovăm <strong>kickboxingul</strong> de <strong>performanță</strong> și <strong>sportul pentru toți</strong>, promovăm in comunitatea noastra un stil de viață mai sănătos și activ prin antrenamente de autoaparare. Ne gasesti in Baia-Mare, Poienile de sub Munte si Petrova.</p>
+                
+                <p class="mb-4 text-xl">Organizăm sesiuni de probă gratuite în fiecare zi.</p>
+
+
                     <div class="mt-8">
                         <h3 class="mb-4 text-2xl font-bold text-red-900">Orar</h3>
                         <div class="space-y-2">
