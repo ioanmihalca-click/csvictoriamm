@@ -1,131 +1,112 @@
 <div>
-       <!-- Hero Section -->
-<section class="relative bg-center bg-cover" style="background-image: url('assets/unsplash-image.webp')">
+<!-- Hero Section -->
+<section class="relative flex items-center h-screen bg-center bg-cover" style="background-image: url('assets/unsplash-image.webp')">
     <div class="absolute inset-0 bg-white opacity-50"></div>
-    <div class="container relative z-10 px-4 py-8 mx-auto">
-        <h1 class="mb-4 text-4xl font-bold text-center text-black md:text-6xl md:text-left font-roboto-condensed">Club Sportiv <br class="md:hidden"> Victoria
-            Maramureș</h1>
-        <h2 class="max-w-2xl p-2 mb-8 text-xl font-semibold text-center text-black md:text-left md:text-2xl">Promovăm sportul de
-            <span class="font-bold">performanță</span> și sportul pentru toți în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de
-            <span class="font-bold">Freestyle Kickboxing</span> și Fitness Funcțional în Baia Mare | Grupe de copii si adulti.</h2>
-
-        <div class="flex justify-center px-4 space-x-8 md:justify-start">
-            <a href="https://www.tiktok.com/@csvictoriamm" target="_blank" rel="noopener noreferrer"
-                class="text-black hover:text-gray-300"><i class="fa-brands fa-tiktok fa-2x"></i></a>
-            <a href="https://www.youtube.com/channel/UCFfZgsuQCT8nPSY8DvcqZhw" target="_blank"
-                rel="noopener noreferrer" class="text-black hover:text-gray-300"><i
-                    class="fa-brands fa-youtube fa-2x"></i></a>
-            <a href="https://www.facebook.com/victoriamaramures" target="_blank" rel="noopener noreferrer"
-                class="text-black hover:text-gray-300"><i class="fa-brands fa-facebook fa-2x"></i></a>
-            <a href="https://www.instagram.com/csvictoriamm" target="_blank" rel="noopener noreferrer"
-                class="text-black hover:text-gray-300"><i class="fa-brands fa-instagram fa-2x"></i></a>
+    <div class="container relative z-10 px-4 mx-auto mt-8">
+        <div class="max-w-3xl">
+            <h1 class="mb-4 text-5xl font-bold text-black md:text-7xl font-roboto-condensed">Club Sportiv Victoria Maramureș</h1>
+            <h2 class="mb-8 text-xl font-semibold text-black md:text-2xl">Promovăm sportul de <span class="font-bold text-red-900">performanță</span> și sportul pentru toți în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de <span class="font-bold text-red-900">Freestyle Kickboxing</span> și Fitness Funcțional | Grupe de copii si adulti.</h2>
+            <div class="flex space-x-8">
+                <a href="https://www.tiktok.com/@csvictoriamm" target="_blank" rel="noopener noreferrer" class="text-black transition-colors duration-300 hover:text-red-900">
+                    <i class="fa-brands fa-tiktok fa-2x"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCFfZgsuQCT8nPSY8DvcqZhw" target="_blank" rel="noopener noreferrer" class="text-black transition-colors duration-300 hover:text-red-900">
+                    <i class="fa-brands fa-youtube fa-2x"></i>
+                </a>
+                <a href="https://www.facebook.com/victoriamaramures" target="_blank" rel="noopener noreferrer" class="text-black transition-colors duration-300 hover:text-red-900">
+                    <i class="fa-brands fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/csvictoriamm" target="_blank" rel="noopener noreferrer" class="text-black transition-colors duration-300 hover:text-red-900">
+                    <i class="fa-brands fa-instagram fa-2x"></i>
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Despre noi Section -->
-<section class="py-16 bg-white">
+<!-- About Us Section -->
+<section class="py-20 bg-white">
     <div class="container px-4 mx-auto">
-        <div class="flex flex-col items-center md:flex-row">
-            <!-- Image Column -->
-            <div class="w-full mb-8 md:w-1/3 md:mb-0">
-                <img src="/assets/antrenamente.webp" alt="Antrenamente Kickbox Baia Mare" class="object-cover w-full h-auto mb-8 rounded-lg shadow-lg aspect-square">
-                <img src="/assets/antrenamente-copii.webp" alt="Antrenamente Kickbox Baia Mare" class="object-cover w-full h-auto rounded-lg shadow-lg aspect-square">
+        <div class="flex flex-col items-center md:flex-row md:space-x-12">
+            <div class="w-full space-y-8 md:w-1/3">
+                <img src="/assets/antrenamente.webp" alt="Antrenamente Kickbox Baia Mare" class="w-full h-auto rounded-lg shadow-xl">
+                <img src="/assets/antrenamente-copii.webp" alt="Antrenamente Kickbox Baia Mare" class="w-full h-auto rounded-lg shadow-xl">
             </div>
-            
-            <!-- Text Column -->
-            <div class="w-full md:w-2/3 md:pl-8">
-                <h2 class="mb-4 text-3xl font-bold text-center text-red-900 md:text-left font-roboto-condensed">Despre noi</h2>
-                <p class="mb-4 text-xl"><strong>Clubul Sportiv Victoria Maramureș</strong> a fost înființat în 2021 și își desfășoară activitatea în Baia Mare, Poienile de Sub Munte și Petrova, având scopul de a promova sportul și un stil de viață sănătos în comunitatea locală.</p>
-                <p class="mb-4 text-xl">Ceea ce a început ca un club mic, pasionat de artele marțiale, a evoluat rapid într-o comunitate puternică de atleți dedicați, cuprinzând atât copii, cât și adulți.</p>
-                <p class="mb-4 text-xl">Suntem afiliati ai <strong>Federatiei Romane de Freestyle Kickboxing</strong> si participam anual la competitii nationale si internationale. Am castigat multe medalii și trofee prețioase, dar cea mai mare realizare a noastră rămâne impactul pozitiv asupra vieților tinerilor și adulților care s-au alăturat clubului de-a lungul timpului.</p>
-                <p class="mb-4 text-xl">Clubul nostru promovează valorile <strong>respectului</strong> și ale <strong>disciplinei personale.</strong></p>
-                <p class="mb-4 text-xl">Suntem profesioniști dedicați, cu experiență în domeniu si certificări naționale relevante. Ne concentram pe furnizarea celor mai bune sesiuni de antrenament pentru toți membrii clubului, indiferent de vârstă sau nivel.</p>
-                <p class="mb-4 text-xl">Promovăm <strong>kickboxingul</strong> de <strong>performanță</strong> și <strong>sportul pentru toți</strong>, promovăm in comunitatea noastra un stil de viață mai sănătos și activ prin antrenamente de autoaparare. Ne gasesti in Baia-Mare, Poienile de sub Munte si Petrova.</p>
-                
-                <p class="mb-4 text-xl">Organizăm sesiuni de probă gratuite în fiecare zi.</p>
-
-                <h3 class="mt-8 mb-4 text-2xl font-bold">Orar</h3>
-                <h4 class="mb-2 text-xl font-semibold">Baia Mare:</h4>
-                <ul class="pl-5 mb-4 text-xl list-disc">
-                    <li>De luni pana joi, ora 19:15 - Grupa adulti si juniori mari</li>
-                    <li>Marti si joi, ora 18:00 - Grupa copii (6-12 ani)</li>
-                </ul>
-                <p class="mb-2 text-xl">Vineri, ora 18:30 - <strong>Sala de sport Petrova</strong> - Grupa mixta</p>
-                <p class="mb-4 text-xl">Sambata, ora 13:00 - <strong>Sala de sport Poienile de sub Munte</strong> - Grupa mixta</p>
-
-                
-                <p class="mt-8 text-lg italic">Ioan Mihalca,<br>antrenor</p>
+            <div class="w-full mt-8 md:w-2/3 md:mt-0">
+                <h2 class="mb-6 text-4xl font-bold text-red-900 font-roboto-condensed">Despre noi</h2>
+                <div class="space-y-4 text-lg">
+                    <p><strong>Clubul Sportiv Victoria Maramureș</strong>, înființat în 2021, își desfășoară activitatea în Baia Mare, Poienile de Sub Munte și Petrova, cu scopul de a promova sportul și un stil de viață sănătos în comunitatea locală.</p>
+                    <p>Suntem afiliați ai <strong>Federatiei Romane de Freestyle Kickboxing</strong> și participăm anual la competiții naționale și internaționale, câștigând numeroase medalii și trofee.</p>
+                    <p>Promovăm valorile <strong>respectului</strong> și ale <strong>disciplinei personale</strong>, oferind sesiuni de antrenament profesioniste pentru toate vârstele și nivelurile.</p>
+                    <div class="mt-8">
+                        <h3 class="mb-4 text-2xl font-bold text-red-900">Orar</h3>
+                        <div class="space-y-2">
+                            <p><strong>Baia Mare:</strong></p>
+                            <ul class="list-disc list-inside">
+                                <li>Luni - Joi, 19:15 - Grupa adulți și juniori mari</li>
+                                <li>Marți și Joi, 18:00 - Grupa copii (6-12 ani)</li>
+                            </ul>
+                            <p><strong>Petrova:</strong> Vineri, 18:30 - Grupa mixtă</p>
+                            <p><strong>Poienile de sub Munte:</strong> Sâmbătă, 13:00 - Grupa mixtă</p>
+                        </div>
+                    </div>
+                    <p class="mt-8 italic">Ioan Mihalca, antrenor</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!--De ce noi? Section -->
-
-<div class="relative w-full bg-fixed bg-center bg-no-repeat bg-cover h-96" style="background-image: url('assets/OG-VictoriaMM.webp')">
- 
-  
-</div>
-
-<section class="py-16 bg-white">
-  <div class="container px-4 mx-auto">
-    <h2 class="mb-12 text-3xl font-bold text-center text-red-900 font-roboto-condensed">De ce noi?</h2>
-    
-    <div class="grid items-center grid-cols-1 gap-8 md:grid-cols-3">
-     <!-- Left column -->
-<div class="space-y-6">
-  <div>
-    <h3 class="mb-2 text-xl font-semibold">Pregătiți Temeinic, Implicați Deplin</h3>
-    <p class="text-xl">Această pregătire temeinică, combinată cu pasiunea și dăruirea, se reflectă în sesiunile de noastre de antrenament.</p>
-  </div>
-  <div>
-    <h3 class="mb-2 text-xl font-semibold">Atmosferă prietenoasă și motivantă în timpul claselor</h3>
-    <p class="text-xl">Clubul Sportiv Victoria Maramures pune accent pe crearea unei atmosfere prietenoase și motivante în clase, bazata pe respect reciproc, ceea ce încurajează noii membrii să se simtă confortabil și să se bucure de antrenamente, sporind astfel motivația și implicarea lor în activitățile sportive organizate.</p>
-  </div>
-  <div>
-    <h3 class="mb-2 text-xl font-semibold">Progres Constant și Dezvoltare Personală</h3>
-    <p class="text-xl">Ne dorim ca fiecare sportiv sa-și atinga potențialul maxim, îmbunătățindu-și nu doar abilitățile fizice, ci și încrederea în sine și disciplina personală.</p>
-  </div>
-</div>
-      
-      <!-- Middle column (image) -->
-      <div class="flex justify-center">
-        <img src="/assets/csvictoriamm-colaj.webp" alt="CS Victoria Colaj" class="h-auto max-w-full rounded-lg shadow-lg">
-      </div>
-      
-      <!-- Right column -->
-      <div class="space-y-6">
-        <div>
-          <h3 class="mb-2 text-xl font-semibold">Sala de Kickboxing in Baia Mare | Un Mediu Optim pentru Antrenament și Progres</h3>
-          <p class="text-xl">La Clubul Sportiv Victoria Maramureș, sala noastră special amenajată pentru <strong>Kickboxing din Baia Mare</strong> oferă toate condițiile necesare pentru a vă dezvolta abilitățile în acest sport captivant. Am acordat o atenție deosebită detaliilor, pentru a crea un spațiu sigur, funcțional și inspirațional.</p>
-        </div>
-        <div>
-          <h3 class="mb-2 text-xl font-semibold">Echipamente Complete pentru Antrenamente Intense</h3>
-          <p class="text-xl">Sala este dotată cu o gamă completă de echipamente și accesorii, inclusiv:</p>
-          <ul class="pl-5 mt-2 list-disc">
-            <li>Saci de antrenament rezistenți și durabili</li>
-            <li>Tatami și saltele de protecție anti-alunecare</li>
-            <li>Kickpaduri și manuși pentru antrenamente în pereche</li>
-            <li>Și multe altele</li>
-          </ul>
-        </div>
-      </div>
+<!-- Parallax Section -->
+<section class="relative bg-fixed bg-center bg-cover h-96" style="background-image: url('assets/OG-VictoriaMM.webp')">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+        <h2 class="text-4xl font-bold text-white md:text-6xl font-roboto-condensed">Performanță și Pasiune</h2>
     </div>
-  </div>
 </section>
 
-<!-- Prietenii nostri Carusel-->
-<section class="py-16 bg-white" x-data="carousel()">
-    <div class="container max-w-2xl px-4 mx-auto">
-        <h2 class="mb-4 text-3xl font-bold text-center text-red-900 font-roboto-condensed">Prietenii nostri</h2>
-        
-       <div class="relative overflow-hidden">
+<!-- Why Us Section -->
+<section class="py-20 bg-white">
+    <div class="container px-4 mx-auto">
+        <h2 class="mb-12 text-4xl font-bold text-center text-red-900 font-roboto-condensed">De ce noi?</h2>
+        <div class="grid gap-12 md:grid-cols-3">
+            <div class="space-y-8">
+                <div>
+                    <h3 class="mb-3 text-2xl font-semibold text-red-900">Pregătiți Temeinic, Implicați Deplin</h3>
+                    <p class="text-lg">Pregătirea noastră temeinică, combinată cu pasiunea și dăruirea, se reflectă în fiecare sesiune de antrenament.</p>
+                </div>
+                <div>
+                    <h3 class="mb-3 text-2xl font-semibold text-red-900">Atmosferă Prietenoasă și Motivantă</h3>
+                    <p class="text-lg">Creăm o atmosferă bazată pe respect reciproc, încurajând membrii să se simtă confortabil și să se bucure de antrenamente.</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-center">
+                <img src="/assets/csvictoriamm-colaj.webp" alt="CS Victoria Colaj" class="rounded-lg shadow-xl">
+            </div>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="mb-3 text-2xl font-semibold text-red-900">Sală de Kickboxing în Baia Mare</h3>
+                    <p class="text-lg">Oferim un mediu optim pentru antrenament și progres, cu o sală special amenajată și toate echipamentele necesare.</p>
+                </div>
+                <div>
+                    <h3 class="mb-3 text-2xl font-semibold text-red-900">Progres Constant și Dezvoltare Personală</h3>
+                    <p class="text-lg">Ne concentrăm pe dezvoltarea fiecărui sportiv, îmbunătățind nu doar abilitățile fizice, ci și încrederea în sine și disciplina personală.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partners Carousel -->
+<section class="py-16 bg-gray-100" x-data="carousel()">
+    <div class="container px-4 mx-auto">
+        <h2 class="mb-12 text-4xl font-bold text-center text-red-900 font-roboto-condensed">Prietenii Noștri</h2>
+        <div class="relative overflow-hidden">
             <div class="flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(-${currentTranslate}%)` }">
                 <template x-for="image in displayImages">
-                    <div class="flex-shrink-0 w-1/3 md:w-1/5">
-                        <div class="flex items-center justify-center bg-white aspect-square">
-                            <img :src="image" alt="Logo prieten" class="object-contain max-w-full max-h-full p-2">
+                    <div class="flex-shrink-0 w-1/3 px-2 md:w-1/5">
+                        <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-md aspect-square">
+                            <img :src="image" alt="Logo partener" class="object-contain max-w-full max-h-full">
                         </div>
                     </div>
                 </template>
@@ -134,15 +115,12 @@
     </div>
 </section>
 
-
-</div>
-
 <script>
 function carousel() {
     return {
         currentIndex: 0,
         currentTranslate: 0,
-       itemsToShow: window.innerWidth < 768 ? 3 : 5,
+        itemsToShow: window.innerWidth < 768 ? 3 : 5,
         images: [
             '/assets/logouri/ARMURA.webp',
             '/assets/logouri/Federatia-Romana-de-Freestyle-Kickboxing.webp',
@@ -151,7 +129,7 @@ function carousel() {
             '/assets/logouri/acs-kickbox-.webp',
             '/assets/logouri/cs-dragonul-baia-mare.webp',
             '/assets/logouri/clickstudiosdigital.jpg',
-       ],
+        ],
         get displayImages() {
             return [...this.images, ...this.images.slice(0, this.itemsToShow)];
         },
@@ -183,3 +161,4 @@ function carousel() {
     }
 }
 </script>
+</div>
