@@ -62,7 +62,7 @@
   "@type": "SportsClub",
   "name": "Club Sportiv Victoria Maramureș",
   "description": "Clubul Sportiv Victoria Maramureș este un club de kickboxing și fitness funcțional din Baia Mare, Poienile de sub Munte, Petrova, Maramureș, dedicat promovării unui stil de viață sănătos și activ prin sport.",
-  "image": "https://csvictoriamm.ro/lib/g96fty/CS-Victoria-Maramures-lnwzqw16.png",
+  "image": "https://csvictoriamm.ro/assets/OG-VictoriaMM.webp",
   "url": "https://csvictoriamm.ro",
   "address": {
     "@type": "PostalAddress",
