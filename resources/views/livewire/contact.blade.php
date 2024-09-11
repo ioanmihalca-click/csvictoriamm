@@ -51,7 +51,15 @@
                         </p>
                     </div>
                 </div>
+
+                                            <!--Google Reviews -->
+<div class="container p-8 mt-4">
+<div class="elfsight-app-630db31d-36a2-4674-90a9-e4b40d06b39e" data-elfsight-app-lazy></div>
+</div>
+
             </div>
+
+            
 
             <!-- Image -->
             <div class="relative overflow-hidden rounded-lg shadow-xl h-96">
@@ -65,6 +73,8 @@
 
                 </div>
             </div>
+
+
 
             <!-- Google Maps Embed -->
             <div class="overflow-hidden bg-white rounded-lg shadow-xl">
