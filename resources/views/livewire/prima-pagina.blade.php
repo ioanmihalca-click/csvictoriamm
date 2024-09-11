@@ -61,6 +61,12 @@
                 </div>
             </div>
         </div>
+        
+        <!--Google Reviews -->
+<div class="container p-8">
+<div class="elfsight-app-630db31d-36a2-4674-90a9-e4b40d06b39e" data-elfsight-app-lazy></div>
+</div>
+
     </div>
 </section>
 
@@ -168,4 +174,6 @@ function carousel() {
     }
 }
 </script>
+
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </div>
