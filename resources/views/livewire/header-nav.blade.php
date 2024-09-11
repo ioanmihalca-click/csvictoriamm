@@ -25,29 +25,29 @@
 
         <!-- Desktop menu -->
         <div class="hidden space-x-8 md:flex">
-            <a wire:navigate href="/" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Prima pagină
+            <a wire:navigate href="{{ route('prima-pagina') }}" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Prima pagină
 </a>
-           <a wire:navigate href="/antrenamente" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Antrenamente</a>
-            <a wire:navigate href="/galerie" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Galerie</a wire:navigate>
-            <a wire:navigate href="/competitii" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Competitii</a wire:navigate>
-            <a wire:navigate href="/sponsori" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Sponsori</a wire:navigate>
-            <a wire:navigate href="/blog" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Blog</a wire:navigate>
-            <a wire:navigate href="/echipa" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Echipa</a wire:navigate>
-            <a wire:navigate href="/contact" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Contact</a>
+           <a wire:navigate href="{{ route('antrenamente') }}" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Antrenamente</a>
+            <a wire:navigate href="{{ route('galerie') }}" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Galerie</a wire:navigate>
+            <a wire:navigate href="{{ route('competitii') }}" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Competitii</a wire:navigate>
+            <a wire:navigate href="{{ route('sponsori') }}" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Sponsori</a wire:navigate>
+            <a wire:navigate href="{{ route('blog.index') }}" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Blog</a wire:navigate>
+            <a wire:navigate href="{{ route('echipa') }}" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Echipa</a wire:navigate>
+            <a wire:navigate href="{{ route('contact') }}" class="text-lg font-semibold text-black hover:text-red-900 font-roboto-condensed">Contact</a>
         </div>
     </div>
 
     <!-- Mobile menu -->
     <div x-show="isOpen" @click.away="isOpen = false" class="md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a wire:navigate href="/" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Prima pagină</a>
-            <a wire:navigate href="/antrenamente" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Antrenamente</a wire:navigate>
-            <a wire:navigate href="/galerie" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Galerie</a wire:navigate>
-            <a wire:navigate href="/competitii" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Competitii</a wire:navigate>
-             <a wire:navigate href="/sponsori" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Sponsori</a wire:navigate>
-            <a wire:navigate href="/blog" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Blog</a wire:navigate>
-             <a wire:navigate href="/echipa" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Echipa</a wire:navigate>
-            <a wire:navigate href="/contact" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Contact</a>
+            <a wire:navigate href="{{ route('prima-pagina') }}" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Prima pagină</a>
+            <a wire:navigate href="{{ route('antrenamente') }}" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Antrenamente</a wire:navigate>
+            <a wire:navigate href="{{ route('galerie') }}" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Galerie</a wire:navigate>
+            <a wire:navigate href="{{ route('competitii') }}" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Competitii</a wire:navigate>
+             <a wire:navigate href="{{ route('sponsori') }}" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Sponsori</a wire:navigate>
+            <a wire:navigate href="{{ route('blog.index') }}" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Blog</a wire:navigate>
+             <a wire:navigate href="{{ route('echipa') }}" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Echipa</a wire:navigate>
+            <a wire:navigate href="{{ route('contact') }}" @click="isOpen = false" class="block px-3 py-2 text-lg text-black font-roboto-condensed">Contact</a>
         </div>
     </div>
 </nav>
