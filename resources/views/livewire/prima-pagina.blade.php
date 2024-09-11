@@ -1,25 +1,24 @@
 <div>
-<!-- Hero Section -->
-<section class="relative flex items-start h-screen pt-24 bg-center bg-cover" style="background-image: url('assets/unsplash-image.webp')">
+   <!-- Hero Section -->
+<section class="relative bg-center bg-cover" style="background-image: url('assets/unsplash-image.webp')">
     <div class="absolute inset-0 bg-white opacity-50"></div>
-    <div class="container relative z-10 px-4 mx-auto">
-        <div class="max-w-3xl">
-            <h1 class="mb-4 text-5xl font-bold text-black md:text-7xl font-roboto-condensed">Club Sportiv Victoria Maramureș</h1>
-            <h2 class="mb-8 text-xl font-semibold text-black md:text-2xl">Promovăm sportul de <span class="font-bold text-red-900">performanță</span> și sportul pentru toți în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de <span class="font-bold text-red-900">Freestyle Kickboxing</span> și Fitness Funcțional | Grupe de copii si adulti.</h2>
-            <div class="flex space-x-8">
-                <a href="https://www.tiktok.com/@csvictoriamm" target="_blank" rel="noopener noreferrer" class="text-black transition-colors duration-300 hover:text-red-900">
-                    <i class="fa-brands fa-tiktok fa-2x"></i>
-                </a>
-                <a href="https://www.youtube.com/channel/UCFfZgsuQCT8nPSY8DvcqZhw" target="_blank" rel="noopener noreferrer" class="text-black transition-colors duration-300 hover:text-red-900">
-                    <i class="fa-brands fa-youtube fa-2x"></i>
-                </a>
-                <a href="https://www.facebook.com/victoriamaramures" target="_blank" rel="noopener noreferrer" class="text-black transition-colors duration-300 hover:text-red-900">
-                    <i class="fa-brands fa-facebook fa-2x"></i>
-                </a>
-                <a href="https://www.instagram.com/csvictoriamm" target="_blank" rel="noopener noreferrer" class="text-black transition-colors duration-300 hover:text-red-900">
-                    <i class="fa-brands fa-instagram fa-2x"></i>
-                </a>
-            </div>
+    <div class="container relative z-10 px-4 py-8 mx-auto">
+        <h1 class="mb-4 text-4xl font-bold text-center text-black md:text-6xl md:text-left font-roboto-condensed">Club Sportiv <br class="md:hidden"> Victoria
+            Maramureș</h1>
+        <h2 class="max-w-2xl p-2 mb-8 text-xl font-semibold text-center text-black md:text-left md:text-2xl">Promovăm sportul de
+            <span class="font-bold text-red-900">performanță</span> și sportul pentru toți în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de
+            <span class="font-bold text-red-900">Freestyle Kickboxing</span> și Fitness Funcțional în Baia Mare | Grupe de copii si adulti.</h2>
+
+        <div class="flex justify-center px-4 space-x-8 md:justify-start">
+            <a href="https://www.tiktok.com/@csvictoriamm" target="_blank" rel="noopener noreferrer"
+                class="text-black hover:text-red-900"><i class="fa-brands fa-tiktok fa-2x"></i></a>
+            <a href="https://www.youtube.com/channel/UCFfZgsuQCT8nPSY8DvcqZhw" target="_blank"
+                rel="noopener noreferrer" class="text-black hover:text-red-900"><i
+                    class="fa-brands fa-youtube fa-2x"></i></a>
+            <a href="https://www.facebook.com/victoriamaramures" target="_blank" rel="noopener noreferrer"
+                class="text-black hover:text-red-900"><i class="fa-brands fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com/csvictoriamm" target="_blank" rel="noopener noreferrer"
+                class="text-black hover:text-red-900"><i class="fa-brands fa-instagram fa-2x"></i></a>
         </div>
     </div>
 </section>
