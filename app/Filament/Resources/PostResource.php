@@ -18,6 +18,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\RichEditor;
 use App\Filament\Resources\PostResource\Pages\ListPosts;
 use App\Filament\Resources\PostResource\Pages\CreatePost;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class PostResource extends Resource
 {
@@ -40,7 +41,7 @@ class PostResource extends Resource
                
                     Forms\Components\TextInput::make('meta.title')->label('Meta Title')->required(),
                     Forms\Components\Textarea::make('meta.description')->label('Meta Description')->required(),
-                    Forms\Components\MarkdownEditor::make('body')->columnSpanFull()
+                   TinyEditor::make('body')->columnSpanFull()
                     ->required(),
                     Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
                     ->required()
