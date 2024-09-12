@@ -41,18 +41,12 @@ class PostResource extends Resource
                
                     Forms\Components\TextInput::make('meta.title')->label('Meta Title')->required(),
                     Forms\Components\Textarea::make('meta.description')->label('Meta Description')->required(),
-                    RichEditor::make('body')
+                    TinyEditor::make('body')
                     ->columnSpanFull()
                     ->required()
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'link',
-                        'table',
-                        'code', // Add this to enable the code view button
-                        // ... any other buttons you want
+                    ->options([
+                        'plugins' => 'code',
                     ]),
-                  
                     Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
                     ->required()
                     ->image(),
