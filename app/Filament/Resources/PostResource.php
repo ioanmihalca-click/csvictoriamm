@@ -42,7 +42,8 @@ class PostResource extends Resource
                     Forms\Components\TextInput::make('meta.title')->label('Meta Title')->required(),
                     Forms\Components\Textarea::make('meta.description')->label('Meta Description')->required(),
                     TinyEditor::make('body')->columnSpanFull()
-                    ->required(),
+                    ->required()
+                    ->profile('default'),
                     
                     Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
                     ->required()
