@@ -44,7 +44,7 @@ class PostResource extends Resource
                     TinyEditor::make('body')->columnSpanFull()
                     ->required()
                     ->profile('default'),
-                    
+           
                     Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
                     ->required()
                     ->image(),
