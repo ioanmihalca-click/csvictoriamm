@@ -46,6 +46,7 @@ class PostResource extends Resource
                     ->required()
                     ->options([
                         'plugins' => 'code',
+                        'toolbar' => 'code',
                     ]),
                     Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
                     ->required()
