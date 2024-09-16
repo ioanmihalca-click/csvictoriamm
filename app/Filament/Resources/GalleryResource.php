@@ -25,6 +25,9 @@ class GalleryResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
+    protected static ?string $modelLabel = 'Foto';
+    protected static ?string $pluralModelLabel = 'Foto';
+
     public static function form(Form $form): Form
     {
         return $form
