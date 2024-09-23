@@ -46,7 +46,7 @@
             <div class="mt-12 overflow-hidden bg-white shadow-md rounded-xl">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
-                        <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724149060/352381441_252217514085499_5107195744692959078_n-lo646b69_qgeob3.jpg" alt="Kickboxing in Baia Mare" class="w-full h-auto rounded-lg">
+                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727107335/antrenamente_bcsnj1.jpg" alt="Kickboxing in Baia Mare" class="w-full h-auto rounded-lg">
                     </div>
                     <div class="p-6">
                         <h3 class="mb-4 text-2xl font-bold text-red-900">Antrenor: Ioan Mihalca</h3>
