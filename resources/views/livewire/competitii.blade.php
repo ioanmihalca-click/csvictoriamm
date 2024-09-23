@@ -208,7 +208,7 @@
 <!-- Cupa Maramuresului (12.11.2023) -->
 <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
     <div class="relative h-64 overflow-hidden">
-        <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724149021/105A0324-lnx22vey_tafdvm.jpg" alt="Cupa Maramuresului 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726502566/z0qnzc4mcmkmez560i4t.webp" alt="Cupa Maramuresului 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
             <h3 class="text-xl font-bold text-white">Cupa Maramuresului</h3>
             <p class="text-sm text-gray-300">12.11.2023 @ Baia Mare</p>
