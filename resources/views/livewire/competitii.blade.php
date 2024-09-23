@@ -40,7 +40,7 @@
             <!-- Campionatul National de Freestyle Kickboxing -->
             <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726501821/phfba2no3xdjtcavfrff.jpg" alt="Campionatul National de Freestyle Kickboxing" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+                    <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1726501821/phfba2no3xdjtcavfrff.jpg" alt="Campionatul National de Freestyle Kickboxing" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                         <h3 class="text-xl font-bold text-white">Campionatul National de Freestyle Kickboxing</h3>
                         <p class="text-sm text-gray-300">16 martie 2024 @ Brazi, Prahova</p>
