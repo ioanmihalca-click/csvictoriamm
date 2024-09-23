@@ -7,7 +7,7 @@
             <!-- GRAND PRIX JUDGEMENT DAY 2024 -->
             <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724154884/DSC00252_075845_vmckmk.jpg" alt="GRAND PRIX JUDGEMENT DAY 2024" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+                    <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727118170/tkdoe7k7qe3gzuveohim.jpg" alt="GRAND PRIX JUDGEMENT DAY 2024" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                         <h3 class="text-xl font-bold text-white">GRAND PRIX JUDGEMENT DAY 2024</h3>
                         <p class="text-sm text-gray-300">22 iunie 2024 @ Brasov</p>
@@ -40,7 +40,7 @@
             <!-- Campionatul National de Freestyle Kickboxing -->
             <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                 <div class="relative h-64 overflow-hidden">
-                    <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724153921/432680872_405459635427952_1987417501116602711_n_ztx0se.jpg" alt="Campionatul National de Freestyle Kickboxing" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+                    <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726501821/phfba2no3xdjtcavfrff.jpg" alt="Campionatul National de Freestyle Kickboxing" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                         <h3 class="text-xl font-bold text-white">Campionatul National de Freestyle Kickboxing</h3>
                         <p class="text-sm text-gray-300">16 martie 2024 @ Brazi, Prahova</p>
@@ -68,7 +68,7 @@
            <!-- GRAND PRIX JUDGEMENT DAY (19 nov 2023) -->
 <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
     <div class="relative h-64 overflow-hidden">
-        <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724149021/IMG-20231119-WA0006_edit_117800499320686-lpb55ctg_cqxfoc.jpg" alt="GRAND PRIX JUDGEMENT DAY 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726501474/nk1hkid9zco5rcdbjsfj.jpg" alt="GRAND PRIX JUDGEMENT DAY 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
             <h3 class="text-xl font-bold text-white">GRAND PRIX JUDGEMENT DAY</h3>
             <p class="text-sm text-gray-300">19 nov 2023 @ Ploiesti</p>
@@ -98,7 +98,7 @@
 <!-- Cupa Maramuresului (11 nov 2023) -->
 <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
     <div class="relative h-64 overflow-hidden">
-        <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724153705/401616708_334424075864842_4310761090375986039_n_yyognq.jpg" alt="Cupa Maramuresului 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727117904/401616708_334424075864842_4310761090375986039_n_qxj1fi.webp" alt="Cupa Maramuresului 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
             <h3 class="text-xl font-bold text-white">Cupa Maramuresului</h3>
             <p class="text-sm text-gray-300">11 nov 2023 @ Baia Mare</p>
@@ -119,7 +119,7 @@
 <!-- CUPA ROMANIEI DE FREESTYLE KICKBOXING (14.10.2023) -->
 <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
     <div class="relative h-64 overflow-hidden">
-        <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724149091/IMG_20231119_122854-lpb4q4vm_rnsbzc.jpg" alt="CUPA ROMANIEI DE FREESTYLE KICKBOXING 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726502140/qn0b4shpiakxagfmcahx.jpg" alt="CUPA ROMANIEI DE FREESTYLE KICKBOXING 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
             <h3 class="text-xl font-bold text-white">CUPA ROMANIEI DE FREESTYLE KICKBOXING</h3>
             <p class="text-sm text-gray-300">14.10.2023 @ Ploiesti</p>
@@ -149,7 +149,7 @@
 <!-- Campionatul National de Freestyle Kickboxing K1 (30.04.2023) -->
 <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
     <div class="relative h-64 overflow-hidden">
-        <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724153099/343929636_647152483915278_2981896038198312159_n_bvnnuh.jpg" alt="Campionatul National de Freestyle Kickboxing K1 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727117658/343929636_647152483915278_2981896038198312159_n_i31wad.webp" alt="Campionatul National de Freestyle Kickboxing K1 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
             <h3 class="text-xl font-bold text-white">Campionatul National de Freestyle Kickboxing K1</h3>
             <p class="text-sm text-gray-300">30.04.2023 @ Alba Iulia</p>
@@ -177,7 +177,7 @@
 <!-- Campionatul National de Freestyle Kickboxing - Probe de Tatami (11.03.2023) -->
 <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
     <div class="relative h-64 overflow-hidden">
-        <img src="https://res.cloudinary.com/dpxess5iw/image/upload/v1724152763/335007122_6067910739930979_3187511036522481575_n_qgv7tc.jpg" alt="Campionatul National de Freestyle Kickboxing - Probe de Tatami 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727117545/335007122_6067910739930979_3187511036522481575_n_bwmcnu.webp" alt="Campionatul National de Freestyle Kickboxing - Probe de Tatami 2023" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
             <h3 class="text-xl font-bold text-white">Campionatul National de Freestyle Kickboxing - Probe de Tatami</h3>
             <p class="text-sm text-gray-300">11.03.2023 @ Ploiesti</p>
