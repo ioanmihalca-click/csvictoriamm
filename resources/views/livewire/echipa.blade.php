@@ -25,7 +25,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Timeea Benzar</h3>
-                        <p class="text-blue-600">10 ani</p>
+                        <p class="text-red-900">10 ani</p>
                     </div>
                   
                 </div>
@@ -39,7 +39,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Ema Recalo</h3>
-                        <p class="text-blue-600">11 ani</p>
+                        <p class="text-red-900">11 ani</p>
                     </div>
                     
                 </div>
@@ -53,7 +53,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Alexandru Taut</h3>
-                        <p class="text-blue-600">11 ani</p>
+                        <p class="text-red-900">11 ani</p>
                     </div>
                    
                 </div>
@@ -67,7 +67,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Vladimyr Benzar</h3>
-                        <p class="text-blue-600">12 ani</p>
+                        <p class="text-red-900">12 ani</p>
                     </div>
                    
                 </div>
@@ -81,7 +81,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Sergiu Ciontos</h3>
-                        <p class="text-blue-600">12 ani</p>
+                        <p class="text-red-900">12 ani</p>
                     </div>
                     
                 </div>
@@ -95,7 +95,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Ramona Rozovlean</h3>
-                        <p class="text-blue-600">13 ani</p>
+                        <p class="text-red-900">13 ani</p>
                     </div>
                     
                 </div>
@@ -109,7 +109,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Daria Curac</h3>
-                        <p class="text-blue-600">16 ani</p>
+                        <p class="text-red-900">16 ani</p>
                     </div>
                    
                 </div>
@@ -123,7 +123,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Anton Corjuc</h3>
-                        <p class="text-blue-600">16 ani</p>
+                        <p class="text-red-900">16 ani</p>
                     </div>
                     
                 </div>
@@ -137,7 +137,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Alexandru Nemzet</h3>
-                        <p class="text-blue-600">16 ani</p>
+                        <p class="text-red-900">16 ani</p>
                     </div>
                     
                 </div>
@@ -151,7 +151,7 @@
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Giorgio Curac</h3>
-                        <p class="text-blue-600">16 ani</p>
+                        <p class="text-red-900">16 ani</p>
                     </div>
 
 
