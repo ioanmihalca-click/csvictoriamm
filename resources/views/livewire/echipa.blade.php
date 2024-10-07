@@ -34,12 +34,12 @@
               <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724157041/IMG_20240810_205941_233_tfrfma.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1728293033/IMG_20240810_205941_233_y1a7v7.jpg" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
                         <h3>Ema Recalo</h3>
-                        <p class="text-blue-600">10 ani</p>
+                        <p class="text-blue-600">11 ani</p>
                     </div>
                     
                 </div>
@@ -48,7 +48,7 @@
             <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149062/DSC00266_075808-lxsr3c2g_e3qtkr.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510796/wm7yrugkcewkvy7pswyl.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
@@ -62,7 +62,7 @@
             <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149080/DSC00270_075832-lxsr62xa_fqk1qb.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510810/jjlnksokphi4mawe61ul.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
@@ -76,7 +76,7 @@
             <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149069/DSC00278_075858-lxsr524i_e9lthi.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510824/eoa6hcr6rbljjbpt1jcc.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
@@ -90,7 +90,7 @@
             <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149070/DSC00284_075906-lxsr77ad_j9qa4e.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510838/yrpi7a7ohr0syv7zabgd.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
@@ -104,7 +104,7 @@
             <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-pink-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149077/DSC00295_075919-lxsr9a4d_kawdnd.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510855/pvviagotlgpfwxxwkwjl.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
@@ -118,7 +118,7 @@
             <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149067/DSC00304_075939-lxsr9q9d_aswfkh.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510868/tpsjfozjgai9fgqy9ael.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
@@ -132,7 +132,7 @@
             <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149068/DSC00316_075951-lxsra8ak_exrw0p.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510894/zb5aphzmfbonqhseijh2.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
@@ -146,7 +146,7 @@
         <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149024/105A0610-lnx23ccc_rsqadk.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726502427/e5igocdud2vxxp9ydx4p.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">
