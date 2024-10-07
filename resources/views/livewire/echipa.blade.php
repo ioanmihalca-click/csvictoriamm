@@ -20,7 +20,7 @@
             <div class="flex flex-col items-center justify-center col-span-1">
                 <div class="relative p-5">
                     <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Profile/v1724149064/DSC00260_075755-lxsqz2n1_yxi8jr.png" />
+                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510773/aovcbueyzttx8gjmqsd6.webp" />
                 </div>
                 <div class="mt-3 space-y-2 text-center">
                     <div class="space-y-1 text-lg font-medium leading-6">

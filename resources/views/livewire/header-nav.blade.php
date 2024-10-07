@@ -9,7 +9,7 @@
             <img src="/assets/CS-Victoria-Maramures.webp" alt="Logo Click Music" class="w-auto h-28">
         </a>        
     <!-- Hamburger menu button (visible on mobile) -->
-<button @click="isOpen = !isOpen" class="relative w-8 h-8 text-black md:hidden">
+<button x-cloak @click="isOpen = !isOpen" class="relative w-8 h-8 text-black md:hidden">
     <svg class="absolute w-8 h-8 transition-all duration-300 ease-in-out transform"
          :class="{'rotate-0 opacity-100': !isOpen, '-rotate-90 opacity-0': isOpen}"
          fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
