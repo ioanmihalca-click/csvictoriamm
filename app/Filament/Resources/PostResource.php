@@ -43,8 +43,8 @@ class PostResource extends Resource
                     Forms\Components\TextInput::make('meta.title')->label('Meta Title')->required(),
                     Forms\Components\Textarea::make('meta.description')->label('Meta Description')->required(),
                     MarkdownEditor::make('body')->columnSpanFull()
-                    ->required()
-                    ->profile('default'),
+                    ->required(),
+                   
            
                     Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
                     ->required()
