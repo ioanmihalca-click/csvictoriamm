@@ -88,7 +88,12 @@
             <div class="container p-8 mt-4">
                 <div class="elfsight-app-630db31d-36a2-4674-90a9-e4b40d06b39e" data-elfsight-app-lazy></div>
             </div>
+
+            <livewire:latest-posts />
+
+
         </div>
+
     </section>
 
 <!-- Parallax Section -->
