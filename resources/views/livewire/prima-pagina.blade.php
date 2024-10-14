@@ -81,7 +81,7 @@
                             <p><strong>Poienile de sub Munte:</strong> Sâmbătă, 13:00 - Grupa mixtă</p>
                         </div>
                     </div>
-                    <p class="mt-8 italic text-red-700">Ioan Mihalca, antrenor</p>
+                    <p class="mt-8 italic text-red-900">Ioan Mihalca, antrenor</p>
                 </div>
             </div>
                <!--Google Reviews -->

@@ -1,5 +1,5 @@
 <section class="px-4 py-8 mx-auto md:py-12 max-w-7xl sm:px-6 lg:px-8">
-    <h2 class="mb-12 text-4xl font-extrabold text-center text-red-900 font-roboto-condensed">Ultimele Articole</h2>
+    <h2 class="mb-12 text-4xl font-extrabold text-center text-red-900 font-roboto-condensed">Articole Recente</h2>
 
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         @foreach ($latestPosts as $post)
