@@ -4,6 +4,44 @@
         <h2 class="mb-12 text-4xl font-extrabold text-center text-red-900 font-roboto-condensed">Competiții</h2>
         
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+            <!-- Cupa Romaniei 2024 -->
+        <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
+    <div class="relative h-64 overflow-hidden">
+        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1728897518/IMG_20241012_173626_yl79yr.webp" alt="CS Victoria Maramureș la Cupa României" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+            <h3 class="text-xl font-bold text-white">Cupa României 2024</h3>
+            <p class="text-sm text-gray-300">12 octombrie 2024 @ Cornu, Prahova</p>
+        </div>
+    </div>
+    <div class="p-6">
+        <p class="mb-4 text-gray-600">Am participat la Cupa României, organizată de <strong>Federația Română de Freestyle Kickboxing și Muay Boran</strong> (<a href="http://www.frfk.ro" target="_blank" rel="noopener noreferrer" class="text-red-900 hover:underline">www.frfk.ro</a>), eveniment la care au participat aproximativ 45 de cluburi și 400 de sportivi.</p>
+        <div class="mb-4">
+            <h4 class="mb-2 font-semibold text-red-900">Rezultatele noastre:</h4>
+            <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>Timeea Benzar:
+                    <ul class="pl-5 list-disc">
+                        <li>Aur - K1, 9-10 ani, Fete, -35 Kg</li>
+                        <li>Aur - K1 Light, 9-10 ani, Fete, -30 Kg</li>
+                    </ul>
+                </li>
+                <li>Alex Taut și Vladimyr Benzar - Aur (ex-aequo) - K1, 11-12 ani, Băieți, -35 Kg</li>
+                <li>Sergiu-Ioan Ciontos - Aur - K1 Light, 11-12 ani, Băieți, -45 Kg</li>
+                <li>Ramona Rozovlean - Bronz - K1 Light, 12-14 ani, Fete, -60 Kg</li>
+                <li>Daria Curac - Argint - K1 Light, 15-16 ani, Fete, -55 Kg</li>
+                <li>Rafael Ember - Argint - K1, 15-16 ani, Băieți, -80 Kg</li>
+            </ul>
+        </div>
+        <p class="mb-4 text-sm italic text-gray-600">Notă specială: Alex Taut și Vladimyr Benzar au ajuns amândoi în Finală la categoria lor, dar din dovadă de prietenie și respect reciproc nu au luptat. Îi considerăm pe amândoi campionii acestei categorii.</p>
+        <a href="https://csvictoriamm.ro/blog/cs-victoria-maramures-la-cupa-romaniei-4-medalii-de-aur-3-de-argint-si-1-de-bronz-la-freestyle-kickboxing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-red-900 transition-colors duration-200 hover:text-red-700">
+            Vezi mai multe detalii
+            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</article>
+
             <!-- GRAND PRIX JUDGEMENT DAY 2024 -->
             <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                 <div class="relative h-64 overflow-hidden">
