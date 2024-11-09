@@ -5,6 +5,53 @@
         
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 
+            <!-- Cupa Maramuresului 2024 -->
+
+<article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
+    <div class="relative h-64 overflow-hidden">
+        <img src="https://csvictoriamm.ro/storage/blog-images/01JC9ANFSXHF86H3CTG5WYMW4W.jpg" alt="CS Victoria Maramureș la Cupa Maramureșului" class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+            <h3 class="text-xl font-bold text-white">Cupa Maramureșului de Kickboxing</h3>
+            <p class="text-sm text-gray-300">9 noiembrie 2024 @ Baia Mare</p>
+        </div>
+    </div>
+    <div class="p-6">
+        <p class="mb-4 text-gray-600">Clubul Sportiv Victoria Maramureș a participat la <strong>"Cupa Maramureșului"</strong>, organizată la Baia Mare de maestrul Oliver Polgar și ACS Kickboxing Baia Mare. Lotul nostru, format din 17 sportivi, a concurat în probele de Kick Light și K1.</p>
+        
+        <div class="mb-4">
+            <h4 class="mb-2 font-semibold text-red-900">Rezultatele obținute:</h4>
+            <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>Kick Light: 13 medalii de aur</li>
+                <li>Super Fight (K1): 1 medalie de aur, 2 de argint</li>
+                <li>"Centura Maramureșului" (K1): Vicecampion, Sergiu Ioan Ciontoș</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h4 class="mb-2 font-semibold text-red-900">Componența echipei:</h4>
+            <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>Echipa Kick Light:
+                    <p class="pl-5 mt-1">Timeea Benzar, Emanuela Recalo, Ramona Rozovlean, Kristina Zon, Darius Boroș, Curac Daria, Elena Scopeti, Alexandru Aldea, Anton Corjuc, Dumitru Iurcia, Marcu Pava, Alexandru Nemzet și Eric Balasz.</p>
+                </li>
+                <li>Super Fight K1:
+                    <p class="pl-5 mt-1">Alexandru Tăut, Vladimyr Benzar și Rafael Ember.</p>
+                </li>
+            </ul>
+        </div>
+
+        <p class="mb-4 text-sm italic text-gray-600">
+            Suntem mândri de performanța lui Sergiu Ioan Ciontoș, care a luptat cu înverșunare într-o piramidă de 8 sportivi în cadrul competiției "Centura Maramureșului", reușind să câștige două meciuri împotriva unor adversari foarte bine pregătiți.
+        </p>
+
+        <a href="https://csvictoriamm.ro/blog/cs-victoria-maramures-straluceste-la-cupa-maramuresului-de-kickboxing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-red-900 transition-colors duration-200 hover:text-red-700">
+            Vezi mai multe detalii
+            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+</article>
+
             <!-- Cupa Romaniei 2024 -->
         <article class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
     <div class="relative h-64 overflow-hidden">
