@@ -11,7 +11,8 @@ class Galerie extends Component
 {
     public function render()
     {
-        $galleryItems = Gallery::all();
+        // Obține elementele sortate după prioritate sau data creării
+        $galleryItems = Gallery::orderBy('priority', 'asc')->get(); // sau 'created_at', 'desc'
 
         return view('livewire.galerie', [
             'galleryItems' => $galleryItems
