@@ -9,8 +9,17 @@
     <meta name="description" content="Descoperiți cele mai recente știri, sfaturi și actualizări de la Club Sportiv Victoria Maramureș, destinația dumneavoastră premium pentru antrenamente de kickboxing freestyle și Muay Thai în Baia Mare, România.">
     <link rel="canonical" href="https://csvictoriamm.ro/blog" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon" />
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/favicon/favicon-96x96.png') }}" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('assets/favicon/favicon.svg') }}">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-touch-icon.png') }}">
+    <meta name="apple-mobile-web-app-title" content="CS Victoria MM">
+
+    <!-- Web Manifest -->
+    {{-- <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}"> --}}
 
     <!-- Open Graph Tags for Social Media Sharing -->
     <meta property="og:title" content="Blog de Kickboxing | Club Sportiv Victoria Maramureș" />
