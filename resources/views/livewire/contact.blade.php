@@ -57,7 +57,7 @@
 
             <!-- Image -->
             <div class="relative overflow-hidden rounded-lg shadow-xl h-96">
-                <img src="https://res.cloudinary.com/dpxess5iw/image/upload/t_Gradient fade/v1724149033/154105428_3510923319131877_1815913397909330049_n-lnx5z2yg_cucw3n.jpg" 
+                <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726502392/fzevluuvlbkfdgia7epy.jpg" 
                      alt="Kickbox Baia Mare Maramures" 
                      class="object-cover w-full h-full">
                 <div class="absolute inset-0 opacity-50 bg-gradient-to-t from-black to-transparent"></div>
