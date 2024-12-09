@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ $title ?? 'Club Sportiv Victoria Maramureș' }}</title>
-    <meta name="description" content="Club Sportiv Victoria Maramureș - Antrenamente Kickboxing în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
+    <meta name="description"
+        content="Club Sportiv Victoria Maramureș - Antrenamente Kickboxing în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
     <link rel="canonical" href="{{ url()->current() }}">
-    <link rel="icon" href="{{ asset('assets/favicon.ico') }}" type="image/x-icon" />
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon/favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/favicon/favicon-96x96.png') }}" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('assets/favicon/favicon.svg') }}">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicon/apple-touch-icon.png') }}">
+    <meta name="apple-mobile-web-app-title" content="CS Victoria MM">
+
+    <!-- Web Manifest -->
+    {{-- <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}"> --}}
 
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Kickboxing și Pregatire Fizica în Baia Mare | Clubul Victoria Maramureș" />
     <meta property="og:site_name" content="Club Sportiv Victoria Maramures Baia Mare">
-    <meta property="og:description" content="Clubul Sportiv Victoria Maramureș - Antrenamente Kickboxing  în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
+    <meta property="og:description"
+        content="Clubul Sportiv Victoria Maramureș - Antrenamente Kickboxing  în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
     <meta property="og:image" content="{{ asset('assets/OG-VictoriaMM.webp') }}" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:alt" content="Clubul Sportiv Victoria Maramureș" />
@@ -32,19 +46,24 @@
         body::-webkit-scrollbar {
             width: 9px;
         }
+
         body::-webkit-scrollbar-thumb {
             background-color: #7F1D1D;
             border-radius: 3px;
         }
+
         body::-webkit-scrollbar-track {
             background-color: #d1d5db;
             border-radius: 3px;
         }
-        [x-cloak] { display: none !important; }
+
+        [x-cloak] {
+            display: none !important;
+        }
     </style>
 
     <!-- Schema.org JSON-LD -->
-      <script type="application/ld+json">
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SportsClub",
@@ -119,7 +138,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BHQPK0P11"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
         gtag('config', 'G-5BHQPK0P11');
     </script>
@@ -127,40 +149,31 @@
     <meta name="google-site-verification" content="Nh4bYEQOuTIi3Xms3pkbl8zuf9UC_YHnYsBjWMhrmy0" />
 </head>
 
-<body 
-    x-data="{ 
-        pageLoading: true,
-        init() {
-            this.$nextTick(() => {
-                this.pageLoading = false;
-            });
-        }
-    }" 
-    x-init="
-        Livewire.on('navigating', () => { pageLoading = true });
-        Livewire.on('navigated', () => { pageLoading = false });
-    "
-    @navigate.window="pageLoading = true"
-    @navigated.window="pageLoading = false"
-    class="font-sans antialiased bg-white"
->
+<body x-data="{
+    pageLoading: true,
+    init() {
+        this.$nextTick(() => {
+            this.pageLoading = false;
+        });
+    }
+}" x-init="Livewire.on('navigating', () => { pageLoading = true });
+Livewire.on('navigated', () => { pageLoading = false });" @navigate.window="pageLoading = true"
+    @navigated.window="pageLoading = false" class="font-sans antialiased bg-white">
     <livewire:header-nav />
 
     <!-- Transition wrapper -->
-    <div 
-        x-show="pageLoading"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="transition ease-in duration-300"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-75"
-    >
+    <div x-show="pageLoading" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-75">
         <!-- Loading indicator -->
-        <svg class="w-16 h-16 text-red-900 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        <svg class="w-16 h-16 text-red-900 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+            </circle>
+            <path class="opacity-75" fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+            </path>
         </svg>
     </div>
 
@@ -173,4 +186,5 @@
     @livewireScripts
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </body>
+
 </html>
