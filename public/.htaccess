@@ -5,6 +5,10 @@
 
     RewriteEngine On
 
+    # Return 410 for .shtml and .html malware pages
+    RewriteCond %{REQUEST_URI} \.(shtml|html)$ [NC]
+    RewriteRule ^ - [R=410,L]
+
     # Redirect from http:// and https://www to https://csvictoriamm.ro (non-www)
     RewriteCond %{HTTP_HOST} ^(www\.)?csvictoriamm\.ro [NC,OR]
     RewriteCond %{HTTP_HOST} ^csvictoriamm\.ro [NC]
