@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Disallow: /zhHant/
+Disallow: /product/
+Disallow: /safe_search/
+Disallow: /pcmypage/
+Disallow: /*.shtml$
+Disallow: /*.html$
+Sitemap: https://csvictoriamm.ro/sitemap.xml

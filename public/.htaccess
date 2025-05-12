@@ -5,7 +5,8 @@
 
     RewriteEngine On
 
-    # Return 410 for .shtml and .html malware pages
+   # Return 410 for malware URLs in /zhHant/, .shtml, and .html
+    RewriteCond %{REQUEST_URI} ^/(zhHant|product|safe_search|pcmypage)/ [NC]
     RewriteCond %{REQUEST_URI} \.(shtml|html)$ [NC]
     RewriteRule ^ - [R=410,L]
 
