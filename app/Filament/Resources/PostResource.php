@@ -47,9 +47,9 @@ class PostResource extends Resource
 
 
                 Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
-                    ->required()
-                    ->image()
-                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
+                    ->required(),
+                //->image()
+                //->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
                 DatePicker::make('published_at')
                     ->required(),
             ]);
