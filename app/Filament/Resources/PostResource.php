@@ -26,7 +26,7 @@ class PostResource extends Resource
     protected static ?string $model = Post::class;
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
     protected static ?string $navigationLabel = 'Blog';
-    protected static ?int $navigationSort = 1; 
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -35,20 +35,21 @@ class PostResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->reactive()
-                    ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
+                    ->afterStateUpdated(fn($state, callable $set) => $set('slug', Str::slug($state))),
                 Forms\Components\TextInput::make('slug')
                     ->required()
                     ->unique(ignoreRecord: true),
-               
-                    Forms\Components\TextInput::make('meta.title')->label('Meta Title')->required(),
-                    Forms\Components\Textarea::make('meta.description')->label('Meta Description')->required(),
-                    MarkdownEditor::make('body')->columnSpanFull()
+
+                Forms\Components\TextInput::make('meta.title')->label('Meta Title')->required(),
+                Forms\Components\Textarea::make('meta.description')->label('Meta Description')->required(),
+                MarkdownEditor::make('body')->columnSpanFull()
                     ->required(),
-                   
-           
-                    Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
+
+
+                Forms\Components\FileUpload::make('featured_image')->disk('public')->directory('blog-images')
                     ->required()
-                    ->image(),
+                    ->image()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
                 DatePicker::make('published_at')
                     ->required(),
             ]);
@@ -64,7 +65,7 @@ class PostResource extends Resource
                 TextColumn::make('meta')->searchable()->limit('20'),
                 TextColumn::make('published_at')
                     ->dateTime(),
-                      
+
             ])
             ->filters([
                 // ... (optional filters) ...
@@ -79,14 +80,14 @@ class PostResource extends Resource
             ])
             ->defaultSort('published_at', 'desc');
     }
-    
+
     public static function getRelations(): array
     {
         return [
             // ... (optional relation managers for categories, tags, etc.) ...
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -95,23 +96,22 @@ class PostResource extends Resource
             // 'view' => ViewPost::route('/{record}'),
             // 'edit' => EditPost::route('/{record}/edit'),
         ];
-    } 
-    
+    }
+
     public static function mutateFormDataBeforeFill(array $data): array
     {
         // Decode JSON string to array for meta
         $data['meta'] = json_decode($data['meta'], true);
-    
+
         return $data;
     }
-    
+
     // This method is called before the form fields are saved to the database
     public static function mutateFormDataBeforeSave(array $data): array
     {
         // Convert the meta array to a JSON string before saving
         $data['meta'] = json_encode(Arr::only($data['meta'], ['title', 'description']));
-    
+
         return $data;
     }
-
 }
