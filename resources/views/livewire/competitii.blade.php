@@ -6,6 +6,61 @@
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 
 
+                <!-- AMC 4 Baia Mare (24 mai 2025) -->
+                <article
+                    class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://csvictoriamm.ro/storage/blog-images/01JW3F783HE2R90YRCX4S68TM2.jpg"
+                            alt="Victoria Maramures la competitia AMC 4 Baia Mare"
+                            class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                            <h3 class="text-xl font-bold text-white">AMC 4 Baia Mare</h3>
+                            <p class="text-sm text-gray-300">24 mai 2025 @ Baia Mare</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="mb-4 text-gray-600">Sportivii de la Club Sportiv Victoria Maramureș au demonstrat încă
+                            o dată o bună pregătire în kickboxing! Echipa noastră a participat la competiția AMC 4,
+                            organizată la Baia Mare de maestrul Kenzo Ionuț de la ALPHA Mixed Martial Arts Academy Baia
+                            Mare.</p>
+
+                        <div class="mb-4">
+                            <h4 class="mb-2 font-semibold text-red-900">Rezultatele obținute:</h4>
+                            <ul class="text-sm text-gray-600 list-disc list-inside">
+                                <li>K1:
+                                    <ul class="pl-5 list-disc">
+                                        <li>Alexandru Tăut - Medalie de Aur</li>
+                                        <li>Sergiu Ciotos - Medalie de Argint</li>
+                                        <li>Luis Pintea - Medalie de Aur</li>
+                                    </ul>
+                                </li>
+                                <li>K1 Light Contact:
+                                    <ul class="pl-5 list-disc">
+                                        <li>Timeea Benzar - Medalie de Aur</li>
+                                        <li>Vladimyr Benzar - Medalie de Aur (2 meciuri)</li>
+                                        <li>Zon Kristina - Medalie de Aur</li>
+                                        <li>Darius Boros - Medalie de Aur</li>
+                                        <li>Iosif Dana - Medalie de Aur</li>
+                                        <li>David Stenczel - Medalie de Aur</li>
+                                        <li>Nemzet Alexandru - Medalie de Aur</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="https://csvictoriamm.ro/blog/victoria-maramures-la-competitia-amc-4-baia-mare"
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center text-red-900 transition-colors duration-200 hover:text-red-700">
+                            Vezi mai multe detalii
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+
                 <!-- Campionatul National de Freestyle Kickboxing 2025 -->
                 <article
                     class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
@@ -243,7 +298,7 @@
                 <article
                     class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726501474/nk1hkid9zco5rcdbjsfj.jpg"
+                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload_v1726501474/nk1hkid9zco5rcdbjsfj.jpg"
                             alt="GRAND PRIX JUDGEMENT DAY 2023"
                             class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
@@ -281,7 +336,7 @@
                 <article
                     class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727117904/401616708_334424075864842_4310761090375986039_n_qxj1fi.webp"
+                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload_v1727117904/401616708_334424075864842_4310761090375986039_n_qxj1fi.webp"
                             alt="Cupa Maramuresului 2023"
                             class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
@@ -312,7 +367,7 @@
                 <article
                     class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726502140/qn0b4shpiakxagfmcahx.jpg"
+                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload_v1726502140/qn0b4shpiakxagfmcahx.jpg"
                             alt="CUPA ROMANIEI DE FREESTYLE KICKBOXING 2023"
                             class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
@@ -350,7 +405,7 @@
                 <article
                     class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727117658/343929636_647152483915278_2981896038198312159_n_i31wad.webp"
+                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload_v1727117658/343929636_647152483915278_2981896038198312159_n_i31wad.webp"
                             alt="Campionatul National de Freestyle Kickboxing K1 2023"
                             class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
@@ -388,7 +443,7 @@
                 <article
                     class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727117545/335007122_6067910739930979_3187511036522481575_n_bwmcnu.webp"
+                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload_v1727117545/335007122_6067910739930979_3187511036522481575_n_bwmcnu.webp"
                             alt="Campionatul National de Freestyle Kickboxing - Probe de Tatami 2023"
                             class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
@@ -430,7 +485,7 @@
                 <article
                     class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726502566/z0qnzc4mcmkmez560i4t.webp"
+                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload_v1726502566/z0qnzc4mcmkmez560i4t.webp"
                             alt="Cupa Maramuresului 2023"
                             class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                         <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">

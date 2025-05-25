@@ -33,7 +33,7 @@ class GalleryResource extends Resource
         return $form
             ->schema([
                 Forms\Components\FileUpload::make('photo')
-                    ->image()
+                    //->image()
                     ->required()
                     ->afterStateUpdated(function ($state, callable $set, CloudinaryService $cloudinaryService) {
                         if ($state) {
