@@ -2,14 +2,15 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CompetitionResource\Pages;
-use App\Models\Competition;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\Competition;
+use Filament\Resources\Resource;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\CompetitionResource\Pages;
 
 class CompetitionResource extends Resource
 {
@@ -43,12 +44,16 @@ class CompetitionResource extends Resource
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'])
-                            ->image() // Adaugă această validare
-                            ->maxSize(5120) // 5MB limit
                             ->directory('competition-images')
                             ->disk('public')
-                            ->columnSpanFull()
-                            ->rules(['image', 'mimes:jpeg,png,jpg,gif,webp', 'max:5120']), // Validări suplimentare
+                            ->afterStateUpdated(function ($state) {
+                                Log::info('File uploaded: ', [
+                                    'original_name' => $state?->getClientOriginalName(),
+                                    'mime_type' => $state?->getMimeType(),
+                                    'size' => $state?->getSize(),
+                                ]);
+                            })
+                            ->columnSpanFull(),
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
