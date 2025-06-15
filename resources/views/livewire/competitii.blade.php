@@ -7,9 +7,9 @@
                 @forelse ($competitions as $competition)
                     <article
                         class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
-                        <div class="relative h-64 overflow-hidden">
+                        <div class="relative h-auto overflow-hidden">
                             <img src="{{ $competition->image_url }}" alt="{{ $competition->title }}"
-                                class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
+                                class="object-cover w-auto h-auto transition duration-300 ease-in-out transform hover:scale-105">
                             <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
                                 <h3 class="text-xl font-bold text-white">{{ $competition->title }}</h3>
                                 <p class="text-sm text-gray-300">
