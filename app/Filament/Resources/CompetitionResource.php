@@ -13,6 +13,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Collection;
 use App\Filament\Resources\CompetitionResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
+use Carbon\Carbon;
 
 class CompetitionResource extends Resource
 {
@@ -54,33 +55,39 @@ class CompetitionResource extends Resource
                             ->native(false)
                             ->prefixIcon('heroicon-m-calendar-days'),
 
-                        // FileUpload optimizat conform Filament 3.x best practices
+                        // FileUpload optimizat pentru a rezolva eroarea JavaScript
                         FileUpload::make('image_url')
                             ->label('Imagine competiție')
                             ->image()
                             ->disk('public')
                             ->directory('competition-images')
                             ->visibility('public')
-                            ->moveFiles() // Mută fișierele în loc să le copieze
-                            ->imageEditor() // Activează editorul de imagini
-                            ->imageEditorAspectRatios([
-                                '16:9',
-                                '4:3',
-                                '1:1',
-                                null, // Free cropping
-                            ])
+                            ->moveFiles()
                             ->maxSize(2048) // 2MB
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
                             ->uploadingMessage('Se încarcă imaginea...')
-                            ->imagePreviewHeight('250')
                             ->loadingIndicatorPosition('center')
                             ->panelLayout('integrated')
-                            ->removeUploadedFileButtonPosition('right')
-                            ->uploadProgressIndicatorPosition('left')
                             ->openable()
                             ->downloadable()
                             ->deletable()
                             ->columnSpanFull()
+                            // CRITICAL: Acestea rezolvă eroarea JavaScript
+                            ->reactive() // Înlocuiește ->live()
+                            ->dehydrated(true) // Asigură persistența stării
+                            ->extraAttributes(['wire:ignore' => false]) // Permite re-render
+                            ->afterStateUpdated(function ($state, $set, $get) {
+                                // Debugging și stabilizare stare
+                                if ($state) {
+                                    Log::info('FileUpload State Updated', [
+                                        'timestamp' => Carbon::now()->toISOString()
+
+                                    ]);
+
+                                    // Forțează refresh UI după upload
+                                    $set('image_url', $state);
+                                }
+                            })
                             ->helperText('Formate acceptate: JPG, PNG, WebP. Mărimea maximă: 2MB.'),
 
                         Forms\Components\TextInput::make('details_url')
