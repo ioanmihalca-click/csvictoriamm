@@ -43,6 +43,7 @@ class CompetitionResource extends Resource
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
                             ->image()
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'])
                             ->directory('competition-images')
                             ->disk('public')
                             ->columnSpanFull(),
@@ -51,7 +52,7 @@ class CompetitionResource extends Resource
                             ->url()
                             ->maxLength(255),
                     ])->columns(2),
-                
+
                 Forms\Components\Section::make('Conținut detaliat')
                     ->schema([
                         Forms\Components\RichEditor::make('description')
@@ -67,7 +68,7 @@ class CompetitionResource extends Resource
                             ->label('Note suplimentare')
                             ->columnSpanFull(),
                     ]),
-                
+
                 Forms\Components\Section::make('Setări')
                     ->schema([
                         Forms\Components\Toggle::make('is_active')
@@ -133,12 +134,12 @@ class CompetitionResource extends Resource
                     Tables\Actions\BulkAction::make('activare')
                         ->label('Activare')
                         ->icon('heroicon-o-check')
-                        ->action(fn (Builder $query) => $query->update(['is_active' => true])),
+                        ->action(fn(Builder $query) => $query->update(['is_active' => true])),
                     Tables\Actions\BulkAction::make('dezactivare')
                         ->label('Dezactivare')
                         ->icon('heroicon-o-x-mark')
                         ->color('danger')
-                        ->action(fn (Builder $query) => $query->update(['is_active' => false])),
+                        ->action(fn(Builder $query) => $query->update(['is_active' => false])),
                 ]),
             ]);
     }
