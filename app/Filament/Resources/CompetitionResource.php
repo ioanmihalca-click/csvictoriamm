@@ -9,7 +9,7 @@ use Filament\Tables\Table;
 use App\Models\Competition;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use App\Filament\Resources\CompetitionResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
@@ -44,10 +44,11 @@ class CompetitionResource extends Resource
                             ->required(),
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
-                            ->acceptedFileTypes(['image/*']) // Acceptă orice tip de imagine
+                            ->image()
                             ->directory('competition-images')
                             ->disk('public')
                             ->columnSpanFull(),
+
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
@@ -130,18 +131,16 @@ class CompetitionResource extends Resource
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                    Tables\Actions\BulkAction::make('activare')
-                        ->label('Activare')
-                        ->icon('heroicon-o-check')
-                        ->action(fn(Builder $query) => $query->update(['is_active' => true])),
-                    Tables\Actions\BulkAction::make('dezactivare')
-                        ->label('Dezactivare')
-                        ->icon('heroicon-o-x-mark')
-                        ->color('danger')
-                        ->action(fn(Builder $query) => $query->update(['is_active' => false])),
-                ]),
+                Tables\Actions\DeleteBulkAction::make(),
+                Tables\Actions\BulkAction::make('activare')
+                    ->label('Activare')
+                    ->icon('heroicon-o-check')
+                    ->action(fn(Collection $records) => $records->each(fn($record) => $record->update(['is_active' => true]))),
+                Tables\Actions\BulkAction::make('dezactivare')
+                    ->label('Dezactivare')
+                    ->icon('heroicon-o-x-mark')
+                    ->color('danger')
+                    ->action(fn(Collection $records) => $records->each(fn($record) => $record->update(['is_active' => false]))),
             ]);
     }
 
