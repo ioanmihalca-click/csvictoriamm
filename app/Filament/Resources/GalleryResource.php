@@ -54,7 +54,12 @@ class GalleryResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('photo_url'),
                 Tables\Columns\TextColumn::make('alt_text'),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime('d.m.Y H:i')
+                    ->sortable()
+                    ->label('Data adăugării'),
             ])
+            ->defaultSort('created_at', 'desc')
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
