@@ -42,11 +42,13 @@ class CompetitionResource extends Resource
                             ->required(),
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
-
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'])
+                            ->image() // Adaugă această validare
+                            ->maxSize(5120) // 5MB limit
                             ->directory('competition-images')
                             ->disk('public')
-                            ->columnSpanFull(),
+                            ->columnSpanFull()
+                            ->rules(['image', 'mimes:jpeg,png,jpg,gif,webp', 'max:5120']), // Validări suplimentare
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
