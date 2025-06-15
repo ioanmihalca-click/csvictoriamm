@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\CompetitionResource\Pages;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class CompetitionResource extends Resource
 {
@@ -43,10 +44,15 @@ class CompetitionResource extends Resource
                             ->required(),
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
-                            ->image()
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'])
                             ->directory('competition-images')
                             ->disk('public')
-                            ->columnSpanFull(),
+                            ->columnSpanFull()
+                            ->getUploadedFileUsing(function (TemporaryUploadedFile $file) {
+                                Log::info('MIME Type detected: ' . $file->getMimeType());
+                                Log::info('Extension: ' . $file->getClientOriginalExtension());
+                                return $file;
+                            }),
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
