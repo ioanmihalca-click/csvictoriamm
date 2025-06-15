@@ -79,60 +79,70 @@ class CompetitionResource extends Resource
                 Forms\Components\Section::make('Conținut detaliat')
                     ->description('Informații detaliate despre competiție')
                     ->schema([
-                        Forms\Components\RichEditor::make('description')
+                        // TipTap Editor cu suport Tailwind
+                        \FilamentTiptapEditor\TiptapEditor::make('description')
                             ->label('Descriere')
-                            ->toolbarButtons([
+                            ->profile('simple')
+                            ->tools([
                                 'bold',
                                 'italic',
-                                'link',
-                                'bulletList',
-                                'orderedList',
-                                'h2',
-                                'h3',
+                                'small',
+                                'underline',
+                                'strike',
+                                'superscript',
+                                'subscript',
+                                'lead',
+                                'heading',
+                                'bullet-list',
+                                'ordered-list',
+                                'checked-list',
                                 'blockquote',
+                                'hr',
+                                'link',
+                                'media',
                             ])
+                            ->placeholder('Introduceți descrierea competiției...')
+                            ->maxContentWidth('full')
                             ->columnSpanFull()
-                            ->helperText('Descrierea detaliată a competiției'),
+                            ->extraInputAttributes([
+                                'style' => 'min-height: 200px;'
+                            ])
+                            ->helperText('Editorul va aplica automat stilurile Tailwind corecte'),
 
-                        Forms\Components\RichEditor::make('results')
+                        \FilamentTiptapEditor\TiptapEditor::make('results')
                             ->label('Rezultate')
-                            ->toolbarButtons([
+                            ->profile('simple')
+                            ->tools([
                                 'bold',
                                 'italic',
-                                'link',
-                                'bulletList',
-                                'orderedList',
-                                'h2',
-                                'h3',
+                                'heading',
+                                'bullet-list',
+                                'ordered-list',
                                 'blockquote',
+                                'link',
                             ])
+                            ->placeholder('Introduceți rezultatele competiției...')
+                            ->maxContentWidth('full')
                             ->columnSpanFull()
-                            ->helperText('Rezultatele obținute în competiție'),
+                            ->helperText('Rezultatele vor fi formatate automat')
+                            ->label('Rezultate')
+
+                            ->columnSpanFull()
+                            ->helperText('Rezultatele obținute în competiție')
+
+                            ->extraInputAttributes([
+                                'style' => 'min-height: 150px;'
+                            ]),
 
                         Forms\Components\RichEditor::make('team_composition')
                             ->label('Componența echipei')
-                            ->toolbarButtons([
-                                'bold',
-                                'italic',
-                                'link',
-                                'bulletList',
-                                'orderedList',
-                                'h2',
-                                'h3',
-                            ])
+
                             ->columnSpanFull()
                             ->helperText('Membrii echipei care au participat'),
 
                         Forms\Components\RichEditor::make('notes')
                             ->label('Note suplimentare')
-                            ->toolbarButtons([
-                                'bold',
-                                'italic',
-                                'link',
-                                'bulletList',
-                                'orderedList',
-                                'blockquote',
-                            ])
+
                             ->columnSpanFull()
                             ->helperText('Alte informații relevante'),
                     ])
