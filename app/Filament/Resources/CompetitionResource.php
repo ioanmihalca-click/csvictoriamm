@@ -9,6 +9,7 @@ use Filament\Tables\Table;
 use App\Models\Competition;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Log;
+use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Collection;
 use App\Filament\Resources\CompetitionResource\Pages;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
@@ -42,9 +43,8 @@ class CompetitionResource extends Resource
                         Forms\Components\DatePicker::make('date')
                             ->label('Data')
                             ->required(),
-                        Forms\Components\FileUpload::make('image_url')
+                        FileUpload::make('image_url')
                             ->label('Imagine')
-                            ->image()
                             ->directory('competition-images')
                             ->disk('public')
                             ->columnSpanFull(),
