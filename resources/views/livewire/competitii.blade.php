@@ -9,10 +9,10 @@
                         class="overflow-hidden transition-all duration-300 bg-white shadow-md rounded-xl hover:shadow-xl">
                         <div class="relative h-64 overflow-hidden">
                             <img src="{{ $competition->image_url ?? 'https://csvictoriamm.ro/storage/blog-images/default-competition.jpg' }}"
-                                alt="{{ $competition->name }}"
+                                alt="{{ $competition->title }}"
                                 class="object-cover w-full h-full transition duration-300 ease-in-out transform hover:scale-105">
                             <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-                                <h3 class="text-xl font-bold text-white">{{ $competition->name }}</h3>
+                                <h3 class="text-xl font-bold text-white">{{ $competition->title }}</h3>
                                 <p class="text-sm text-gray-300">
                                     {{ \Carbon\Carbon::parse($competition->date)->format('d F Y') }} @
                                     {{ $competition->location }}</p>
