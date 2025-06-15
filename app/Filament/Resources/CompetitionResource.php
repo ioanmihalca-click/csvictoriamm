@@ -48,11 +48,12 @@ class CompetitionResource extends Resource
                             ->directory('competition-images')
                             ->disk('public')
                             ->columnSpanFull()
-                            ->preserveFilenames() // Păstrează numele original
-                            ->maxSize(2048) // Limitează dimensiunea
-                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
-                            ->imageEditor() // Permite editarea imaginii
-                            ->moveFiles(), // Forțează mutarea în loc de copiere
+                            ->deleteUploadedFileUsing(function (TemporaryUploadedFile $file) {
+                                // Cleanup pentru fișierele temporare
+                                if ($file->exists()) {
+                                    $file->delete();
+                                }
+                            }),
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
