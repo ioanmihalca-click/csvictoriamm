@@ -44,10 +44,10 @@ class CompetitionResource extends Resource
                             ->required(),
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
+                            ->acceptedFileTypes(['image/*']) // Acceptă orice tip de imagine
                             ->directory('competition-images')
                             ->disk('public')
                             ->columnSpanFull(),
-
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
