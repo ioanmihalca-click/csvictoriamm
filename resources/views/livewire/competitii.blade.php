@@ -18,19 +18,37 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <p class="mb-4 text-gray-600">{!! $competition->description !!}</p>
+                            <!-- SOLUȚIA: Aplică stiluri direct prin clasele Tailwind -->
+                            <div
+                                class="mb-4 text-gray-600 prose prose-sm prose-gray max-w-none 
+                                        prose-p:mb-3 prose-p:leading-relaxed prose-p:text-gray-600
+                                        prose-strong:font-semibold prose-strong:text-red-900
+                                        prose-ul:mb-3 prose-li:text-gray-600
+                                        prose-ol:mb-3 prose-h3:text-red-900 prose-h3:font-semibold
+                                        prose-h2:text-red-900 prose-h2:font-semibold">
+                                {!! $competition->description !!}
+                            </div>
 
                             @if ($competition->results)
                                 <div class="mb-4">
                                     <h4 class="mb-2 font-semibold text-red-900">Rezultatele obținute:</h4>
-                                    {!! $competition->results !!}
+                                    <div
+                                        class="text-gray-600 prose prose-sm prose-gray max-w-none 
+                                               prose-p:mb-2 prose-p:text-gray-600
+                                               prose-strong:font-semibold prose-strong:text-red-900
+                                               prose-ul:mb-2 prose-li:text-gray-600
+                                               prose-ol:mb-2">
+                                        {!! $competition->results !!}
+                                    </div>
                                 </div>
                             @endif
 
                             @if ($competition->notes)
-                                <p class="mb-4 text-sm italic text-gray-600">
+                                <div
+                                    class="mb-4 text-sm italic text-gray-600 prose prose-sm prose-gray max-w-none 
+                                           prose-p:mb-2 prose-p:text-gray-600 prose-p:text-sm prose-p:italic">
                                     {!! $competition->notes !!}
-                                </p>
+                                </div>
                             @endif
 
                             @if ($competition->details_url)
@@ -45,7 +63,6 @@
                             @endif
                         </div>
                     </article>
-
 
                 @empty
                     <div class="col-span-3 p-8 text-center">
