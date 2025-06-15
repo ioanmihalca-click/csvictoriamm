@@ -47,13 +47,7 @@ class CompetitionResource extends Resource
                             ->directory('competition-images')
                             ->disk('public')
                             ->columnSpanFull()
-                            // NU pune acceptedFileTypes() când folosești rules()
-                            ->rules([
-                                'nullable',
-                                'file',
-                                'mimes:jpeg,jpg,png,gif,webp',
-                                'max:5120',
-                            ]),
+                            ->image(),
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
