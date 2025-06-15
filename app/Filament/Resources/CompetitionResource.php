@@ -48,10 +48,15 @@ class CompetitionResource extends Resource
                             ->directory('competition-images')
                             ->disk('public')
                             ->columnSpanFull()
-                            ->getUploadedFileUsing(function (TemporaryUploadedFile $file) {
-                                Log::info('MIME Type detected: ' . $file->getMimeType());
-                                Log::info('Extension: ' . $file->getClientOriginalExtension());
-                                return $file;
+                            ->afterStateUpdated(function ($state) {
+                                if ($state) {
+                                    Log::info('File debug info:', [
+                                        'original_name' => $state->getClientOriginalName(),
+                                        'mime_type' => $state->getMimeType(),
+                                        'extension' => $state->getClientOriginalExtension(),
+                                        'size' => $state->getSize(),
+                                    ]);
+                                }
                             }),
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
