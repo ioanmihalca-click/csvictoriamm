@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <p class="mb-4 text-gray-600">{{!! $competition->description !!}}</p>
+                            <p class="mb-4 text-gray-600">{!! $competition->description !!}</p>
 
                             @if ($competition->results)
                                 <div class="mb-4">
@@ -29,7 +29,7 @@
 
                             @if ($competition->notes)
                                 <p class="mb-4 text-sm italic text-gray-600">
-                                    {{!! $competition->notes !!}}
+                                    {!! $competition->notes !!}
                                 </p>
                             @endif
 
