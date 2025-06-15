@@ -44,10 +44,16 @@ class CompetitionResource extends Resource
                             ->required(),
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
-                            ->image()
                             ->directory('competition-images')
                             ->disk('public')
-                            ->columnSpanFull(),
+                            ->columnSpanFull()
+                            // NU pune acceptedFileTypes() când folosești rules()
+                            ->rules([
+                                'nullable',
+                                'file',
+                                'mimes:jpeg,jpg,png,gif,webp',
+                                'max:5120',
+                            ]),
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
