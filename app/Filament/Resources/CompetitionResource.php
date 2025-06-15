@@ -46,8 +46,8 @@ class CompetitionResource extends Resource
                             ->label('Imagine')
                             ->directory('competition-images')
                             ->disk('public')
-                            ->columnSpanFull()
-                            ->image(),
+                            ->columnSpanFull(),
+
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
