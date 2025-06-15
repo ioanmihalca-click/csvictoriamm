@@ -267,9 +267,9 @@ class CompetitionResource extends Resource
                     ->icon('heroicon-o-arrow-path')
                     ->color('gray')
                     ->action(function (Collection $records) {
-                        $records->each(function ($record) {
+                        foreach ($records as $record) {
                             $record->update(['is_active' => !$record->is_active]);
-                        });
+                        }
                     })
                     ->deselectRecordsAfterCompletion(),
 
@@ -277,7 +277,11 @@ class CompetitionResource extends Resource
                     ->label('Activează')
                     ->icon('heroicon-o-check')
                     ->color('success')
-                    ->action(fn(Collection $records) => $records->each(fn($record) => $record->update(['is_active' => true])))
+                    ->action(function (Collection $records) {
+                        foreach ($records as $record) {
+                            $record->update(['is_active' => true]);
+                        }
+                    })
                     ->deselectRecordsAfterCompletion(),
 
                 Tables\Actions\BulkAction::make('deactivate')
@@ -285,7 +289,11 @@ class CompetitionResource extends Resource
                     ->icon('heroicon-o-x-mark')
                     ->color('danger')
                     ->requiresConfirmation()
-                    ->action(fn(Collection $records) => $records->each(fn($record) => $record->update(['is_active' => false])))
+                    ->action(function (Collection $records) {
+                        foreach ($records as $record) {
+                            $record->update(['is_active' => false]);
+                        }
+                    })
                     ->deselectRecordsAfterCompletion(),
             ])
             ->emptyStateIcon('heroicon-o-trophy')
