@@ -63,7 +63,7 @@ class Competition extends Model
     }
 
     /**
-     * Accessor pentru URL imagine - FIX pentru producție
+     * Accessor pentru URL imagine - FIX pentru afișare și editing
      */
     public function getImageUrlAttribute($value)
     {
@@ -71,14 +71,17 @@ class Competition extends Model
             return null;
         }
 
-        // Dacă este deja un URL complet, returnează direct
-        if (str_starts_with($value, 'http')) {
-            return $value;
+        // Pentru afișarea pe site (URL complet)
+        if (request()->is('admin/*') === false) {
+            // Dacă nu suntem în admin, returnează URL complet pentru site
+            if (str_starts_with($value, 'http')) {
+                return $value;
+            }
+            return config('app.url') . '/storage/' . $value;
         }
 
-        // SOLUȚIA PENTRU PRODUCȚIE - forțează path-ul corect
-        // Valorile se salvează ca: competition-images/filename.jpg
-        // Trebuie să devină: https://domain.com/storage/competition-images/filename.jpg
-        return config('app.url') . '/storage/' . $value;
+        // Pentru Filament admin - returnează path-ul relativ
+        // Aceasta permite FileUpload să recunoască fișierul existent
+        return $value;
     }
 }
