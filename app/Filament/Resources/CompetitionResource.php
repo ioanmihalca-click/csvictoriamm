@@ -42,7 +42,7 @@ class CompetitionResource extends Resource
                             ->required(),
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
-                            ->image()
+
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'])
                             ->directory('competition-images')
                             ->disk('public')
