@@ -47,8 +47,12 @@ class CompetitionResource extends Resource
                             ->label('Imagine')
                             ->directory('competition-images')
                             ->disk('public')
-                            ->columnSpanFull(),
-
+                            ->columnSpanFull()
+                            ->preserveFilenames() // Păstrează numele original
+                            ->maxSize(2048) // Limitează dimensiunea
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                            ->imageEditor() // Permite editarea imaginii
+                            ->moveFiles(), // Forțează mutarea în loc de copiere
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
                             ->url()
