@@ -43,16 +43,9 @@ class CompetitionResource extends Resource
                             ->required(),
                         Forms\Components\FileUpload::make('image_url')
                             ->label('Imagine')
-                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/gif'])
+                            ->image()
                             ->directory('competition-images')
                             ->disk('public')
-                            ->afterStateUpdated(function ($state) {
-                                Log::info('File uploaded: ', [
-                                    'original_name' => $state?->getClientOriginalName(),
-                                    'mime_type' => $state?->getMimeType(),
-                                    'size' => $state?->getSize(),
-                                ]);
-                            })
                             ->columnSpanFull(),
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
