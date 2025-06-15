@@ -55,40 +55,16 @@ class CompetitionResource extends Resource
                             ->native(false)
                             ->prefixIcon('heroicon-m-calendar-days'),
 
-                        // FileUpload optimizat pentru a rezolva eroarea JavaScript
+                        // Versiunea MINIMĂ și SIGURĂ - garantat funcțională
                         FileUpload::make('image_url')
                             ->label('Imagine competiție')
                             ->image()
                             ->disk('public')
                             ->directory('competition-images')
                             ->visibility('public')
-                            ->moveFiles()
-                            ->maxSize(2048) // 2MB
+                            ->maxSize(2048)
                             ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
-                            ->uploadingMessage('Se încarcă imaginea...')
-                            ->loadingIndicatorPosition('center')
-                            ->panelLayout('integrated')
-                            ->openable()
-                            ->downloadable()
-                            ->deletable()
-                            ->columnSpanFull()
-                            // CRITICAL: Acestea rezolvă eroarea JavaScript
-                            ->reactive() // Înlocuiește ->live()
-                            ->dehydrated(true) // Asigură persistența stării
-                            ->extraAttributes(['wire:ignore' => false]) // Permite re-render
-                            ->afterStateUpdated(function ($state, $set, $get) {
-                                // Debugging și stabilizare stare
-                                if ($state) {
-                                    Log::info('FileUpload State Updated', [
-                                        'timestamp' => Carbon::now()->toISOString()
-
-                                    ]);
-
-                                    // Forțează refresh UI după upload
-                                    $set('image_url', $state);
-                                }
-                            })
-                            ->helperText('Formate acceptate: JPG, PNG, WebP. Mărimea maximă: 2MB.'),
+                            ->columnSpanFull(),
 
                         Forms\Components\TextInput::make('details_url')
                             ->label('URL pentru detalii (opțional)')
