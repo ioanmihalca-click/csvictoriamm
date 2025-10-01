@@ -21,17 +21,32 @@
     <!-- Web Manifest -->
     {{-- <link rel="manifest" href="{{ asset('assets/favicon/site.webmanifest') }}"> --}}
 
+    <!-- Enhanced Meta Tags for AI Search 2025 -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Kickboxing și Pregatire Fizica în Baia Mare | Clubul Victoria Maramureș" />
     <meta property="og:site_name" content="Club Sportiv Victoria Maramures Baia Mare">
     <meta property="og:description"
         content="Clubul Sportiv Victoria Maramureș - Antrenamente Kickboxing  în Baia Mare | Freestyle Kickboxing pentru toate vârstele | Instructori calificați | Află mai multe!">
     <meta property="og:image" content="{{ asset('assets/OG-VictoriaMM.webp') }}" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:alt" content="Clubul Sportiv Victoria Maramureș" />
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ro_RO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kickboxing și Pregatire Fizica în Baia Mare | Clubul Victoria Maramureș">
+    <meta name="twitter:description"
+        content="Clubul Sportiv Victoria Maramureș - Antrenamente Kickboxing în Baia Mare pentru toate vârstele">
+    <meta name="twitter:image" content="{{ asset('assets/OG-VictoriaMM.webp') }}">
+    <meta name="twitter:image:alt" content="Clubul Sportiv Victoria Maramureș">
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
@@ -83,7 +98,9 @@
   "email": "csvictoriamm@gmail.com",
   "sameAs": [
     "https://www.facebook.com/victoriamaramures",
-    "https://www.instagram.com/csvictoriamm/"
+    "https://www.instagram.com/csvictoriamm/",
+    "https://www.tiktok.com/@csvictoriamm",
+    "https://www.youtube.com/channel/UCFfZgsuQCT8nPSY8DvcqZhw"
   ],
   "sportingDiscipline": [
     {
@@ -133,6 +150,12 @@
   ]
 }
     </script>
+
+    <!-- FAQ Schema for AI & Featured Snippets -->
+    <x-faq-schema />
+
+    <!-- Organization Schema with Social Media -->
+    <x-organization-schema />
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BHQPK0P11"></script>

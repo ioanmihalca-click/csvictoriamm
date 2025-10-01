@@ -35,10 +35,12 @@
                 <div class="w-full md:w-1/3 md:sticky md:top-8 md:self-start">
                     <div x-data="{ currentImage: 0 }" class="space-y-8">
                         <div class="relative overflow-hidden rounded-lg shadow-xl aspect-square">
-                            <img src="/assets/antrenamente.webp" alt="Antrenamente Kickbox Baia Mare"
+                            <img src="/assets/antrenamente.webp" alt="Antrenamente Kickbox Baia Mare" width="800"
+                                height="800" loading="eager"
                                 class="absolute inset-0 object-contain w-full h-full transition-opacity duration-500"
                                 :class="{ 'opacity-100': currentImage === 0, 'opacity-0': currentImage === 1 }">
                             <img src="/assets/antrenamente-copii.webp" alt="Antrenamente Kickbox Baia Mare pentru copii"
+                                width="800" height="800" loading="lazy"
                                 class="absolute inset-0 object-contain w-full h-full transition-opacity duration-500"
                                 :class="{ 'opacity-100': currentImage === 1, 'opacity-0': currentImage === 0 }">
                         </div>
@@ -65,7 +67,8 @@
                     </div>
                 </div>
                 <div class="w-full mt-8 md:w-2/3 md:mt-0">
-                    <h2 class="mb-6 text-4xl font-bold text-red-900 font-roboto-condensed">Despre noi</h2>
+                    <h2 class="mb-6 text-4xl font-bold text-red-900 font-roboto-condensed" id="despre-noi">Despre noi
+                    </h2>
                     <div class="space-y-4 text-lg" x-data="{ expanded: false }">
                         <p class="mb-4 text-xl"><strong>Clubul Sportiv Victoria Maramureș</strong> a fost înființat în
                             2021 și își desfășoară activitatea în Baia Mare, Poienile de Sub Munte și Petrova, având
@@ -130,14 +133,16 @@
         style="background-image: url('assets/OG-VictoriaMM.webp')">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-            <h2 class="text-4xl font-bold text-white md:text-6xl font-roboto-condensed">Performanță și Pasiune</h2>
+            <div class="text-4xl font-bold text-white md:text-6xl font-roboto-condensed" role="heading" aria-level="2">
+                Performanță și Pasiune</div>
         </div>
     </section>
 
     <!-- Why Us Section -->
     <section class="py-20 bg-white">
         <div class="container px-4 mx-auto">
-            <h2 class="mb-12 text-4xl font-bold text-center text-red-900 font-roboto-condensed">De ce noi?</h2>
+            <h2 class="mb-12 text-4xl font-bold text-center text-red-900 font-roboto-condensed" id="de-ce-noi">De ce
+                noi?</h2>
             <div class="grid gap-12 md:grid-cols-3">
                 <div class="space-y-8">
                     <div>
@@ -152,7 +157,8 @@
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
-                    <img src="/assets/csvictoriamm-colaj.webp" alt="CS Victoria Colaj" class="rounded-lg shadow-xl">
+                    <img src="/assets/csvictoriamm-colaj.webp" alt="CS Victoria Colaj" width="600" height="800"
+                        loading="lazy" class="rounded-lg shadow-xl">
                 </div>
                 <div class="space-y-8">
                     <div>
@@ -174,17 +180,15 @@
     <!-- Partners Carousel -->
     <section class="py-16 bg-gray-100" x-data="carousel()">
         <div class="container px-4 mx-auto">
-            <h2 class="mb-12 text-4xl font-bold text-center text-red-900 font-roboto-condensed">Prietenii Noștri</h2>
+            <h2 class="mb-12 text-4xl font-bold text-center text-red-900 font-roboto-condensed" id="parteneri">
+                Prietenii Noștri</h2>
             <div class="relative overflow-hidden">
                 <div class="flex transition-transform duration-500 ease-in-out"
                     :style="{ transform: `translateX(-${currentTranslate}%)` }">
-                    <template x-for="image in displayImages">
+                    <template x-for="(image, index) in displayImages" :key="index">
                         <div class="flex-shrink-0 w-1/3 px-2 md:w-1/5">
-                            <div
-                                class="flex items-center justify-center p-4 bg-white rounded-lg shadow-md aspect-square">
-                                <img :src="image" alt="Logo partener"
-                                    class="object-contain max-w-full max-h-full">
-                            </div>
+                            <img :src="image" :alt="'Partener CS Victoria ' + (index + 1)" width="200"
+                                height="200" loading="lazy" class="object-contain w-full h-auto">
                         </div>
                     </template>
                 </div>

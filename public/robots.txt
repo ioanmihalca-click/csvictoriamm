@@ -1,8 +1,41 @@
+# Robots.txt pentru CS Victoria Maramureș
+# Optimizat pentru SEO și AI Search 2025
+
 User-agent: *
+Allow: /
+
 Disallow: /zhHant/
 Disallow: /product/
 Disallow: /safe_search/
 Disallow: /pcmypage/
 Disallow: /*.shtml$
 Disallow: /*.html$
+Disallow: /admin/
+Disallow: /filament/
+Disallow: /storage/
+Disallow: /vendor/
+
+# Permitem crawling pentru AI bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Crawl-delay pentru a nu supraîncărca serverul
+Crawl-delay: 1
+
+# Sitemap
 Sitemap: https://csvictoriamm.ro/sitemap.xml
