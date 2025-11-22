@@ -12,6 +12,9 @@ class Show extends Component
     {
         $this->post = Post::whereSlug($slug)->firstOrFail();
         $this->loadRecommendedPosts();
+
+        // Track post view
+        $this->post->trackView(request());
     }
 
     public function loadRecommendedPosts()
