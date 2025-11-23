@@ -1,28 +1,29 @@
-<!-- Breadcrumbs -->
-<nav class="max-w-4xl px-4 py-3 mx-auto mb-4" aria-label="Breadcrumb">
-    <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="{{ route('prima-pagina') }}" class="text-gray-600 hover:text-red-900" itemprop="item">
-                <span itemprop="name">Acasă</span>
-            </a>
-            <meta itemprop="position" content="1" />
-        </li>
-        <li class="text-gray-400">/</li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="{{ route('blog.index') }}" class="text-gray-600 hover:text-red-900" itemprop="item">
-                <span itemprop="name">Blog</span>
-            </a>
-            <meta itemprop="position" content="2" />
-        </li>
-        <li class="text-gray-400">/</li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <span class="text-gray-900" itemprop="name" aria-current="page">{{ Str::limit($post->title, 50) }}</span>
-            <meta itemprop="position" content="3" />
-        </li>
-    </ol>
-</nav>
+<div>
+    <!-- Breadcrumbs -->
+    <nav class="max-w-4xl px-4 py-3 mx-auto mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="{{ route('prima-pagina') }}" class="text-gray-600 hover:text-red-900" itemprop="item">
+                    <span itemprop="name">Acasă</span>
+                </a>
+                <meta itemprop="position" content="1" />
+            </li>
+            <li class="text-gray-400">/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <a href="{{ route('blog.index') }}" class="text-gray-600 hover:text-red-900" itemprop="item">
+                    <span itemprop="name">Blog</span>
+                </a>
+                <meta itemprop="position" content="2" />
+            </li>
+            <li class="text-gray-400">/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                <span class="text-gray-900" itemprop="name" aria-current="page">{{ Str::limit($post->title, 50) }}</span>
+                <meta itemprop="position" content="3" />
+            </li>
+        </ol>
+    </nav>
 
-<div class="py-4">
+    <div class="py-4">
     <article class="max-w-4xl p-4 mx-auto bg-white rounded-lg shadow-md"
         data-post-id="{{ $post->id }}"
         itemscope
@@ -45,7 +46,7 @@
         @endif
 
         <div class="prose text-gray-800 max-w-none" itemprop="articleBody">
-            {!! $post->body !!}
+            {!! Str::markdown($post->body) !!}
         </div>
 
         {{-- Butoane Share --}}
@@ -121,7 +122,7 @@
                                     {{ $post->published_at->format('j F Y') }}
                                 </time>
                                 <p class="mt-3 text-gray-600 line-clamp-3">
-                                    {{ $post->summary }}
+                                    {{ strip_tags(Str::markdown($post->summary)) }}
                                 </p>
                             </div>
                         </a>
@@ -130,4 +131,5 @@
             </div>
         </section>
     @endif
+    </div>
 </div>

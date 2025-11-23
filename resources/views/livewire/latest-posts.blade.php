@@ -26,7 +26,7 @@
                             {{ $post->published_at->format('j F Y') }}
                         </time>
                         <p class="mt-3 text-gray-600 line-clamp-3">
-                            {{ $post->summary }}
+                            {{ strip_tags(Str::markdown($post->summary)) }}
                         </p>
                     </div>
                 </a>
