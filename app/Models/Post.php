@@ -20,7 +20,6 @@ class Post extends Model
 
     protected $fillable = [
         'title', 'slug', 'body', 'meta', 'featured_image', 'published_at',
-        'focus_keyword', 'keyword_density', 'keyword_analysis', 'seo_score', 'seo_analysis',
         'views_count', 'unique_views', 'shares_count', 'average_time_on_page',
         'last_viewed_at', 'reading_time',
     ];
@@ -29,8 +28,6 @@ class Post extends Model
         'meta' => 'array',
         'published_at' => 'datetime',
         'last_viewed_at' => 'datetime',
-        'keyword_analysis' => 'array',
-        'seo_analysis' => 'array',
         'unique_views' => 'array',
         'shares_count' => 'array',
     ];
@@ -71,51 +68,6 @@ class Post extends Model
     public function getUrlAttribute()
     {
         return route('blog.show', $this->slug);
-    }
-
-    // SEO Methods
-    public function calculateSeoScore(): int
-    {
-        $service = new \App\Services\SeoScoreService;
-
-        return $service->calculateAndSave($this);
-    }
-
-    public function getSeoScoreLevelAttribute(): string
-    {
-        $score = $this->seo_score ?? 0;
-        if ($score >= 80) {
-            return 'Good';
-        }
-        if ($score >= 60) {
-            return 'OK';
-        }
-        if ($score >= 40) {
-            return 'Needs Work';
-        }
-
-        return 'Poor';
-    }
-
-    public function getSeoScoreColorAttribute(): string
-    {
-        $score = $this->seo_score ?? 0;
-        if ($score >= 80) {
-            return 'success';
-        }
-        if ($score >= 60) {
-            return 'warning';
-        }
-
-        return 'danger';
-    }
-
-    // Keyword Analysis Methods
-    public function analyzeKeyword(?string $keyword = null): array
-    {
-        $analyzer = new \App\Services\KeywordAnalyzer;
-
-        return $analyzer->analyzeAndSave($this, $keyword);
     }
 
     // Statistics Methods
