@@ -21,190 +21,24 @@
                 <h2 class="relative max-w-lg mt-5 mb-10 text-4xl font-semibold leading-tight lg:text-5xl">Ei sunt
                     sportivii cu care ne mandrim</h2>
                 <div class="grid w-full grid-cols-1 gap-10 md:grid-cols-4">
-                    <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50">
+                    @foreach ($athletes as $athlete)
+                        <div class="flex flex-col items-center justify-center col-span-1">
+                            <div class="relative p-5">
+                                <div
+                                    class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none {{ $athlete->background_color }}">
+                                </div>
+                                <img class="relative z-20 w-full rounded-full"
+                                    src="{{ $athlete->photo_url ?? asset('assets/placeholder_athlete.jpg') }}"
+                                    alt="{{ $athlete->name }}" />
                             </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510773/aovcbueyzttx8gjmqsd6.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Timeea Benzar</h3>
-                                <p class="text-red-900">10 ani</p>
+                            <div class="mt-3 space-y-2 text-center">
+                                <div class="space-y-1 text-lg font-medium leading-6">
+                                    <h3>{{ $athlete->name }}</h3>
+                                </div>
                             </div>
-
                         </div>
-                    </div>
-
-                    <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1728293033/IMG_20240810_205941_233_y1a7v7.jpg" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Ema Recalo</h3>
-                                <p class="text-red-900">11 ani</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510796/wm7yrugkcewkvy7pswyl.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Alexandru Taut</h3>
-                                <p class="text-red-900">11 ani</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510810/jjlnksokphi4mawe61ul.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Vladimyr Benzar</h3>
-                                <p class="text-red-900">12 ani</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510824/eoa6hcr6rbljjbpt1jcc.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Sergiu Ciontos</h3>
-                                <p class="text-red-900">12 ani</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510838/yrpi7a7ohr0syv7zabgd.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Ramona Rozovlean</h3>
-                                <p class="text-red-900">13 ani</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-pink-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510855/pvviagotlgpfwxxwkwjl.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Daria Curac</h3>
-                                <p class="text-red-900">16 ani</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    {{-- <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-green-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510868/tpsjfozjgai9fgqy9ael.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Anton Corjuc</h3>
-                                <p class="text-red-900">16 ani</p>
-                            </div>
-
-                        </div>
-                    </div> --}}
-
-                    <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726510894/zb5aphzmfbonqhseijh2.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Alexandru Nemzet</h3>
-                                <p class="text-red-900">16 ani</p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    {{-- <div class="flex flex-col items-center justify-center col-span-1">
-                <div class="relative p-5">
-                    <div class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50"></div>
-                    <img class="relative z-20 w-full rounded-full" src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1728827574/IMG_20241012_170636_lr7goy.webp" />
+                    @endforeach
                 </div>
-                <div class="mt-3 space-y-2 text-center">
-                    <div class="space-y-1 text-lg font-medium leading-6">
-                        <h3>Rafael Ember</h3>
-                        <p class="text-red-900">16 ani</p>
-                    </div>
-                    
-                </div>
-            </div> --}}
-
-                    {{-- <div class="flex flex-col items-center justify-center col-span-1">
-                        <div class="relative p-5">
-                            <div
-                                class="absolute z-10 w-full h-full -mt-5 -ml-5 rounded-full rounded-tr-none bg-blue-50">
-                            </div>
-                            <img class="relative z-20 w-full rounded-full"
-                                src="https://res.cloudinary.com/dadjiwkkf/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1726502427/e5igocdud2vxxp9ydx4p.webp" />
-                        </div>
-                        <div class="mt-3 space-y-2 text-center">
-                            <div class="space-y-1 text-lg font-medium leading-6">
-                                <h3>Giorgio Curac</h3>
-                                <p class="text-red-900">16 ani</p>
-                            </div>
-
-
-                        </div>
-                    </div> --}}
         </section>
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\PerformanceAthlete;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 
@@ -10,6 +11,10 @@ class Echipa extends Component
 {
     public function render()
     {
-        return view('livewire.echipa');
+        $athletes = PerformanceAthlete::active()->ordered()->get();
+
+        return view('livewire.echipa', [
+            'athletes' => $athletes,
+        ]);
     }
 }
