@@ -76,10 +76,11 @@ class KeywordAnalyzer
             return 0;
         }
 
+        // Normalize keyword: replace hyphens with spaces for flexible matching
         // Count keyword occurrences (case-insensitive)
         $keywordCount = substr_count(
             Str::lower($content),
-            Str::lower($this->keyword)
+            Str::lower(str_replace('-', ' ', $this->keyword))
         );
 
         $density = ($keywordCount / $wordCount) * 100;
@@ -123,7 +124,8 @@ class KeywordAnalyzer
     protected function checkKeywordInTitle(): void
     {
         $title = Str::lower($this->post->title ?? '');
-        $keyword = Str::lower($this->keyword);
+        // Normalize keyword: replace hyphens with spaces for flexible matching
+        $keyword = Str::lower(str_replace('-', ' ', $this->keyword));
         $found = Str::contains($title, $keyword);
 
         // Check position (better if at beginning)
@@ -164,7 +166,8 @@ class KeywordAnalyzer
     {
         $meta = $this->post->meta ?? [];
         $description = Str::lower($meta['description'] ?? $meta['meta_description'] ?? '');
-        $keyword = Str::lower($this->keyword);
+        // Normalize keyword: replace hyphens with spaces for flexible matching
+        $keyword = Str::lower(str_replace('-', ' ', $this->keyword));
         $found = Str::contains($description, $keyword);
 
         $this->analysis['in_meta_description'] = [
@@ -184,7 +187,8 @@ class KeywordAnalyzer
         $content = strip_tags(Str::markdown($this->post->body ?? ''));
         $firstParagraph = Str::limit($content, 150, '');
         $firstParagraphLower = Str::lower($firstParagraph);
-        $keyword = Str::lower($this->keyword);
+        // Normalize keyword: replace hyphens with spaces for flexible matching
+        $keyword = Str::lower(str_replace('-', ' ', $this->keyword));
         $found = Str::contains($firstParagraphLower, $keyword);
 
         $this->analysis['in_first_paragraph'] = [
@@ -213,7 +217,8 @@ class KeywordAnalyzer
 
         // Split content into sections
         $sections = str_split($content, (int) (strlen($content) / 4));
-        $keywordLower = Str::lower($this->keyword);
+        // Normalize keyword: replace hyphens with spaces for flexible matching
+        $keywordLower = Str::lower(str_replace('-', ' ', $this->keyword));
         $distribution = [];
 
         foreach ($sections as $index => $section) {
