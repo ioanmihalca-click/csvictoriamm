@@ -261,7 +261,8 @@
                                 <li>Alexandru Badea</li>
                                 <li>Alin Buda</li>
                                 <li>Călin Filip</li>
-                                <li>Vasile Mihalca</li>
+                                <li>Vasi Mihalca</li>
+                                <li>Vasi Chindriș</li>
                             </ul>
                         </div>
                     </div>
