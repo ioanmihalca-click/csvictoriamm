@@ -8,7 +8,9 @@ use Illuminate\Support\Str;
 class KeywordAnalyzer
 {
     protected Post $post;
+
     protected string $keyword = '';
+
     protected array $analysis = [];
 
     /**
@@ -25,10 +27,10 @@ class KeywordAnalyzer
                 'keyword' => '',
                 'density' => 0,
                 'analysis' => [
-                    'error' => 'No focus keyword specified'
+                    'error' => 'No focus keyword specified',
                 ],
                 'suggestions' => [],
-                'score' => 0
+                'score' => 0,
             ];
         }
 
@@ -52,7 +54,7 @@ class KeywordAnalyzer
             'analysis' => $this->analysis,
             'suggestions' => $suggestions,
             'score' => $score,
-            'related_keywords' => $this->findRelatedKeywords()
+            'related_keywords' => $this->findRelatedKeywords(),
         ];
     }
 
@@ -61,7 +63,8 @@ class KeywordAnalyzer
      */
     protected function calculateDensity(): float
     {
-        $content = strip_tags($this->post->body ?? '');
+        // Convert markdown to HTML first, then strip tags
+        $content = strip_tags(Str::markdown($this->post->body ?? ''));
         $content = preg_replace('/\s+/', ' ', $content); // Normalize whitespace
 
         if (empty($content)) {
@@ -87,7 +90,7 @@ class KeywordAnalyzer
             'keyword_count' => $keywordCount,
             'word_count' => $wordCount,
             'optimal' => $density >= 1.5 && $density <= 3.5,
-            'message' => $this->getDensityMessage($density)
+            'message' => $this->getDensityMessage($density),
         ];
 
         return round($density, 2);
@@ -98,10 +101,19 @@ class KeywordAnalyzer
      */
     protected function getDensityMessage(float $density): string
     {
-        if ($density < 0.5) return 'Very low - keyword rarely appears';
-        if ($density < 1.5) return 'Low - consider using keyword more often';
-        if ($density <= 3.5) return 'Optimal - good keyword density';
-        if ($density <= 5) return 'High - might be over-optimized';
+        if ($density < 0.5) {
+            return 'Very low - keyword rarely appears';
+        }
+        if ($density < 1.5) {
+            return 'Low - consider using keyword more often';
+        }
+        if ($density <= 3.5) {
+            return 'Optimal - good keyword density';
+        }
+        if ($density <= 5) {
+            return 'High - might be over-optimized';
+        }
+
         return 'Too high - risk of keyword stuffing';
     }
 
@@ -124,7 +136,7 @@ class KeywordAnalyzer
             'at_beginning' => $atBeginning,
             'message' => $found
                 ? ($atBeginning ? 'Keyword found at beginning of title (excellent)' : 'Keyword found in title')
-                : 'Keyword not found in title'
+                : 'Keyword not found in title',
         ];
     }
 
@@ -141,7 +153,7 @@ class KeywordAnalyzer
             'found' => $found,
             'message' => $found
                 ? 'Keyword found in URL'
-                : 'Keyword not found in URL'
+                : 'Keyword not found in URL',
         ];
     }
 
@@ -151,7 +163,7 @@ class KeywordAnalyzer
     protected function checkKeywordInMetaDescription(): void
     {
         $meta = $this->post->meta ?? [];
-        $description = Str::lower($meta['meta_description'] ?? '');
+        $description = Str::lower($meta['description'] ?? $meta['meta_description'] ?? '');
         $keyword = Str::lower($this->keyword);
         $found = Str::contains($description, $keyword);
 
@@ -159,7 +171,7 @@ class KeywordAnalyzer
             'found' => $found,
             'message' => $found
                 ? 'Keyword found in meta description'
-                : 'Keyword not found in meta description'
+                : 'Keyword not found in meta description',
         ];
     }
 
@@ -168,7 +180,8 @@ class KeywordAnalyzer
      */
     protected function checkKeywordInFirstParagraph(): void
     {
-        $content = strip_tags($this->post->body ?? '');
+        // Convert markdown to HTML first, then strip tags
+        $content = strip_tags(Str::markdown($this->post->body ?? ''));
         $firstParagraph = Str::limit($content, 150, '');
         $firstParagraphLower = Str::lower($firstParagraph);
         $keyword = Str::lower($this->keyword);
@@ -178,7 +191,7 @@ class KeywordAnalyzer
             'found' => $found,
             'message' => $found
                 ? 'Keyword found in opening paragraph'
-                : 'Keyword not found in opening paragraph - important for SEO'
+                : 'Keyword not found in opening paragraph - important for SEO',
         ];
     }
 
@@ -187,17 +200,19 @@ class KeywordAnalyzer
      */
     protected function checkKeywordDistribution(): void
     {
-        $content = strip_tags($this->post->body ?? '');
+        // Convert markdown to HTML first, then strip tags
+        $content = strip_tags(Str::markdown($this->post->body ?? ''));
         if (empty($content)) {
             $this->analysis['distribution'] = [
                 'good' => false,
-                'message' => 'No content to analyze'
+                'message' => 'No content to analyze',
             ];
+
             return;
         }
 
         // Split content into sections
-        $sections = str_split($content, (int)(strlen($content) / 4));
+        $sections = str_split($content, (int) (strlen($content) / 4));
         $keywordLower = Str::lower($this->keyword);
         $distribution = [];
 
@@ -206,7 +221,7 @@ class KeywordAnalyzer
             $count = substr_count($sectionLower, $keywordLower);
             $distribution[] = [
                 'section' => $index + 1,
-                'count' => $count
+                'count' => $count,
             ];
         }
 
@@ -226,7 +241,7 @@ class KeywordAnalyzer
             'good' => $goodDistribution,
             'message' => $goodDistribution
                 ? 'Keyword is well distributed throughout content'
-                : 'Keyword distribution is uneven - spread usage more evenly'
+                : 'Keyword distribution is uneven - spread usage more evenly',
         ];
     }
 
@@ -283,7 +298,7 @@ class KeywordAnalyzer
         $checks += 10;
 
         // Return percentage score
-        return min(100, (int)(($score / $checks) * 100));
+        return min(100, (int) (($score / $checks) * 100));
     }
 
     /**
@@ -298,64 +313,64 @@ class KeywordAnalyzer
             $suggestions[] = [
                 'type' => 'density_low',
                 'priority' => 'high',
-                'message' => "Increase keyword usage to 2-3% density (currently {$density}%)"
+                'message' => "Increase keyword usage to 2-3% density (currently {$density}%)",
             ];
         } elseif ($density > 3.5) {
             $suggestions[] = [
                 'type' => 'density_high',
                 'priority' => 'high',
-                'message' => "Reduce keyword usage to avoid over-optimization (currently {$density}%)"
+                'message' => "Reduce keyword usage to avoid over-optimization (currently {$density}%)",
             ];
         }
 
         // Title suggestions
-        if (isset($this->analysis['in_title']['found']) && !$this->analysis['in_title']['found']) {
+        if (isset($this->analysis['in_title']['found']) && ! $this->analysis['in_title']['found']) {
             $suggestions[] = [
                 'type' => 'title',
                 'priority' => 'high',
-                'message' => 'Add focus keyword to title for better SEO'
+                'message' => 'Add focus keyword to title for better SEO',
             ];
-        } elseif (isset($this->analysis['in_title']['at_beginning']) && !$this->analysis['in_title']['at_beginning']) {
+        } elseif (isset($this->analysis['in_title']['at_beginning']) && ! $this->analysis['in_title']['at_beginning']) {
             $suggestions[] = [
                 'type' => 'title_position',
                 'priority' => 'medium',
-                'message' => 'Move keyword closer to beginning of title'
+                'message' => 'Move keyword closer to beginning of title',
             ];
         }
 
         // URL suggestions
-        if (isset($this->analysis['in_slug']['found']) && !$this->analysis['in_slug']['found']) {
+        if (isset($this->analysis['in_slug']['found']) && ! $this->analysis['in_slug']['found']) {
             $suggestions[] = [
                 'type' => 'slug',
                 'priority' => 'medium',
-                'message' => 'Include keyword in URL slug'
+                'message' => 'Include keyword in URL slug',
             ];
         }
 
         // Meta description suggestions
-        if (isset($this->analysis['in_meta_description']['found']) && !$this->analysis['in_meta_description']['found']) {
+        if (isset($this->analysis['in_meta_description']['found']) && ! $this->analysis['in_meta_description']['found']) {
             $suggestions[] = [
                 'type' => 'meta_description',
                 'priority' => 'high',
-                'message' => 'Add keyword to meta description'
+                'message' => 'Add keyword to meta description',
             ];
         }
 
         // First paragraph suggestions
-        if (isset($this->analysis['in_first_paragraph']['found']) && !$this->analysis['in_first_paragraph']['found']) {
+        if (isset($this->analysis['in_first_paragraph']['found']) && ! $this->analysis['in_first_paragraph']['found']) {
             $suggestions[] = [
                 'type' => 'first_paragraph',
                 'priority' => 'high',
-                'message' => 'Include keyword in the first 150 characters'
+                'message' => 'Include keyword in the first 150 characters',
             ];
         }
 
         // Distribution suggestions
-        if (isset($this->analysis['distribution']['good']) && !$this->analysis['distribution']['good']) {
+        if (isset($this->analysis['distribution']['good']) && ! $this->analysis['distribution']['good']) {
             $suggestions[] = [
                 'type' => 'distribution',
                 'priority' => 'medium',
-                'message' => 'Distribute keyword more evenly throughout content'
+                'message' => 'Distribute keyword more evenly throughout content',
             ];
         }
 
@@ -367,16 +382,17 @@ class KeywordAnalyzer
      */
     protected function findRelatedKeywords(): array
     {
-        $content = strip_tags($this->post->body ?? '');
+        // Convert markdown to HTML first, then strip tags
+        $content = strip_tags(Str::markdown($this->post->body ?? ''));
         $title = $this->post->title ?? '';
-        $fullText = $title . ' ' . $content;
+        $fullText = $title.' '.$content;
 
         // Common sports-related terms that might be relevant
         $sportsTerms = [
             'fotbal', 'meci', 'victorie', 'gol', 'jucător', 'echipă',
             'antrenor', 'campionat', 'ligă', 'stadion', 'antrenament',
             'strategie', 'tactică', 'performanță', 'rezultat', 'scor',
-            'sport', 'competiție', 'turneu', 'sezon', 'clasament'
+            'sport', 'competiție', 'turneu', 'sezon', 'clasament',
         ];
 
         $related = [];
@@ -390,14 +406,14 @@ class KeywordAnalyzer
                     $related[] = [
                         'keyword' => $term,
                         'count' => $count,
-                        'relevance' => min(100, $count * 10)
+                        'relevance' => min(100, $count * 10),
                     ];
                 }
             }
         }
 
         // Sort by relevance
-        usort($related, fn($a, $b) => $b['relevance'] <=> $a['relevance']);
+        usort($related, fn ($a, $b) => $b['relevance'] <=> $a['relevance']);
 
         // Return top 5
         return array_slice($related, 0, 5);

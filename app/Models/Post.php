@@ -2,11 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
@@ -15,15 +11,18 @@ class Post extends Model
     use SoftDeletes;
 
     protected $table = 'canvas_posts';
+
     protected $primaryKey = 'id';
+
     protected $keyType = 'string';
+
     public $incrementing = false;
 
     protected $fillable = [
         'title', 'slug', 'body', 'meta', 'featured_image', 'published_at',
         'focus_keyword', 'keyword_density', 'keyword_analysis', 'seo_score', 'seo_analysis',
         'views_count', 'unique_views', 'shares_count', 'average_time_on_page',
-        'last_viewed_at', 'reading_time'
+        'last_viewed_at', 'reading_time',
     ];
 
     protected $casts = [
@@ -59,12 +58,14 @@ class Post extends Model
     {
         $words = str_word_count(strip_tags($this->body));
         $minutes = ceil($words / 200); // Average reading speed: 200 words/minute
-        return $minutes . ' min read';
+
+        return $minutes.' min read';
     }
 
     public function getSummaryAttribute()
     {
-        return Str::words(strip_tags($this->body), 30); // Show the first 30 words as summary
+        // Convert markdown to HTML first, then strip tags
+        return Str::words(strip_tags(Str::markdown($this->body)), 30); // Show the first 30 words as summary
     }
 
     public function getUrlAttribute()
@@ -75,56 +76,72 @@ class Post extends Model
     // SEO Methods
     public function calculateSeoScore(): int
     {
-        $service = new \App\Services\SeoScoreService();
+        $service = new \App\Services\SeoScoreService;
+
         return $service->calculateAndSave($this);
     }
 
     public function getSeoScoreLevelAttribute(): string
     {
         $score = $this->seo_score ?? 0;
-        if ($score >= 80) return 'Good';
-        if ($score >= 60) return 'OK';
-        if ($score >= 40) return 'Needs Work';
+        if ($score >= 80) {
+            return 'Good';
+        }
+        if ($score >= 60) {
+            return 'OK';
+        }
+        if ($score >= 40) {
+            return 'Needs Work';
+        }
+
         return 'Poor';
     }
 
     public function getSeoScoreColorAttribute(): string
     {
         $score = $this->seo_score ?? 0;
-        if ($score >= 80) return 'success';
-        if ($score >= 60) return 'warning';
+        if ($score >= 80) {
+            return 'success';
+        }
+        if ($score >= 60) {
+            return 'warning';
+        }
+
         return 'danger';
     }
 
     // Keyword Analysis Methods
     public function analyzeKeyword(?string $keyword = null): array
     {
-        $analyzer = new \App\Services\KeywordAnalyzer();
+        $analyzer = new \App\Services\KeywordAnalyzer;
+
         return $analyzer->analyzeAndSave($this, $keyword);
     }
 
     // Statistics Methods
     public function trackView(\Illuminate\Http\Request $request): void
     {
-        $tracker = new \App\Services\PostStatsTracker();
+        $tracker = new \App\Services\PostStatsTracker;
         $tracker->trackView($this, $request);
     }
 
     public function trackShare(string $platform): void
     {
-        $tracker = new \App\Services\PostStatsTracker();
+        $tracker = new \App\Services\PostStatsTracker;
         $tracker->trackShare($this, $platform);
     }
 
     public function getStatsSummary(): array
     {
-        $tracker = new \App\Services\PostStatsTracker();
+        $tracker = new \App\Services\PostStatsTracker;
+
         return $tracker->getStatsSummary($this);
     }
 
     public function getTotalSharesAttribute(): int
     {
         $shares = $this->shares_count ?? [];
+
         return $shares['total'] ?? 0;
     }
 
@@ -132,10 +149,11 @@ class Post extends Model
     {
         $views = $this->views_count ?? 0;
         if ($views > 1000000) {
-            return number_format($views / 1000000, 1) . 'M';
+            return number_format($views / 1000000, 1).'M';
         } elseif ($views > 1000) {
-            return number_format($views / 1000, 1) . 'K';
+            return number_format($views / 1000, 1).'K';
         }
+
         return (string) $views;
     }
 
@@ -148,6 +166,6 @@ class Post extends Model
     public function scopeTrending($query)
     {
         return $query->where('last_viewed_at', '>=', now()->subDays(7))
-                    ->orderByDesc('views_count');
+            ->orderByDesc('views_count');
     }
 }
