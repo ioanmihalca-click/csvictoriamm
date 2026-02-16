@@ -57,7 +57,7 @@
 
             <!-- Image -->
             <div class="relative overflow-hidden rounded-lg shadow-xl h-96">
-                <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1726502392/fzevluuvlbkfdgia7epy.jpg" 
+                <img src="{{ asset('storage/site-images/contact.jpg') }}" 
                      alt="Kickbox Baia Mare Maramures" 
                      class="object-cover w-full h-full">
                 <div class="absolute inset-0 opacity-50 bg-gradient-to-t from-black to-transparent"></div>

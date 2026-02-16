@@ -2,18 +2,13 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
-use Filament\Tables;
-use App\Models\Gallery;
-use Filament\Forms\Form;
-use Filament\Tables\Table;
-use Filament\Resources\Resource;
-use App\Services\CloudinaryService;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
 use App\Filament\Resources\GalleryResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\GalleryResource\RelationManagers;
+use App\Models\Gallery;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
 
 class GalleryResource extends Resource
 {
@@ -26,25 +21,24 @@ class GalleryResource extends Resource
     protected static ?int $navigationSort = 2;
 
     protected static ?string $modelLabel = 'Foto';
+
     protected static ?string $pluralModelLabel = 'Foto';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\FileUpload::make('photo')
-                    //->image()
-                    ->required()
-                    ->afterStateUpdated(function ($state, callable $set, CloudinaryService $cloudinaryService) {
-                        if ($state) {
-                            $result = $cloudinaryService->uploadImage($state->getRealPath());
-                            $set('photo_url', $result['secure_url']);
-                        }
-                    }),
+                Forms\Components\FileUpload::make('photo_url')
+                    ->label('Fotografie')
+                    ->image()
+                    ->disk('public')
+                    ->directory('gallery')
+                    ->visibility('public')
+                    ->maxSize(2048)
+                    ->required(),
                 Forms\Components\TextInput::make('alt_text')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Hidden::make('photo_url'),
             ]);
     }
 
@@ -52,7 +46,8 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('photo_url'),
+                Tables\Columns\ImageColumn::make('photo_url')
+                    ->disk('public'),
                 Tables\Columns\TextColumn::make('alt_text'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime('d.m.Y H:i')
@@ -62,28 +57,16 @@ class GalleryResource extends Resource
             ->defaultSort('created_at', 'desc')
             ->actions([
                 Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make()
-                    ->after(function (Gallery $record, CloudinaryService $cloudinaryService) {
-                        $publicId = $cloudinaryService->getPublicIdFromUrl($record->photo_url);
-                        $cloudinaryService->deleteImage($publicId);
-                    }),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make()
-                    ->after(function ($records, CloudinaryService $cloudinaryService) {
-                        foreach ($records as $record) {
-                            $publicId = $cloudinaryService->getPublicIdFromUrl($record->photo_url);
-                            $cloudinaryService->deleteImage($publicId);
-                        }
-                    }),
+                Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

@@ -197,7 +197,7 @@
                 <div class="flex items-center justify-center">
                     <div class="relative">
                         <div class="absolute inset-0 transform bg-red-600 rounded-2xl rotate-3 opacity-30"></div>
-                        <img src="https://res.cloudinary.com/dadjiwkkf/image/upload/v1727107335/antrenamente_bcsnj1.jpg"
+                        <img src="{{ asset('storage/site-images/antrenamente.jpg') }}"
                             alt="Antrenor Ioan Mihalca" class="relative shadow-2xl rounded-2xl">
                     </div>
                 </div>
