@@ -3,23 +3,20 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PerformanceAthleteResource\Pages;
-use App\Filament\Resources\PerformanceAthleteResource\RelationManagers;
 use App\Models\PerformanceAthlete;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PerformanceAthleteResource extends Resource
 {
     protected static ?string $model = PerformanceAthlete::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-user-group';
 
-    protected static ?string $navigationGroup = 'Conținut';
+    protected static string|\UnitEnum|null $navigationGroup = 'Conținut';
 
     protected static ?string $navigationLabel = 'Sportivi Performanță';
 
@@ -29,9 +26,9 @@ class PerformanceAthleteResource extends Resource
 
     protected static ?string $pluralModelLabel = 'sportivi';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 Forms\Components\Section::make('Informații sportiv')
                     ->description('Detalii despre sportivul din grupa de performanță')
@@ -114,7 +111,7 @@ class PerformanceAthleteResource extends Resource
                 Tables\Columns\TextColumn::make('background_color')
                     ->label('Culoare')
                     ->badge()
-                    ->formatStateUsing(fn(string $state): string => match ($state) {
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
                         'bg-blue-50' => 'Albastru',
                         'bg-green-50' => 'Verde',
                         'bg-pink-50' => 'Roz',
@@ -123,7 +120,7 @@ class PerformanceAthleteResource extends Resource
                         'bg-red-50' => 'Roșu',
                         default => $state,
                     })
-                    ->color(fn(string $state): string => match ($state) {
+                    ->color(fn (string $state): string => match ($state) {
                         'bg-blue-50' => 'info',
                         'bg-green-50' => 'success',
                         'bg-pink-50' => 'danger',

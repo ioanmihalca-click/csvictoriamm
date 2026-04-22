@@ -91,7 +91,7 @@
     <!-- Enhanced Schema.org for AI & SEO 2025 -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
+        "@@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "{{ $post->title }}",
         "image": {
@@ -141,7 +141,7 @@
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
+        "@@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
             {

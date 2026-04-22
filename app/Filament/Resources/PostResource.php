@@ -14,38 +14,40 @@ use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Form;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Arr;
+use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 
 class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
 
     protected static ?string $navigationLabel = 'Blog';
 
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 Grid::make()->columns(2)->schema([
                     Section::make('Content')
                         ->schema([
                             Forms\Components\TextInput::make('title')
                                 ->required()
-                                ->reactive()
+                                ->live()
                                 ->maxLength(60)
                                 ->helperText(fn ($state) => strlen($state ?? '').'/60 characters')
-                                ->afterStateUpdated(fn ($state, callable $set) => $set('slug', Str::slug($state))),
+                                ->afterStateUpdated(fn (Set $set, $state) => $set('slug', Str::slug($state))),
                             Forms\Components\TextInput::make('slug')
                                 ->required()
                                 ->unique(ignoreRecord: true),
@@ -73,14 +75,14 @@ class PostResource extends Resource
                                 ->label('Meta Title')
                                 ->required()
                                 ->maxLength(60)
-                                ->reactive()
+                                ->live()
                                 ->helperText(fn ($state) => strlen($state ?? '').'/60 characters'),
                             Forms\Components\Textarea::make('meta.description')
                                 ->label('Meta Description')
                                 ->required()
                                 ->maxLength(160)
                                 ->rows(3)
-                                ->reactive()
+                                ->live()
                                 ->helperText(fn ($state) => strlen($state ?? '').'/160 characters'),
                         ])->columnSpan(1),
                 ]),
@@ -96,7 +98,7 @@ class PostResource extends Resource
                                         return '0';
                                     }
 
-                                    return new \Illuminate\Support\HtmlString(
+                                    return new HtmlString(
                                         "<div class='text-2xl font-bold'>{$record->formatted_views}</div>
                                         <div class='text-sm text-gray-500'>Total Views</div>"
                                     );
@@ -109,7 +111,7 @@ class PostResource extends Resource
                                     }
                                     $shares = $record->total_shares;
 
-                                    return new \Illuminate\Support\HtmlString(
+                                    return new HtmlString(
                                         "<div class='text-2xl font-bold'>{$shares}</div>
                                         <div class='text-sm text-gray-500'>Total Shares</div>"
                                     );
@@ -122,7 +124,7 @@ class PostResource extends Resource
                                     }
                                     $time = $record->reading_time ?? 0;
 
-                                    return new \Illuminate\Support\HtmlString(
+                                    return new HtmlString(
                                         "<div class='text-2xl font-bold'>{$time} min</div>
                                         <div class='text-sm text-gray-500'>Avg. Reading Time</div>"
                                     );

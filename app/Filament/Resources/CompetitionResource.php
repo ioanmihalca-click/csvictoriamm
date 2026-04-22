@@ -2,34 +2,31 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
-use Filament\Tables;
-use Filament\Forms\Form;
-use Filament\Tables\Table;
-use App\Models\Competition;
-use Filament\Resources\Resource;
-use Illuminate\Support\Facades\Log;
-use Filament\Forms\Components\FileUpload;
-use Illuminate\Database\Eloquent\Collection;
 use App\Filament\Resources\CompetitionResource\Pages;
-use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
-use Carbon\Carbon;
+use App\Models\Competition;
+use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Collection;
 
 class CompetitionResource extends Resource
 {
     protected static ?string $model = Competition::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-trophy';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-trophy';
 
-    protected static ?string $navigationGroup = 'Conținut';
+    protected static string|\UnitEnum|null $navigationGroup = 'Conținut';
 
     protected static ?string $navigationLabel = 'Competiții';
 
     protected static ?int $navigationSort = 3;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 Forms\Components\Section::make('Informații de bază')
                     ->description('Informațiile principale despre competiție')
@@ -39,7 +36,7 @@ class CompetitionResource extends Resource
                             ->required()
                             ->maxLength(255)
                             ->live(onBlur: true)
-                            ->afterStateUpdated(fn($state, $set) => $set('title', ucfirst($state))),
+                            ->afterStateUpdated(fn ($state, $set) => $set('title', ucfirst($state))),
 
                         Forms\Components\TextInput::make('location')
                             ->label('Locație')
@@ -79,70 +76,35 @@ class CompetitionResource extends Resource
                 Forms\Components\Section::make('Conținut detaliat')
                     ->description('Informații detaliate despre competiție')
                     ->schema([
-                        // TipTap Editor cu suport Tailwind
-                        \FilamentTiptapEditor\TiptapEditor::make('description')
+                        Forms\Components\RichEditor::make('description')
                             ->label('Descriere')
-                            ->profile('simple')
-                            ->tools([
-                                'bold',
-                                'italic',
-                                'small',
-                                'underline',
-                                'strike',
-                                'superscript',
-                                'subscript',
-                                'lead',
-                                'heading',
-                                'bullet-list',
-                                'ordered-list',
-                                'checked-list',
-                                'blockquote',
-                                'hr',
-                                'link',
-                                'media',
+                            ->toolbarButtons([
+                                'bold', 'italic', 'underline', 'strike',
+                                'h2', 'h3',
+                                'bulletList', 'orderedList', 'blockquote',
+                                'link', 'undo', 'redo',
                             ])
-                            ->placeholder('Introduceți descrierea competiției...')
-                            ->maxContentWidth('full')
                             ->columnSpanFull()
-                            ->extraInputAttributes([
-                                'style' => 'min-height: 200px;'
-                            ])
-                            ->helperText('Editorul va aplica automat stilurile Tailwind corecte'),
+                            ->helperText('Descrierea completă a competiției'),
 
-                        \FilamentTiptapEditor\TiptapEditor::make('results')
+                        Forms\Components\RichEditor::make('results')
                             ->label('Rezultate')
-                            ->profile('simple')
-                            ->tools([
-                                'bold',
-                                'italic',
-                                'heading',
-                                'bullet-list',
-                                'ordered-list',
-                                'blockquote',
-                                'link',
+                            ->toolbarButtons([
+                                'bold', 'italic',
+                                'h2', 'h3',
+                                'bulletList', 'orderedList', 'blockquote',
+                                'link', 'undo', 'redo',
                             ])
-                            ->placeholder('Introduceți rezultatele competiției...')
-                            ->maxContentWidth('full')
                             ->columnSpanFull()
-                            ->helperText('Rezultatele vor fi formatate automat')
-                            ->label('Rezultate')
-
-                            ->columnSpanFull()
-                            ->helperText('Rezultatele obținute în competiție')
-
-                            ->extraInputAttributes([
-                                'style' => 'min-height: 150px;'
-                            ]),
+                            ->helperText('Rezultatele obținute în competiție'),
 
                         Forms\Components\RichEditor::make('team_composition')
                             ->label('Componența echipei')
-
                             ->columnSpanFull()
                             ->helperText('Membrii echipei care au participat'),
 
                         Forms\Components\RichEditor::make('notes')
                             ->label('Note suplimentare')
-
                             ->columnSpanFull()
                             ->helperText('Alte informații relevante'),
                     ])
@@ -249,8 +211,8 @@ class CompetitionResource extends Resource
                     ])
                     ->query(function ($query, array $data) {
                         return $query
-                            ->when($data['date_from'], fn($q) => $q->whereDate('date', '>=', $data['date_from']))
-                            ->when($data['date_until'], fn($q) => $q->whereDate('date', '<=', $data['date_until']));
+                            ->when($data['date_from'], fn ($q) => $q->whereDate('date', '>=', $data['date_from']))
+                            ->when($data['date_until'], fn ($q) => $q->whereDate('date', '<=', $data['date_until']));
                     }),
             ])
             ->filtersFormColumns(2)
@@ -278,7 +240,7 @@ class CompetitionResource extends Resource
                     ->color('gray')
                     ->action(function (Collection $records) {
                         foreach ($records as $record) {
-                            $record->update(['is_active' => !$record->is_active]);
+                            $record->update(['is_active' => ! $record->is_active]);
                         }
                     })
                     ->deselectRecordsAfterCompletion(),

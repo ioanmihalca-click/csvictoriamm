@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\PostAnalyticsController;
 use App\Livewire\Antrenamente;
-use Illuminate\Support\Facades\Route;
 use App\Livewire\Blog\Index as BlogIndex;
 use App\Livewire\Blog\Show as BlogShow;
 use App\Livewire\Competitii;
@@ -10,21 +10,18 @@ use App\Livewire\Echipa;
 use App\Livewire\Galerie;
 use App\Livewire\PrimaPagina;
 use App\Livewire\Sponsori;
-use App\Http\Controllers\Api\PostAnalyticsController;
+use Illuminate\Support\Facades\Route;
 
-Route::get('/', PrimaPagina::class)->name('prima-pagina');
-Route::get('/antrenamente', Antrenamente::class)->name('antrenamente');
-Route::get('/galerie', Galerie::class)->name('galerie');
-Route::get('/competitii', Competitii::class)->name('competitii');
-Route::get('/sponsori', Sponsori::class)->name('sponsori');
-Route::get('/echipa', Echipa::class)->name('echipa');
-Route::get('/contact', Contact::class)->name('contact');
+Route::livewire('/', PrimaPagina::class)->name('prima-pagina');
+Route::livewire('/antrenamente', Antrenamente::class)->name('antrenamente');
+Route::livewire('/galerie', Galerie::class)->name('galerie');
+Route::livewire('/competitii', Competitii::class)->name('competitii');
+Route::livewire('/sponsori', Sponsori::class)->name('sponsori');
+Route::livewire('/echipa', Echipa::class)->name('echipa');
+Route::livewire('/contact', Contact::class)->name('contact');
 
-
-
-
-Route::get('/blog', BlogIndex::class)->name('blog.index');
-Route::get('/blog/{slug}', BlogShow::class)->name('blog.show');
+Route::livewire('/blog', BlogIndex::class)->name('blog.index');
+Route::livewire('/blog/{slug}', BlogShow::class)->name('blog.show');
 
 // API Routes for Post Analytics
 Route::prefix('api/posts/{post}')->group(function () {

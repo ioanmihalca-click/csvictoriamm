@@ -4,6 +4,8 @@ use Illuminate\Support\Str;
 
 return [
 
+    'serializable_classes' => [],
+
     /*
     |--------------------------------------------------------------------------
     | Default Cache Store

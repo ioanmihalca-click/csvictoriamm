@@ -13,7 +13,7 @@ class KeywordAnalysisField extends Component implements HasStateContract
 
     protected string $view = 'filament.forms.components.keyword-analysis';
 
-    public static function make(string $name): static
+    public static function make(?string $name = null): static
     {
         $static = app(static::class, ['name' => $name]);
         $static->configure();
@@ -24,7 +24,7 @@ class KeywordAnalysisField extends Component implements HasStateContract
     public function getKeywordAnalysis(): array
     {
         $record = $this->getRecord();
-        if (!$record || !$record->exists) {
+        if (! $record || ! $record->exists) {
             return $this->getEmptyAnalysis();
         }
 
@@ -35,7 +35,8 @@ class KeywordAnalysisField extends Component implements HasStateContract
 
         // If we have a focus keyword, analyze it
         if ($record->focus_keyword) {
-            $analyzer = new KeywordAnalyzer();
+            $analyzer = new KeywordAnalyzer;
+
             return $analyzer->analyze($record);
         }
 
@@ -54,21 +55,22 @@ class KeywordAnalysisField extends Component implements HasStateContract
                 'in_slug' => ['found' => false, 'message' => 'No keyword set'],
                 'in_meta_description' => ['found' => false, 'message' => 'No keyword set'],
                 'in_first_paragraph' => ['found' => false, 'message' => 'No keyword set'],
-                'distribution' => ['good' => false, 'message' => 'No keyword set']
+                'distribution' => ['good' => false, 'message' => 'No keyword set'],
             ],
             'suggestions' => [],
-            'related_keywords' => []
+            'related_keywords' => [],
         ];
     }
 
     public function analyzeKeyword(string $keyword): array
     {
         $record = $this->getRecord();
-        if (!$record || !$record->exists) {
+        if (! $record || ! $record->exists) {
             return $this->getEmptyAnalysis();
         }
 
-        $analyzer = new KeywordAnalyzer();
+        $analyzer = new KeywordAnalyzer;
+
         return $analyzer->analyzeAndSave($record, $keyword);
     }
 }

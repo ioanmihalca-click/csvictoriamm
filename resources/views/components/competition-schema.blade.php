@@ -3,7 +3,7 @@
 <!-- Schema.org pentru Competiție / Event -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@type": "SportsEvent",
   "name": "{{ $competition->title }}",
   "description": "{{ strip_tags($competition->description) }}",

@@ -13,7 +13,7 @@ class SeoScoreDisplay extends Component implements HasStateContract
 
     protected string $view = 'filament.forms.components.seo-score-display';
 
-    public static function make(string $name): static
+    public static function make(?string $name = null): static
     {
         $static = app(static::class, ['name' => $name]);
         $static->configure();
@@ -24,7 +24,7 @@ class SeoScoreDisplay extends Component implements HasStateContract
     public function getScore(): int
     {
         $record = $this->getRecord();
-        if (!$record || !$record->exists) {
+        if (! $record || ! $record->exists) {
             return 0;
         }
 
@@ -34,7 +34,7 @@ class SeoScoreDisplay extends Component implements HasStateContract
     public function getAnalysis(): array
     {
         $record = $this->getRecord();
-        if (!$record || !$record->exists) {
+        if (! $record || ! $record->exists) {
             return $this->getEmptyAnalysis();
         }
 
@@ -44,7 +44,8 @@ class SeoScoreDisplay extends Component implements HasStateContract
         }
 
         // Otherwise calculate fresh
-        $service = new SeoScoreService();
+        $service = new SeoScoreService;
+
         return $service->analyze($record);
     }
 
@@ -61,7 +62,7 @@ class SeoScoreDisplay extends Component implements HasStateContract
                 'featured_image' => ['checked' => false, 'passed' => false, 'message' => 'Not checked yet'],
                 'content_length' => ['checked' => false, 'passed' => false, 'message' => 'Not checked yet'],
             ],
-            'recommendations' => []
+            'recommendations' => [],
         ];
     }
 
@@ -69,7 +70,7 @@ class SeoScoreDisplay extends Component implements HasStateContract
     {
         $record = $this->getRecord();
         if ($record && $record->exists) {
-            $service = new SeoScoreService();
+            $service = new SeoScoreService;
             $service->calculateAndSave($record);
             $record->refresh();
         }

@@ -84,7 +84,7 @@
     <!-- Enhanced Schema.org for Blog & SportsClub -->
     <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@type": "SportsClub",
   "name": "Club Sportiv Victoria Maramureș",
   "description": "Clubul Sportiv Victoria Maramureș este un club de kickboxing și fitness funcțional din Baia Mare, Poienile de sub Munte, Petrova, Maramureș, dedicat promovării unui stil de viață sănătos și activ prin sport.",
@@ -158,7 +158,7 @@
     <!-- Blog Schema -->
     <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@type": "Blog",
   "name": "Blog CS Victoria Maramureș",
   "description": "Articole despre kickboxing, antrenamente, competiții și știri din lumea artelor marțiale",
@@ -178,7 +178,7 @@
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     {

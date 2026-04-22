@@ -5,8 +5,8 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\GalleryResource\Pages;
 use App\Models\Gallery;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 
@@ -14,7 +14,7 @@ class GalleryResource extends Resource
 {
     protected static ?string $model = Gallery::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-camera';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-camera';
 
     protected static ?string $navigationLabel = 'Galerie';
 
@@ -24,9 +24,9 @@ class GalleryResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Foto';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 Forms\Components\FileUpload::make('photo_url')
                     ->label('Fotografie')
