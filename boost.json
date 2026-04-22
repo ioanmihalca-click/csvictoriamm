@@ -1,14 +1,17 @@
 {
     "agents": [
-        "claude_code",
-        "cursor",
-        "gemini"
+        "claude_code"
     ],
-    "editors": [
-        "claude_code",
-        "cursor",
-        "gemini",
-        "vscode"
+    "guidelines": true,
+    "mcp": true,
+    "nightwatch_mcp": false,
+    "packages": [
+        "filament/filament"
     ],
-    "guidelines": []
+    "sail": false,
+    "skills": [
+        "laravel-best-practices",
+        "livewire-development",
+        "tailwindcss-development"
+    ]
 }
