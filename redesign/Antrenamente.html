@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Antrenamente · CS Victoria Maramureș</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/brand.css">
+<style>
+/* ============ PAGE HERO ============ */
+.phero{position:relative;background:var(--ink);border-bottom:1px solid var(--line);overflow:hidden}
+.phero-grid{display:grid;grid-template-columns:1.2fr .8fr;min-height:560px}
+.phero-l{padding:64px 48px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.phero-crumb{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:32px}
+.phero-crumb a{color:var(--mute-2)}
+.phero-crumb .on{color:var(--red)}
+.phero-l h1{font-family:'Oswald',sans-serif;font-size:clamp(72px,9vw,160px);line-height:.85;
+  letter-spacing:.01em;margin:0 0 24px;text-transform:uppercase}
+.phero-l h1 em{font-style:normal;color:var(--red);display:block}
+.phero-l .lead{color:var(--bone-2);font-size:17px;line-height:1.55;max-width:620px;margin:0 0 36px}
+.phero-l .lead strong{color:var(--bone);font-weight:700}
+.phero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.phero-r{position:relative;background:var(--ink-2)}
+.phero-r .ph{position:absolute;inset:0;border:none}
+.phero-r .overlay{position:absolute;inset:0;padding:32px;display:flex;flex-direction:column;
+  justify-content:space-between;z-index:3}
+.phero-r .big-side{font-family:'Oswald',sans-serif;font-size:clamp(80px,9vw,140px);line-height:.85;
+  letter-spacing:.01em;text-align:right;writing-mode:initial}
+.phero-r .big-side em{font-style:normal;color:var(--red)}
+
+/* ============ FACTS ============ */
+.facts{background:var(--ink)}
+.facts-grid{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line)}
+.fact{padding:32px 28px;border-right:1px solid var(--line)}
+.fact:last-child{border-right:none}
+.fact .k{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mute);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
+.fact .v{font-family:'Oswald',sans-serif;font-size:44px;line-height:1;letter-spacing:.02em}
+.fact .v em{font-style:normal;color:var(--red)}
+
+/* ============ PROGRAMS ============ */
+.programs{background:var(--ink)}
+.prog-head{padding:64px 48px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.prog-head .tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:14px}
+.prog-head h2{font-family:'Oswald',sans-serif;font-size:96px;line-height:.88;margin:0;letter-spacing:.01em}
+.prog-head h2 em{color:var(--red);font-style:normal}
+.prog-head p{color:var(--bone-2);font-size:15px;line-height:1.6;max-width:520px;margin:0}
+
+.prog-list{display:flex;flex-direction:column}
+.prog-row{display:grid;grid-template-columns:120px 1fr 1fr 180px;gap:0;border-bottom:1px solid var(--line);
+  align-items:stretch;transition:background .25s;position:relative;min-height:280px}
+.prog-row:hover{background:var(--ink-2)}
+.prog-row .idx{padding:32px;display:flex;flex-direction:column;justify-content:space-between;
+  border-right:1px solid var(--line)}
+.prog-row .idx .n{font-family:'Oswald',sans-serif;font-size:72px;line-height:1;color:var(--red)}
+.prog-row .idx .cat{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mute);
+  letter-spacing:.15em;text-transform:uppercase}
+.prog-row .title-col{padding:32px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between}
+.prog-row .title-col h3{font-family:'Oswald',sans-serif;font-size:56px;line-height:.9;
+  letter-spacing:.02em;margin:0 0 16px;text-transform:uppercase}
+.prog-row .title-col .kind{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:20px}
+.prog-row .tags{display:flex;gap:6px;flex-wrap:wrap}
+.prog-row .tags .t{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);color:var(--mute-2)}
+.prog-row .desc-col{padding:32px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.prog-row .desc-col p{color:var(--bone-2);font-size:14px;line-height:1.6;margin:0 0 18px}
+.prog-row .desc-col ul{list-style:none;margin:0;padding:0;font-size:13px;color:var(--bone-2)}
+.prog-row .desc-col li{padding:7px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+.prog-row .desc-col li:first-child{border-top:none}
+.prog-row .desc-col li strong{color:var(--bone);font-weight:500}
+.prog-row .desc-col li span{color:var(--red)}
+.prog-row .meta-col{padding:32px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:16px}
+.prog-row .meta-col .price{font-family:'Oswald',sans-serif;font-size:40px;line-height:1}
+.prog-row .meta-col .price small{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;
+  color:var(--mute);letter-spacing:.15em;text-transform:uppercase;margin-top:6px;font-weight:400}
+.prog-row .meta-col .btn{width:100%;justify-content:space-between;padding:14px 16px;font-size:11px}
+
+/* ============ WEEK GRID ============ */
+.week{background:var(--bone);color:var(--ink)}
+.week-head{padding:64px 48px;border-bottom:1px solid #d4d4d4;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.week-head h2{font-family:'Oswald',sans-serif;font-size:96px;line-height:.88;margin:0;letter-spacing:.01em}
+.week-head h2 em{color:var(--red);font-style:normal}
+.week-head .tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:14px}
+.week-head p{color:#525252;font-size:15px;line-height:1.55;margin:0}
+.week-grid{display:grid;grid-template-columns:80px repeat(6,1fr);border-bottom:1px solid #d4d4d4}
+.week-grid .h{background:#e7e5e0;padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.15em;text-transform:uppercase;color:#525252;border-right:1px solid #d4d4d4;text-align:center}
+.week-grid .h:last-child{border-right:none}
+.week-grid .time-lbl{padding:14px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:#525252;letter-spacing:.1em;border-right:1px solid #d4d4d4;border-top:1px solid #d4d4d4;
+  background:#fafaf7;text-align:center;display:flex;align-items:center;justify-content:center}
+.week-grid .cell{padding:14px 12px;border-right:1px solid #d4d4d4;border-top:1px solid #d4d4d4;min-height:74px;position:relative}
+.week-grid .cell:last-child{border-right:none}
+.week-grid .cell.active{background:var(--ink);color:var(--bone)}
+.week-grid .cell.active.red{background:var(--red)}
+.week-grid .cell strong{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:11px;
+  letter-spacing:.05em;display:block;margin-bottom:3px}
+.week-grid .cell span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(255,255,255,.7)}
+.week-grid .cell.active.red span{color:#fecaca}
+
+/* ============ METHOD ============ */
+.method{background:var(--ink)}
+.method-grid{display:grid;grid-template-columns:1.1fr .9fr;border-bottom:1px solid var(--line)}
+.method-l{padding:72px 48px;border-right:1px solid var(--line)}
+.method-l .tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:20px}
+.method-l h2{font-family:'Oswald',sans-serif;font-size:80px;line-height:.9;margin:0 0 32px;letter-spacing:.01em}
+.method-l h2 em{color:var(--red);font-style:normal}
+.method-l p{color:var(--bone-2);font-size:15px;line-height:1.65;max-width:520px;margin:0 0 16px}
+.method-l p strong{color:var(--bone)}
+.method-r{padding:0;display:flex;flex-direction:column}
+.m-step{padding:28px 40px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:60px 1fr auto;
+  gap:24px;align-items:center;transition:background .2s}
+.m-step:last-child{border-bottom:none}
+.m-step:hover{background:var(--ink-2)}
+.m-step .n{font-family:'Oswald',sans-serif;font-size:48px;line-height:1;color:var(--line-2)}
+.m-step:hover .n{color:var(--red)}
+.m-step h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;text-transform:uppercase;
+  letter-spacing:.03em;margin:0 0 6px}
+.m-step p{font-size:13px;line-height:1.5;color:var(--mute-2);margin:0}
+.m-step .dur{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.12em;white-space:nowrap}
+
+/* ============ FAQ ============ */
+.faq{background:var(--ink)}
+.faq-head{padding:64px 48px;border-bottom:1px solid var(--line)}
+.faq-head .tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:14px}
+.faq-head h2{font-family:'Oswald',sans-serif;font-size:80px;line-height:.9;margin:0;letter-spacing:.01em}
+.faq-list{display:flex;flex-direction:column}
+.faq-item{display:grid;grid-template-columns:80px 1fr auto;gap:24px;padding:28px 48px;
+  border-bottom:1px solid var(--line);align-items:start;cursor:pointer;transition:background .2s}
+.faq-item:hover{background:var(--ink-2)}
+.faq-item .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.15em}
+.faq-item h3{font-family:'Archivo',sans-serif;font-weight:700;font-size:17px;text-transform:uppercase;
+  letter-spacing:.02em;margin:0}
+.faq-item .body{margin-top:12px;color:var(--bone-2);font-size:14px;line-height:1.6;display:none}
+.faq-item.open .body{display:block}
+.faq-item .plus{font-family:'Oswald',sans-serif;font-size:32px;line-height:1;color:var(--mute);transition:all .2s}
+.faq-item.open .plus{transform:rotate(45deg);color:var(--red)}
+
+@media (max-width:1100px){
+  .phero-grid{grid-template-columns:1fr}
+  .phero-l{padding:48px 24px;border-right:none;border-bottom:1px solid var(--line)}
+  .phero-r{min-height:320px}
+  .facts-grid{grid-template-columns:1fr 1fr}
+  .fact{border-bottom:1px solid var(--line)}
+  .prog-row{grid-template-columns:1fr}
+  .prog-row .idx,.prog-row .title-col,.prog-row .desc-col{border-right:none;border-bottom:1px solid var(--line)}
+  .week-grid{grid-template-columns:60px repeat(6,1fr);font-size:10px}
+  .method-grid{grid-template-columns:1fr}
+  .method-l{border-right:none;border-bottom:1px solid var(--line);padding:48px 24px}
+  .prog-head,.week-head,.faq-head{padding:48px 24px;grid-template-columns:1fr}
+  .faq-item{padding:20px 24px;grid-template-columns:40px 1fr auto}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="mark">V</div>
+      <div class="nav-brand-text">Victoria<br><small>CS · MARAMUREȘ · EST. 2021</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="Homepage.html">Prima pagină</a>
+      <a href="#" class="on">Antrenamente</a>
+      <a href="#">Galerie</a>
+      <a href="#">Competiții</a>
+      <a href="#">Echipa</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="phone">+40 734 411 115</span>
+      <a class="btn btn-red" href="#cta">Sesiune probă<span class="arr"></span></a>
+    </div>
+  </div>
+</header>
+
+<section class="phero">
+  <div class="section-meta">
+    <span class="num">◆ 01 / PAGE</span>
+    <span>ANTRENAMENTE · KICKBOX · MUAY THAI · BJJ · FITNESS FUNCȚIONAL</span>
+    <span>BAIA MARE · PETROVA · POIENILE DE SUB MUNTE</span>
+  </div>
+  <div class="phero-grid">
+    <div class="phero-l">
+      <div class="phero-crumb"><a href="Homepage.html">/ home</a> → <span class="on">/ antrenamente</span></div>
+      <h1>Antrenament.<br><em>Fără scurtături.</em></h1>
+      <p class="lead"><strong>4 discipline · 3 locații · 100+ sportivi activi.</strong> Programe pentru copii, juniori și adulți, predate de antrenori certificați, afiliați Federației Române de Freestyle Kickboxing. Fiecare sesiune e construită pe repetiție, tehnică, și respect.</p>
+      <div class="phero-cta">
+        <a class="btn btn-red" href="#cta">Rezervă sesiune gratuită<span class="arr"></span></a>
+        <a class="btn btn-ghost" href="#orar">Vezi orarul complet</a>
+      </div>
+    </div>
+    <div class="phero-r">
+      <div class="ph"><span class="ph-label">[ antrenamente-hero.jpg ]</span></div>
+      <div class="overlay">
+        <div style="display:flex;justify-content:flex-end"><span class="chip chip-red">● ACTIVE · 6 SESIUNI / SĂPT</span></div>
+        <div class="big-side">
+          <div>TRAIN</div>
+          <div style="-webkit-text-stroke:1.5px var(--bone-2);color:transparent">WITH</div>
+          <div><em>VICTORIA</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>SESIUNI DE PROBĂ GRATUITE</span><span class="dot">◆</span>
+    <span>COPII 6+</span><span class="dot">◆</span>
+    <span>ADULȚI · JUNIORI</span><span class="dot">◆</span>
+    <span>KICKBOX · MUAY THAI · BJJ · FITNESS</span><span class="dot">◆</span>
+    <span>BAIA MARE · PETROVA · POIENILE DE SUB MUNTE</span><span class="dot">◆</span>
+    <span>SESIUNI DE PROBĂ GRATUITE</span><span class="dot">◆</span>
+    <span>COPII 6+</span><span class="dot">◆</span>
+    <span>ADULȚI · JUNIORI</span><span class="dot">◆</span>
+    <span>KICKBOX · MUAY THAI · BJJ · FITNESS</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<section class="facts">
+  <div class="facts-grid">
+    <div class="fact"><div class="k">Discipline</div><div class="v">04</div></div>
+    <div class="fact"><div class="k">Sesiuni / săpt</div><div class="v">06</div></div>
+    <div class="fact"><div class="k">Vârsta minimă</div><div class="v">06 <em>ani</em></div></div>
+    <div class="fact"><div class="k">Sportivi activi</div><div class="v">100<em>+</em></div></div>
+    <div class="fact"><div class="k">Probă · cost</div><div class="v">00 <em>RON</em></div></div>
+  </div>
+</section>
+
+<section class="programs">
+  <div class="section-meta">
+    <span class="num">◆ 02 / 05</span>
+    <span>PROGRAME · CE ANTRENĂM</span>
+    <span>04 DISCIPLINE · NIVEL ÎNCEPĂTOR → AVANSAT</span>
+  </div>
+  <div class="prog-head">
+    <div>
+      <div class="tag">Discipline</div>
+      <h2>Programele<br><em>noastre.</em></h2>
+    </div>
+    <p>Fiecare program e construit în jurul a trei lucruri: tehnica corectă, condiția fizică, și atitudinea potrivită. Lucrăm diferențiat pe grupe de vârstă și nivel — fără lecții copy-paste.</p>
+  </div>
+
+  <div class="prog-list">
+    <article class="prog-row">
+      <div class="idx"><div class="cat">STAND-UP</div><div class="n">01</div></div>
+      <div class="title-col">
+        <div>
+          <div class="kind">◆ STRIKING · FULL CONTACT</div>
+          <h3>Freestyle<br>Kickboxing</h3>
+        </div>
+        <div class="tags"><span class="t">6–12 ani</span><span class="t">13+</span><span class="t">adulți</span><span class="t">competiție</span></div>
+      </div>
+      <div class="desc-col">
+        <p>Box, lovituri de picior, combinații și libertate tehnică. Bază pentru toți sportivii care vor competiție sau doar un stand-up solid.</p>
+        <ul>
+          <li><strong>Durată</strong><span>60–85 min</span></li>
+          <li><strong>Frecvență</strong><span>2×/săpt</span></li>
+          <li><strong>Nivel</strong><span>Începător → avansat</span></li>
+          <li><strong>Echipament</strong><span>Mănuși · bandaj · ș. b.</span></li>
+        </ul>
+      </div>
+      <div class="meta-col">
+        <div class="price">BM<small>· Baia Mare · Luni/Mie</small></div>
+        <a class="btn btn-red" href="#cta">Programează<span class="arr"></span></a>
+      </div>
+    </article>
+
+    <article class="prog-row">
+      <div class="idx"><div class="cat">STAND-UP</div><div class="n">02</div></div>
+      <div class="title-col">
+        <div>
+          <div class="kind">◆ STRIKING · CLINCH · ARTĂ DE 8 MEMBRE</div>
+          <h3>Muay<br>Thai</h3>
+        </div>
+        <div class="tags"><span class="t">13+</span><span class="t">adulți</span><span class="t">intermediari+</span></div>
+      </div>
+      <div class="desc-col">
+        <p>„Arta celor opt membre": pumni, picioare, genunchi, coate. Clinch, condiție și tehnica sudată prin repetiție thailandeză clasică.</p>
+        <ul>
+          <li><strong>Durată</strong><span>90 min</span></li>
+          <li><strong>Frecvență</strong><span>2×/săpt</span></li>
+          <li><strong>Nivel</strong><span>Intermediar+</span></li>
+          <li><strong>Echipament</strong><span>Mănuși · tibiere</span></li>
+        </ul>
+      </div>
+      <div class="meta-col">
+        <div class="price">BM<small>· Baia Mare · integrat</small></div>
+        <a class="btn btn-red" href="#cta">Programează<span class="arr"></span></a>
+      </div>
+    </article>
+
+    <article class="prog-row">
+      <div class="idx"><div class="cat">GRAPPLING</div><div class="n">03</div></div>
+      <div class="title-col">
+        <div>
+          <div class="kind">◆ GROUND · CONTROL · SUBMISSION</div>
+          <h3>Brazilian<br>Jiu-Jitsu</h3>
+        </div>
+        <div class="tags"><span class="t">juniori</span><span class="t">adulți</span><span class="t">gi + no-gi</span></div>
+      </div>
+      <div class="desc-col">
+        <p>Controlul prin tehnică, nu prin forță. Poziții, tranziții, submisii — știința care transformă diferența de forță într-o detaliu irelevant.</p>
+        <ul>
+          <li><strong>Durată</strong><span>90 min</span></li>
+          <li><strong>Frecvență</strong><span>1–2×/săpt</span></li>
+          <li><strong>Nivel</strong><span>Toate nivelurile</span></li>
+          <li><strong>Echipament</strong><span>Gi sau rash guard</span></li>
+        </ul>
+      </div>
+      <div class="meta-col">
+        <div class="price">BM<small>· Baia Mare · integrat</small></div>
+        <a class="btn btn-red" href="#cta">Programează<span class="arr"></span></a>
+      </div>
+    </article>
+
+    <article class="prog-row">
+      <div class="idx"><div class="cat">CONDITIONING</div><div class="n">04</div></div>
+      <div class="title-col">
+        <div>
+          <div class="kind">◆ FULL BODY · FORȚĂ · AGILITATE</div>
+          <h3>Fitness<br>Funcțional</h3>
+        </div>
+        <div class="tags"><span class="t">începători</span><span class="t">intermediari</span><span class="t">avansați</span><span class="t">grup + 1:1</span></div>
+      </div>
+      <div class="desc-col">
+        <p>45–60 min full-body pentru forță, rezistență, agilitate și mobilitate. Sesiuni în grup sau personal, adaptate obiectivelor tale.</p>
+        <ul>
+          <li><strong>Durată</strong><span>45–60 min</span></li>
+          <li><strong>Frecvență</strong><span>2–3×/săpt</span></li>
+          <li><strong>Nivel</strong><span>Toate nivelurile</span></li>
+          <li><strong>Format</strong><span>Grup sau 1:1</span></li>
+        </ul>
+      </div>
+      <div class="meta-col">
+        <div class="price">BM<small>· la cerere</small></div>
+        <a class="btn btn-red" href="#cta">Programează<span class="arr"></span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<div class="caution"></div>
+
+<section class="week" id="orar">
+  <div class="section-meta" style="background:var(--bone);color:#525252;border-bottom:1px solid #d4d4d4">
+    <span class="num" style="color:var(--red)">◆ 03 / 05</span>
+    <span>ORAR VIZUAL · SĂPTĂMÂNAL</span>
+    <span>SEZON · 2025/26</span>
+  </div>
+  <div class="week-head">
+    <div>
+      <div class="tag">Săptămâna ta</div>
+      <h2>Orar<br><em>vizual.</em></h2>
+    </div>
+    <p>Uite toată săptămâna. Luni și miercuri la Baia Mare, vineri în Petrova, sâmbătă în Poienile de sub Munte. Culoarea roșie = sesiuni de striking; negru = grupe mixte și fitness.</p>
+  </div>
+  <div class="week-grid">
+    <div class="h">Ora</div>
+    <div class="h">Luni</div>
+    <div class="h">Marți</div>
+    <div class="h">Miercuri</div>
+    <div class="h">Joi</div>
+    <div class="h">Vineri</div>
+    <div class="h">Sâmbătă</div>
+
+    <div class="time-lbl">13:00</div>
+    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    <div class="cell active"><strong>Grupă mixtă</strong><span>Poienile · toate vârstele</span></div>
+
+    <div class="time-lbl">18:30</div>
+    <div class="cell active red"><strong>Kickbox · Copii</strong><span>BM · 6–12 ani</span></div>
+    <div class="cell"></div>
+    <div class="cell active red"><strong>Kickbox · Copii</strong><span>BM · 6–12 ani</span></div>
+    <div class="cell"></div>
+    <div class="cell active"><strong>Grupă mixtă</strong><span>Petrova</span></div>
+    <div class="cell"></div>
+
+    <div class="time-lbl">19:35</div>
+    <div class="cell active red"><strong>Kickbox + MT</strong><span>BM · adulți · jr. mari</span></div>
+    <div class="cell"></div>
+    <div class="cell active red"><strong>Kickbox + MT</strong><span>BM · adulți · jr. mari</span></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+</section>
+
+<section class="method">
+  <div class="section-meta">
+    <span class="num">◆ 04 / 05</span>
+    <span>METODĂ · CUM ARATĂ O SESIUNE</span>
+    <span>90 MIN · 5 FAZE</span>
+  </div>
+  <div class="method-grid">
+    <div class="method-l">
+      <div class="tag">Structura sesiunii</div>
+      <h2>Același cadru.<br><em>Rezultate reale.</em></h2>
+      <p>Orice sesiune la Victoria urmează aceeași structură — ca să progresezi constant, nu în salturi aleatorii. <strong>Încălzirea e obligatorie.</strong> Tehnica vine înaintea vitezei. Sparringul e controlat, supravegheat, niciodată prosper.</p>
+      <p>Antrenorul corectează individual, nu doar anunță exerciții. La final, feedback scurt — ce ai făcut bine, ce lucrezi data viitoare.</p>
+    </div>
+    <div class="method-r">
+      <div class="m-step"><div class="n">01</div><div><h3>Încălzire dinamică</h3><p>Mobilitate, cardio ușor, pregătirea articulațiilor.</p></div><div class="dur">10 MIN</div></div>
+      <div class="m-step"><div class="n">02</div><div><h3>Tehnică · drills</h3><p>Un subiect pe sesiune — repetiție, corectare, repetiție.</p></div><div class="dur">25 MIN</div></div>
+      <div class="m-step"><div class="n">03</div><div><h3>Combinații · padwork</h3><p>Aplicarea tehnicii la țintă, cu partener sau antrenor.</p></div><div class="dur">25 MIN</div></div>
+      <div class="m-step"><div class="n">04</div><div><h3>Sparring controlat</h3><p>Intensitate adaptată nivelului. Supravegheat îndeaproape.</p></div><div class="dur">15 MIN</div></div>
+      <div class="m-step"><div class="n">05</div><div><h3>Condiție · cool-down</h3><p>Forță specifică, abdomen, stretching. Feedback individual.</p></div><div class="dur">15 MIN</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="section-meta">
+    <span class="num">◆ 05 / 05</span>
+    <span>ÎNTREBĂRI FRECVENTE</span>
+    <span>06 · CELE MAI DESE</span>
+  </div>
+  <div class="faq-head">
+    <div class="tag">Întrebări</div>
+    <h2>Ce ne întreabă<br>oamenii.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item open"><div class="n">Q · 01</div><div><h3>Trebuie să am experiență înainte să vin?</h3><div class="body">Nu. Majoritatea membrilor au început de la zero. Prima sesiune e de observație și acomodare — te obișnuiești cu sala, cu ritmul, și cu antrenorul. De la a doua începi tehnica de bază.</div></div><div class="plus">+</div></div>
+    <div class="faq-item"><div class="n">Q · 02</div><div><h3>De la ce vârstă pot veni copiii?</h3><div class="body">Primim copii de la 6 ani. Grupa copii (6–12 ani) lucrează separat de adulți, cu metode adaptate — joc, coordonare, tehnică de bază, fără sparring adevărat.</div></div><div class="plus">+</div></div>
+    <div class="faq-item"><div class="n">Q · 03</div><div><h3>Cât costă o sesiune de probă?</h3><div class="body">0 RON. Organizăm sesiuni de probă gratuite în fiecare zi în care avem antrenament. Suni sau scrii, stabilim ziua, și vii.</div></div><div class="plus">+</div></div>
+    <div class="faq-item"><div class="n">Q · 04</div><div><h3>De ce echipament am nevoie la început?</h3><div class="body">La prima sesiune — doar haine sport și apă. Dacă rămâi, îți recomandăm mănuși și bandaj (te ghidăm noi). Pentru BJJ — gi sau rash guard, după caz.</div></div><div class="plus">+</div></div>
+    <div class="faq-item"><div class="n">Q · 05</div><div><h3>Voi face sparring din prima?</h3><div class="body">Nu. Sparringul e controlat și se introduce gradual, după ce stăpânești tehnica de bază. Siguranța ta și a partenerilor e pe primul loc.</div></div><div class="plus">+</div></div>
+    <div class="faq-item"><div class="n">Q · 06</div><div><h3>Pot veni doar pentru condiție fizică, fără competiție?</h3><div class="body">Absolut. Cei mai mulți membri vin pentru sport, condiție și comunitate. Competiția e opțiunea celor care și-o doresc și sunt pregătiți.</div></div><div class="plus">+</div></div>
+  </div>
+</section>
+
+<section class="cta-banner" id="cta">
+  <div class="cta-grid">
+    <div>
+      <h2>Ai întrebări?<br><span>Vino la o sesiune.</span></h2>
+      <div class="sub">Gratuit · fără abonament · fără obligații · oricând</div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="tel:+40734411115">Sună · 0734 411 115<span class="arr"></span></a>
+      <a class="btn" style="background:transparent;border-color:var(--bone);color:var(--bone)" href="#">Formular contact</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-big">CS<br>VICTORIA <em>MM</em></div>
+      <p style="color:var(--mute-2);font-size:13px;max-width:380px;margin:0 0 20px">Club Sportiv Victoria Maramureș · înființat 2021 · afiliat Federația Română de Freestyle Kickboxing. Baia Mare · Petrova · Poienile de sub Munte.</p>
+      <div style="display:flex;gap:10px">
+        <span class="chip">TT</span><span class="chip">YT</span><span class="chip">FB</span><span class="chip">IG</span>
+      </div>
+    </div>
+    <div>
+      <h4>Navigare</h4>
+      <ul>
+        <li><a href="Homepage.html">Prima pagină</a></li>
+        <li><a href="#">Antrenamente</a></li>
+        <li><a href="#">Galerie</a></li>
+        <li><a href="#">Competiții</a></li>
+        <li><a href="#">Echipa</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Locații</h4>
+      <ul>
+        <li><a href="#">Baia Mare</a></li>
+        <li><a href="#">Petrova</a></li>
+        <li><a href="#">Poienile de sub Munte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+40734411115">+40 734 411 115</a></li>
+        <li><a href="mailto:contact@csvictoriamm.ro">contact@csvictoriamm.ro</a></li>
+        <li><a href="#">Formular contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>◆ CS VICTORIA MM · 2021 — 2026 · MARAMUREȘ</span>
+    <span>DESIGN · BRUTALIST-SPORT · V.01</span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-item').forEach(el=>{
+  el.addEventListener('click',()=>el.classList.toggle('open'));
+});
+</script>
+
+</body>
+</html>

@@ -53,7 +53,17 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+
+    <!-- Brutalist-sport system fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- brand.css trebuie încărcat DUPĂ Tailwind preflight ca să bată reset-urile pe h1/h2/body --}}
+    <link rel="stylesheet" href="{{ asset('css/brand.css') }}?v={{ filemtime(public_path('css/brand.css')) }}">
+
     @livewireStyles
 
     <style>
@@ -289,11 +299,8 @@
     }
 }" x-init="Livewire.on('navigating', () => { pageLoading = true });
 Livewire.on('navigated', () => { pageLoading = false });" @navigate.window="pageLoading = true"
-    @navigated.window="pageLoading = false" class="font-sans antialiased bg-white">
+    @navigated.window="pageLoading = false" class="antialiased">
     <livewire:header-nav />
-
-    <!-- Spacer for fixed header -->
-    <div class="h-24 md:h-28"></div>
 
     <!-- Transition wrapper -->
     <div x-show="pageLoading" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"

@@ -1,382 +1,331 @@
-<div class="bg-gray-50">
-    <!-- Hero Section -->
-    <section class="relative py-24 bg-center bg-cover md:py-32"
-        style="background-image: url('/assets/unsplash-image.webp')">
-        <div class="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-transparent"></div>
-        <div class="container relative z-10 px-4 mx-auto">
-            <div class="max-w-3xl">
-                <span
-                    class="inline-block px-4 py-2 mb-6 text-sm font-bold tracking-wider text-white uppercase bg-red-700 rounded-full">
-                    Antrenamente în Baia Mare
-                </span>
-                <h1 class="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl font-roboto-condensed">
-                    Freestyle Kickboxing &<br>
-                    <span class="text-red-400">Muay Thai</span>
-                </h1>
-                <p class="max-w-2xl mb-8 text-xl text-gray-200">
-                    Antrenamente pentru toate vârstele și nivelurile în Baia-Mare, Poienile de sub Munte și Petrova.
-                    Descoperă puterea artelor marțiale alături de instructori certificați.
+<div>
+    {{-- ============ PAGE HERO ============ --}}
+    <section class="phero">
+        <div class="section-meta">
+            <span class="num">◆ 01 / PAGINĂ</span>
+            <span>ANTRENAMENTE · KICKBOX · MUAY THAI · BJJ · FITNESS FUNCȚIONAL</span>
+            <span>BAIA MARE · PETROVA · POIENILE DE SUB MUNTE</span>
+        </div>
+        <div class="phero-grid">
+            <div class="phero-l">
+                <div class="phero-crumb">
+                    <a wire:navigate href="{{ route('prima-pagina') }}">/ acasă</a> → <span class="on">/ antrenamente</span>
+                </div>
+                <h1>Antrenament.<br><em>Fără scurtături.</em></h1>
+                <p class="lead">
+                    <strong>4 discipline · 3 locații · 100+ sportivi activi.</strong> Programe pentru copii, juniori și adulți, predate de antrenori certificați, afiliați Federației Române de Freestyle Kickboxing. Fiecare sesiune e construită pe repetiție, tehnică și respect.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#orar"
-                        class="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-red-700 rounded-lg hover:bg-red-800 hover:scale-105 hover:shadow-lg">
-                        <i class="mr-2 fas fa-calendar-alt"></i>
-                        Vezi Orarul
-                    </a>
-                    <a href="{{ route('contact') }}"
-                        class="inline-flex items-center px-8 py-4 text-lg font-bold text-red-700 transition-all duration-300 bg-white rounded-lg hover:bg-gray-100 hover:scale-105">
-                        <i class="mr-2 fas fa-envelope"></i>
-                        Contactează-ne
-                    </a>
+                <div class="phero-cta">
+                    <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Rezervă sesiune gratuită<span class="arr"></span></a>
+                    <a href="#orar" class="btn btn-ghost">Vezi orarul complet</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Intro Section -->
-    <section class="py-16">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="mb-12 text-center">
-                <span class="text-sm font-bold tracking-wider text-red-700 uppercase">Ce oferim</span>
-                <h2 class="mt-2 text-4xl font-bold text-gray-900 md:text-5xl font-roboto-condensed">Antrenamente de
-                    Freestyle Kickboxing</h2>
-                <div class="w-24 h-1 mx-auto mt-4 bg-red-700 rounded"></div>
-            </div>
-
-            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-                <!-- Coloana stângă -->
-                <div class="space-y-6">
-                    <div
-                        class="p-8 transition-all duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl hover:-translate-y-1">
-                        <div class="flex items-center justify-center w-16 h-16 mb-6 bg-red-100 rounded-xl">
-                            <i class="text-3xl text-red-700 fas fa-fist-raised"></i>
-                        </div>
-                        <h3 class="mb-4 text-2xl font-bold text-gray-900">Freestyle Kickboxing</h3>
-                        <p class="mb-4 leading-relaxed text-gray-600">Freestyle Kickboxing este o formă de arte marțiale
-                            care combină tehnici de box și lovituri cu piciorul. Acest stil de luptă este caracterizat
-                            de libertatea și creativitatea luptătorilor în a folosi diverse tehnici și mișcări pentru
-                            a-și învinge adversarii.</p>
-                        <p class="leading-relaxed text-gray-600">Deși este similar cu alte stiluri de arte marțiale,
-                            precum kickboxingul și Muay Thai, Freestyle Kickboxing permite luptătorilor să-și dezvolte
-                            propriul stil și să experimenteze cu diverse tehnici și strategii.</p>
-                    </div>
-
-                    <div class="overflow-hidden shadow-lg rounded-2xl">
-                        <img src="/assets/Kickboxing-Baia-Mare.webp" alt="Kickboxing în Baia Mare"
-                            class="object-cover w-full h-64">
-                    </div>
+            <div class="phero-r">
+                <div class="ph">
+                    <img src="{{ asset('assets/antrenamente.webp') }}" alt="Antrenamente CS Victoria Maramureș" class="ph-img">
                 </div>
-
-                <!-- Coloana dreaptă -->
-                <div class="space-y-6">
-                    <div class="overflow-hidden shadow-lg rounded-2xl">
-                        <img src="/assets/antrenamente.webp" alt="Antrenamente Kickboxing"
-                            class="object-cover w-full h-64">
+                <div class="overlay">
+                    <div style="display:flex;justify-content:flex-end">
+                        <span class="chip chip-red">ACTIV · 6 SESIUNI / SĂPT</span>
                     </div>
-
-                    <div
-                        class="p-8 transition-all duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl hover:-translate-y-1">
-                        <div class="flex items-center justify-center w-16 h-16 mb-6 bg-red-100 rounded-xl">
-                            <i class="text-3xl text-red-700 fas fa-users"></i>
-                        </div>
-                        <h3 class="mb-4 text-2xl font-bold text-gray-900">Pentru Copii și Adulți</h3>
-                        <p class="leading-relaxed text-gray-600">Freestyle Kickboxing este practicat în scopuri
-                            recreative și de fitness, dar și în competiții sportive, inclusiv în evenimente
-                            profesioniste. La Clubul Sportiv Victoria Maramureș, oferim programe adaptate pentru toate
-                            vârstele și nivelurile.</p>
+                    <div class="big-side">
+                        <div>ANTRENEAZĂ-TE</div>
+                        <div class="stroke">CU</div>
+                        <div><em>VICTORIA</em></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Orar Section -->
-    <section id="orar" class="py-16 bg-white">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="mb-12 text-center">
-                <span class="text-sm font-bold tracking-wider text-red-700 uppercase">Program</span>
-                <h2 class="mt-2 text-4xl font-bold text-gray-900 md:text-5xl font-roboto-condensed">Orar Antrenamente
-                </h2>
-                <div class="w-24 h-1 mx-auto mt-4 bg-red-700 rounded"></div>
+    {{-- ============ MARQUEE ============ --}}
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>SESIUNI DE PROBĂ GRATUITE</span><span class="dot">◆</span>
+            <span>COPII 6+</span><span class="dot">◆</span>
+            <span>ADULȚI · JUNIORI</span><span class="dot">◆</span>
+            <span>KICKBOX · MUAY THAI · BJJ · FITNESS</span><span class="dot">◆</span>
+            <span>BAIA MARE · PETROVA · POIENILE DE SUB MUNTE</span><span class="dot">◆</span>
+            <span>SESIUNI DE PROBĂ GRATUITE</span><span class="dot">◆</span>
+            <span>COPII 6+</span><span class="dot">◆</span>
+            <span>ADULȚI · JUNIORI</span><span class="dot">◆</span>
+            <span>KICKBOX · MUAY THAI · BJJ · FITNESS</span><span class="dot">◆</span>
+        </div>
+    </div>
+
+    {{-- ============ FACTS ============ --}}
+    <section class="facts">
+        <div class="facts-grid">
+            <div class="fact"><div class="k">Discipline</div><div class="v">04</div></div>
+            <div class="fact"><div class="k">Sesiuni / săpt</div><div class="v">06</div></div>
+            <div class="fact"><div class="k">Vârsta minimă</div><div class="v">06 <em>ani</em></div></div>
+            <div class="fact"><div class="k">Sportivi activi</div><div class="v">100<em>+</em></div></div>
+            <div class="fact"><div class="k">Probă · cost</div><div class="v">00 <em>RON</em></div></div>
+        </div>
+    </section>
+
+    {{-- ============ PROGRAMS ============ --}}
+    <section class="programs">
+        <div class="section-meta">
+            <span class="num">◆ 02 / 05</span>
+            <span>PROGRAME · CE ANTRENĂM</span>
+            <span>04 DISCIPLINE · NIVEL ÎNCEPĂTOR → AVANSAT</span>
+        </div>
+        <div class="prog-head">
+            <div>
+                <div class="tag">Discipline</div>
+                <h2>Programele<br><em>noastre.</em></h2>
             </div>
+            <p>Fiecare program e construit în jurul a trei lucruri: tehnica corectă, condiția fizică și atitudinea potrivită. Lucrăm diferențiat pe grupe de vârstă și nivel — fără lecții copy-paste.</p>
+        </div>
 
-            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-                <!-- Baia Mare -->
-                <div
-                    class="overflow-hidden transition-all duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl hover:-translate-y-2">
-                    <div class="p-6 text-white bg-gradient-to-r from-red-900 to-red-700">
-                        <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-white/20">
-                            <i class="text-3xl fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-center">Baia Mare</h3>
-                        <p class="mt-2 text-center text-red-100">Str. Vasile Lucaciu</p>
+        <div class="prog-list">
+            <article class="prog-row">
+                <div class="idx"><div class="cat">STAND-UP</div><div class="n">01</div></div>
+                <div class="title-col">
+                    <div>
+                        <div class="kind">◆ STRIKING · FULL CONTACT</div>
+                        <h3>Freestyle<br>Kickboxing</h3>
                     </div>
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-start p-4 rounded-lg bg-gray-50">
-                            <div
-                                class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-red-100 rounded-full">
-                                <i class="text-red-700 fas fa-child"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold text-gray-900">Grupa Copii</h4>
-                                <p class="text-gray-600">6-12 ani</p>
-                                <p class="mt-1 font-semibold text-red-700">Luni & Miercuri, 18:30</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start p-4 rounded-lg bg-gray-50">
-                            <div
-                                class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-red-100 rounded-full">
-                                <i class="text-red-700 fas fa-user"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold text-gray-900">Grupa Adulți & Juniori Mari</h4>
-                                <p class="text-gray-600">13+ ani</p>
-                                <p class="mt-1 font-semibold text-red-700">Luni & Miercuri, 19:35</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="tags"><span class="t">6–12 ani</span><span class="t">13+</span><span class="t">adulți</span><span class="t">competiție</span></div>
                 </div>
+                <div class="desc-col">
+                    <p>Box, lovituri de picior, combinații și libertate tehnică. Bază pentru toți sportivii care vor competiție sau doar un stand-up solid.</p>
+                    <ul>
+                        <li><strong>Durată</strong><span>60–85 min</span></li>
+                        <li><strong>Frecvență</strong><span>2×/săpt</span></li>
+                        <li><strong>Nivel</strong><span>Începător → avansat</span></li>
+                        <li><strong>Echipament</strong><span>Mănuși · bandaj · ș. b.</span></li>
+                    </ul>
+                </div>
+                <div class="meta-col">
+                    <div class="price">BM<small>· Baia Mare · Luni/Mie</small></div>
+                    <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Programează<span class="arr"></span></a>
+                </div>
+            </article>
 
-                <!-- Petrova -->
-                <div
-                    class="overflow-hidden transition-all duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl hover:-translate-y-2">
-                    <div class="p-6 text-white bg-gradient-to-r from-gray-800 to-gray-600">
-                        <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-white/20">
-                            <i class="text-3xl fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-center">Petrova</h3>
-                        <p class="mt-2 text-center text-gray-200">Sala de sport</p>
+            <article class="prog-row">
+                <div class="idx"><div class="cat">STAND-UP</div><div class="n">02</div></div>
+                <div class="title-col">
+                    <div>
+                        <div class="kind">◆ STRIKING · CLINCH · ARTĂ DE 8 MEMBRE</div>
+                        <h3>Muay<br>Thai</h3>
                     </div>
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-start p-4 rounded-lg bg-gray-50">
-                            <div
-                                class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full">
-                                <i class="text-gray-700 fas fa-users"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold text-gray-900">Grupa Mixtă</h4>
-                                <p class="text-gray-600">Toate vârstele</p>
-                                <p class="mt-1 font-semibold text-red-700">Vineri, 18:30</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="tags"><span class="t">13+</span><span class="t">adulți</span><span class="t">intermediari+</span></div>
                 </div>
+                <div class="desc-col">
+                    <p>„Arta celor opt membre": pumni, picioare, genunchi, coate. Clinch, condiție și tehnică sudată prin repetiție thailandeză clasică.</p>
+                    <ul>
+                        <li><strong>Durată</strong><span>90 min</span></li>
+                        <li><strong>Frecvență</strong><span>2×/săpt</span></li>
+                        <li><strong>Nivel</strong><span>Intermediar+</span></li>
+                        <li><strong>Echipament</strong><span>Mănuși · tibiere</span></li>
+                    </ul>
+                </div>
+                <div class="meta-col">
+                    <div class="price">BM<small>· Baia Mare · integrat</small></div>
+                    <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Programează<span class="arr"></span></a>
+                </div>
+            </article>
 
-                <!-- Poienile de sub Munte -->
-                <div
-                    class="overflow-hidden transition-all duration-300 bg-white shadow-lg rounded-2xl hover:shadow-xl hover:-translate-y-2">
-                    <div class="p-6 text-white bg-gradient-to-r from-gray-800 to-gray-600">
-                        <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-white/20">
-                            <i class="text-3xl fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-center">Poienile de sub Munte</h3>
-                        <p class="mt-2 text-center text-gray-200">Sala de sport</p>
+            <article class="prog-row">
+                <div class="idx"><div class="cat">GRAPPLING</div><div class="n">03</div></div>
+                <div class="title-col">
+                    <div>
+                        <div class="kind">◆ LUPTĂ LA SOL · CONTROL · SUBMISIE</div>
+                        <h3>Brazilian<br>Jiu-Jitsu</h3>
                     </div>
-                    <div class="p-6 space-y-4">
-                        <div class="flex items-start p-4 rounded-lg bg-gray-50">
-                            <div
-                                class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-gray-200 rounded-full">
-                                <i class="text-gray-700 fas fa-users"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold text-gray-900">Grupa Mixtă</h4>
-                                <p class="text-gray-600">Toate vârstele</p>
-                                <p class="mt-1 font-semibold text-red-700">Sâmbătă, 13:00</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="tags"><span class="t">juniori</span><span class="t">adulți</span><span class="t">gi + no-gi</span></div>
                 </div>
+                <div class="desc-col">
+                    <p>Controlul prin tehnică, nu prin forță. Poziții, tranziții, submisii — știința care transformă diferența de forță într-un detaliu irelevant.</p>
+                    <ul>
+                        <li><strong>Durată</strong><span>90 min</span></li>
+                        <li><strong>Frecvență</strong><span>1–2×/săpt</span></li>
+                        <li><strong>Nivel</strong><span>Toate nivelurile</span></li>
+                        <li><strong>Echipament</strong><span>Gi sau rash guard</span></li>
+                    </ul>
+                </div>
+                <div class="meta-col">
+                    <div class="price">BM<small>· Baia Mare · integrat</small></div>
+                    <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Programează<span class="arr"></span></a>
+                </div>
+            </article>
+
+            <article class="prog-row">
+                <div class="idx"><div class="cat">CONDIȚIE</div><div class="n">04</div></div>
+                <div class="title-col">
+                    <div>
+                        <div class="kind">◆ CORP ÎNTREG · FORȚĂ · AGILITATE</div>
+                        <h3>Fitness<br>Funcțional</h3>
+                    </div>
+                    <div class="tags"><span class="t">începători</span><span class="t">intermediari</span><span class="t">avansați</span><span class="t">grup + 1:1</span></div>
+                </div>
+                <div class="desc-col">
+                    <p>45–60 min pentru corp întreg — forță, rezistență, agilitate și mobilitate. Sesiuni în grup sau personal, adaptate obiectivelor tale.</p>
+                    <ul>
+                        <li><strong>Durată</strong><span>45–60 min</span></li>
+                        <li><strong>Frecvență</strong><span>2–3×/săpt</span></li>
+                        <li><strong>Nivel</strong><span>Toate nivelurile</span></li>
+                        <li><strong>Format</strong><span>Grup sau 1:1</span></li>
+                    </ul>
+                </div>
+                <div class="meta-col">
+                    <div class="price">BM<small>· la cerere</small></div>
+                    <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Programează<span class="arr"></span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="caution"></div>
+
+    {{-- ============ WEEK GRID ============ --}}
+    <section class="week" id="orar">
+        <div class="section-meta" style="background:var(--bone);color:#525252;border-bottom:1px solid #d4d4d4">
+            <span class="num" style="color:var(--red)">◆ 03 / 05</span>
+            <span>ORAR VIZUAL · SĂPTĂMÂNAL</span>
+            <span>SEZON · 2025/26</span>
+        </div>
+        <div class="week-head">
+            <div>
+                <div class="tag">Săptămâna ta</div>
+                <h2>Orar<br><em>vizual.</em></h2>
+            </div>
+            <p>Uite toată săptămâna. Luni și miercuri la Baia Mare, vineri în Petrova, sâmbătă în Poienile de sub Munte. Culoarea roșie = sesiuni de striking; negru = grupe mixte și fitness.</p>
+        </div>
+        <div class="week-grid">
+            <div class="h">Ora</div>
+            <div class="h">Luni</div>
+            <div class="h">Marți</div>
+            <div class="h">Miercuri</div>
+            <div class="h">Joi</div>
+            <div class="h">Vineri</div>
+            <div class="h">Sâmbătă</div>
+
+            <div class="time-lbl">13:00</div>
+            <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+            <div class="cell active"><strong>Grupă mixtă</strong><span>Poienile · toate vârstele</span></div>
+
+            <div class="time-lbl">18:30</div>
+            <div class="cell active red"><strong>Kickbox · Copii</strong><span>BM · 6–12 ani</span></div>
+            <div class="cell"></div>
+            <div class="cell active red"><strong>Kickbox · Copii</strong><span>BM · 6–12 ani</span></div>
+            <div class="cell"></div>
+            <div class="cell active"><strong>Grupă mixtă</strong><span>Petrova</span></div>
+            <div class="cell"></div>
+
+            <div class="time-lbl">19:35</div>
+            <div class="cell active red"><strong>Kickbox + MT</strong><span>BM · adulți · jr. mari</span></div>
+            <div class="cell"></div>
+            <div class="cell active red"><strong>Kickbox + MT</strong><span>BM · adulți · jr. mari</span></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+    </section>
+
+    {{-- ============ METHOD ============ --}}
+    <section class="method">
+        <div class="section-meta">
+            <span class="num">◆ 04 / 05</span>
+            <span>METODĂ · CUM ARATĂ O SESIUNE</span>
+            <span>90 MIN · 5 FAZE</span>
+        </div>
+        <div class="method-grid">
+            <div class="method-l">
+                <div class="tag">Structura sesiunii</div>
+                <h2>Același cadru.<br><em>Rezultate reale.</em></h2>
+                <p>
+                    Orice sesiune la Victoria urmează aceeași structură — ca să progresezi constant, nu în salturi aleatorii. <strong>Încălzirea e obligatorie.</strong> Tehnica vine înaintea vitezei. Sparringul e controlat, supravegheat, niciodată pripit.
+                </p>
+                <p>
+                    Antrenorul corectează individual, nu doar anunță exerciții. La final, feedback scurt — ce ai făcut bine, ce lucrezi data viitoare.
+                </p>
+            </div>
+            <div class="method-r">
+                <div class="m-step"><div class="n">01</div><div><h3>Încălzire dinamică</h3><p>Mobilitate, cardio ușor, pregătirea articulațiilor.</p></div><div class="dur">10 MIN</div></div>
+                <div class="m-step"><div class="n">02</div><div><h3>Tehnică · drills</h3><p>Un subiect pe sesiune — repetiție, corectare, repetiție.</p></div><div class="dur">25 MIN</div></div>
+                <div class="m-step"><div class="n">03</div><div><h3>Combinații · padwork</h3><p>Aplicarea tehnicii la țintă, cu partener sau antrenor.</p></div><div class="dur">25 MIN</div></div>
+                <div class="m-step"><div class="n">04</div><div><h3>Sparring controlat</h3><p>Intensitate adaptată nivelului. Supravegheat îndeaproape.</p></div><div class="dur">15 MIN</div></div>
+                <div class="m-step"><div class="n">05</div><div><h3>Condiție · cool-down</h3><p>Forță specifică, abdomen, stretching. Feedback individual.</p></div><div class="dur">15 MIN</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Instructor Section -->
-    <section class="py-16 bg-gray-900">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
-                <div class="flex items-center justify-center">
-                    <div class="relative">
-                        <div class="absolute inset-0 transform bg-red-600 rounded-2xl rotate-3 opacity-30"></div>
-                        <img src="{{ asset('storage/site-images/antrenamente.jpg') }}"
-                            alt="Antrenor Ioan Mihalca" class="relative shadow-2xl rounded-2xl">
-                    </div>
+    {{-- ============ FAQ (Alpine) ============ --}}
+    <section class="faq">
+        <div class="section-meta">
+            <span class="num">◆ 05 / 05</span>
+            <span>ÎNTREBĂRI FRECVENTE</span>
+            <span>06 · CELE MAI DESE</span>
+        </div>
+        <div class="faq-head">
+            <div class="tag">Întrebări</div>
+            <h2>Ce ne întreabă<br>oamenii.</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item" x-data="{ open: true }" :class="{ 'open': open }" @click="open = !open" role="button" tabindex="0" @keydown.enter="open = !open" @keydown.space.prevent="open = !open">
+                <div class="n">Q · 01</div>
+                <div>
+                    <h3>Trebuie să am experiență înainte să vin?</h3>
+                    <div class="body">Nu. Majoritatea membrilor au început de la zero. Prima sesiune e de observație și acomodare — te obișnuiești cu sala, cu ritmul și cu antrenorul. De la a doua începi tehnica de bază.</div>
                 </div>
-
-                <div class="text-white">
-                    <span class="text-sm font-bold tracking-wider text-red-400 uppercase">Instructor</span>
-                    <h2 class="mt-2 text-4xl font-bold md:text-5xl font-roboto-condensed">Ioan Mihalca</h2>
-                    <div class="w-24 h-1 mt-4 bg-red-600 rounded"></div>
-
-                    <p class="mt-6 text-lg text-gray-300">Fondator și antrenor principal al Clubului Sportiv Victoria
-                        Maramureș, cu o experiență de peste 10 ani în domeniul artelor marțiale și al fitness-ului
-                        funcțional.</p>
-
-                    <div class="mt-8 space-y-4">
-                        <h3 class="text-xl font-bold">Certificări:</h3>
-
-                        <div class="flex items-start p-4 bg-white/10 rounded-xl backdrop-blur-sm">
-                            <div
-                                class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-red-600 rounded-full">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold">Instructor Sportiv</h4>
-                                <p class="text-gray-400">Asociația Internațională Jissen Do</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start p-4 bg-white/10 rounded-xl backdrop-blur-sm">
-                            <div
-                                class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-red-600 rounded-full">
-                                <i class="fas fa-dumbbell"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold">Fitness & Functional Fitness</h4>
-                                <p class="text-gray-400">Fitness Education School</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start p-4 bg-white/10 rounded-xl backdrop-blur-sm">
-                            <div
-                                class="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-red-600 rounded-full">
-                                <i class="fas fa-belt"></i>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="font-bold">Freestyle Kickboxing Centură Neagră 2 Dan</h4>
-                                <p class="text-gray-400">Federația Română de Freestyle Kickboxing (FRFK)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="{{ route('echipa') }}"
-                        class="inline-flex items-center mt-8 text-lg font-semibold text-red-400 transition-colors duration-300 hover:text-red-300">
-                        Vezi întreaga echipă
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </a>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-item" x-data="{ open: false }" :class="{ 'open': open }" @click="open = !open" role="button" tabindex="0" @keydown.enter="open = !open" @keydown.space.prevent="open = !open">
+                <div class="n">Q · 02</div>
+                <div>
+                    <h3>De la ce vârstă pot veni copiii?</h3>
+                    <div class="body">Primim copii de la 6 ani. Grupa copii (6–12 ani) lucrează separat de adulți, cu metode adaptate — joc, coordonare, tehnică de bază, fără sparring adevărat.</div>
                 </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-item" x-data="{ open: false }" :class="{ 'open': open }" @click="open = !open" role="button" tabindex="0" @keydown.enter="open = !open" @keydown.space.prevent="open = !open">
+                <div class="n">Q · 03</div>
+                <div>
+                    <h3>Cât costă o sesiune de probă?</h3>
+                    <div class="body">0 RON. Organizăm sesiuni de probă gratuite în fiecare zi în care avem antrenament. Suni sau scrii, stabilim ziua, și vii.</div>
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-item" x-data="{ open: false }" :class="{ 'open': open }" @click="open = !open" role="button" tabindex="0" @keydown.enter="open = !open" @keydown.space.prevent="open = !open">
+                <div class="n">Q · 04</div>
+                <div>
+                    <h3>De ce echipament am nevoie la început?</h3>
+                    <div class="body">La prima sesiune — doar haine sport și apă. Dacă rămâi, îți recomandăm mănuși și bandaj (te ghidăm noi). Pentru BJJ — gi sau rash guard, după caz.</div>
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-item" x-data="{ open: false }" :class="{ 'open': open }" @click="open = !open" role="button" tabindex="0" @keydown.enter="open = !open" @keydown.space.prevent="open = !open">
+                <div class="n">Q · 05</div>
+                <div>
+                    <h3>Voi face sparring din prima?</h3>
+                    <div class="body">Nu. Sparringul e controlat și se introduce gradual, după ce stăpânești tehnica de bază. Siguranța ta și a partenerilor e pe primul loc.</div>
+                </div>
+                <div class="plus">+</div>
+            </div>
+            <div class="faq-item" x-data="{ open: false }" :class="{ 'open': open }" @click="open = !open" role="button" tabindex="0" @keydown.enter="open = !open" @keydown.space.prevent="open = !open">
+                <div class="n">Q · 06</div>
+                <div>
+                    <h3>Pot veni doar pentru condiție fizică, fără competiție?</h3>
+                    <div class="body">Absolut. Cei mai mulți membri vin pentru sport, condiție și comunitate. Competiția e opțiunea celor care și-o doresc și sunt pregătiți.</div>
+                </div>
+                <div class="plus">+</div>
             </div>
         </div>
     </section>
 
-    <!-- Fitness Functional Section -->
-    <section class="py-16 bg-white">
-        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="mb-12 text-center">
-                <span class="text-sm font-bold tracking-wider text-red-700 uppercase">Fitness</span>
-                <h2 class="mt-2 text-4xl font-bold text-gray-900 md:text-5xl font-roboto-condensed">Fitness Funcțional
-                    în Baia Mare</h2>
-                <div class="w-24 h-1 mx-auto mt-4 bg-red-700 rounded"></div>
+    {{-- ============ CTA BANNER ============ --}}
+    <section class="cta-banner" id="cta">
+        <div class="cta-grid">
+            <div>
+                <h2>Ai întrebări?<br><span>Vino la o sesiune.</span></h2>
+                <div class="sub">Gratuit · fără abonament · fără obligații · oricând</div>
             </div>
-
-            <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-                <div class="space-y-6">
-                    <div class="p-8 transition-all duration-300 shadow-lg bg-gray-50 rounded-2xl hover:shadow-xl">
-                        <div class="flex items-center justify-center w-16 h-16 mb-6 bg-red-100 rounded-xl">
-                            <i class="text-3xl text-red-700 fas fa-heartbeat"></i>
-                        </div>
-                        <h3 class="mb-4 text-2xl font-bold text-gray-900">Pregătire Personalizată</h3>
-                        <p class="leading-relaxed text-gray-600">La Clubul Sportiv Victoria Maramureș, programele
-                            noastre de Fitness Funcțional sunt concepute pentru a satisface nevoile tuturor, de la
-                            amatori de sport și mișcare până la atleți de elită. Oferim pregătire fizică adaptată și
-                            personalizată.</p>
-                    </div>
-
-                    <div class="p-8 transition-all duration-300 shadow-lg bg-gray-50 rounded-2xl hover:shadow-xl">
-                        <div class="flex items-center justify-center w-16 h-16 mb-6 bg-red-100 rounded-xl">
-                            <i class="text-3xl text-red-700 fas fa-clock"></i>
-                        </div>
-                        <h3 class="mb-4 text-2xl font-bold text-gray-900">Sesiuni Full-Body</h3>
-                        <p class="leading-relaxed text-gray-600">Sesiunile noastre full-body, cu durata de 45-60 de
-                            minute, sunt concepute special pentru a lucra întregul corp și a accelera procesul de
-                            slăbire și tonifiere. Pe lângă dezvoltarea forței și rezistenței, vei îmbunătăți
-                            semnificativ coordonarea motorie și agilitatea.</p>
-                    </div>
-                </div>
-
-                <div class="space-y-6">
-                    <div class="p-8 transition-all duration-300 bg-red-900 shadow-lg rounded-2xl hover:shadow-xl">
-                        <h3 class="flex items-center mb-6 text-2xl font-bold text-white">
-                            <i class="mr-3 fas fa-star"></i>
-                            Beneficii
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-start text-white">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-4 rounded-full bg-white/20">
-                                    <i class="text-sm fas fa-check"></i>
-                                </div>
-                                <span>Îmbunătățirea condiției fizice și mentale</span>
-                            </li>
-                            <li class="flex items-start text-white">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-4 rounded-full bg-white/20">
-                                    <i class="text-sm fas fa-check"></i>
-                                </div>
-                                <span>Dezvoltarea forței, rezistenței, agilității și flexibilității</span>
-                            </li>
-                            <li class="flex items-start text-white">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-4 rounded-full bg-white/20">
-                                    <i class="text-sm fas fa-check"></i>
-                                </div>
-                                <span>Accelerarea procesului de slăbire și tonifiere</span>
-                            </li>
-                            <li class="flex items-start text-white">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-4 rounded-full bg-white/20">
-                                    <i class="text-sm fas fa-check"></i>
-                                </div>
-                                <span>Îmbunătățirea coordonării motorii și agilității</span>
-                            </li>
-                            <li class="flex items-start text-white">
-                                <div
-                                    class="flex items-center justify-center flex-shrink-0 w-8 h-8 mr-4 rounded-full bg-white/20">
-                                    <i class="text-sm fas fa-check"></i>
-                                </div>
-                                <span>Reducerea stresului și creșterea stimei de sine</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div
-                        class="p-8 text-center text-white shadow-lg bg-gradient-to-r from-gray-800 to-gray-700 rounded-2xl">
-                        <h3 class="mb-4 text-2xl font-bold">Pentru Cine?</h3>
-                        <p class="text-lg text-gray-200">Indiferent de nivelul tău de formă fizică sau de obiectivele
-                            pe care le ai, clasele de grup și antrenamentele personale de Fitness Funcțional sunt
-                            potrivite pentru oricine dorește să-și îmbunătățească calitatea vieții și performanțele
-                            fizice.</p>
-                        <a href="{{ route('contact') }}"
-                            class="inline-flex items-center px-6 py-3 mt-6 font-bold text-gray-800 transition-all duration-300 bg-white rounded-lg hover:bg-gray-100 hover:scale-105">
-                            Programează o ședință de probă
-                            <i class="ml-2 fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-16 bg-red-900">
-        <div class="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
-            <h2 class="mb-4 text-4xl font-bold text-white md:text-5xl font-roboto-condensed">Începe călătoria ta
-                astăzi!</h2>
-            <p class="max-w-2xl mx-auto mb-8 text-xl text-red-100">Organizăm sesiuni de probă gratuite în fiecare zi.
-                Vino să ne cunoști și să descoperi beneficiile artelor marțiale și ale fitness-ului funcțional.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="{{ route('contact') }}"
-                    class="inline-flex items-center px-8 py-4 text-lg font-bold text-red-900 transition-all duration-300 bg-white rounded-lg hover:bg-gray-100 hover:scale-105 hover:shadow-lg">
-                    <i class="mr-2 fas fa-calendar-check"></i>
-                    Rezervă o ședință
-                </a>
-                <a href="tel:0734411115"
-                    class="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 border-2 border-white rounded-lg hover:bg-white hover:text-red-900">
-                    <i class="mr-2 fas fa-phone"></i>
-                    Sună acum
-                </a>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+                <a class="btn" href="tel:+40734411115">Sună · 0734 411 115<span class="arr"></span></a>
+                <a class="btn" wire:navigate href="{{ route('contact') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Formular contact</a>
             </div>
         </div>
     </section>

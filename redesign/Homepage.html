@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CS Victoria Maramureș — Kickbox · Muay Thai · BJJ · Baia Mare</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/brand.css">
+<style>
+/* ============ HERO ============ */
+.hero{position:relative;background:var(--ink);padding:0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;min-height:calc(100vh - 72px);border-bottom:1px solid var(--line)}
+.hero-left{padding:48px 48px 32px;display:flex;flex-direction:column;justify-content:space-between;
+  border-right:1px solid var(--line);position:relative}
+.hero-top{display:flex;gap:10px;margin-bottom:auto}
+.hero-headline{font-family:'Oswald',sans-serif;font-size:clamp(72px,10vw,172px);line-height:.82;
+  letter-spacing:.005em;margin:40px 0 28px;text-transform:uppercase}
+.hero-headline em{font-style:normal;color:var(--red);display:block}
+.hero-headline .stroke{-webkit-text-stroke:1.5px var(--bone);color:transparent;display:block}
+.hero-sub{max-width:560px;color:var(--bone-2);font-size:16px;line-height:1.5;margin:0 0 36px}
+.hero-sub strong{color:var(--bone);font-weight:700}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);margin:0 -48px -32px;padding:0}
+.hero-meta div{padding:20px 24px;border-right:1px solid var(--line)}
+.hero-meta div:last-child{border-right:none}
+.hero-meta .k{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--mute);letter-spacing:.15em;
+  text-transform:uppercase;margin-bottom:6px}
+.hero-meta .v{font-family:'Oswald',sans-serif;font-size:32px;line-height:1;letter-spacing:.02em}
+.hero-meta .v em{color:var(--red);font-style:normal}
+
+.hero-right{position:relative;background:var(--ink-2);overflow:hidden}
+.hero-right .ph{position:absolute;inset:0;border:none}
+.hero-right .ph::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,10,10,.2) 0%,rgba(10,10,10,.0) 30%,rgba(10,10,10,.7) 100%)}
+.hero-r-overlay{position:absolute;inset:0;padding:32px;display:flex;flex-direction:column;
+  justify-content:space-between;z-index:3}
+.hero-r-top{display:flex;justify-content:space-between;align-items:flex-start}
+.hero-r-bottom{text-align:right}
+.hero-r-big{font-family:'Oswald',sans-serif;font-size:clamp(64px,7vw,128px);line-height:.85;
+  letter-spacing:.01em;color:var(--bone);text-align:right}
+.hero-r-big em{font-style:normal;color:var(--red)}
+.hero-r-big .stroke{-webkit-text-stroke:1.5px var(--bone-2);color:transparent}
+.hero-r-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute-2);letter-spacing:.15em;
+  text-transform:uppercase;margin-top:16px}
+
+/* Fight silhouette — simple shape */
+.fight-silhouette{position:absolute;inset:auto 0 -5% 0;height:75%;width:100%;z-index:2;
+  background:radial-gradient(ellipse at 50% 100%,rgba(220,38,38,.18) 0%,transparent 55%)}
+.fight-silhouette::before{content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 35% 40% at 35% 70%,rgba(0,0,0,.55) 30%,transparent 70%),
+    radial-gradient(ellipse 30% 45% at 68% 65%,rgba(0,0,0,.5) 30%,transparent 70%)}
+
+/* Crosshair corners on hero */
+.xhair{position:absolute;width:24px;height:24px;z-index:4}
+.xhair::before,.xhair::after{content:'';position:absolute;background:var(--red)}
+.xhair::before{left:0;right:0;top:11px;height:2px}
+.xhair::after{top:0;bottom:0;left:11px;width:2px}
+.xhair.tl{top:20px;left:20px}.xhair.tr{top:20px;right:20px}
+.xhair.bl{bottom:20px;left:20px}.xhair.br{bottom:20px;right:20px}
+
+/* Live ticker */
+.ticker{position:absolute;left:48px;bottom:180px;display:flex;align-items:center;gap:10px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute-2);letter-spacing:.12em;
+  text-transform:uppercase;z-index:5}
+.ticker .dot{width:8px;height:8px;background:var(--red);border-radius:50%;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ============ DISCIPLINES ============ */
+.disciplines{padding:0 0 0;background:var(--ink)}
+.disc-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.disc{padding:56px 40px;border-right:1px solid var(--line);position:relative;min-height:520px;
+  display:flex;flex-direction:column;justify-content:space-between;transition:background .3s;cursor:default}
+.disc:last-child{border-right:none}
+.disc:hover{background:var(--ink-2)}
+.disc-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.15em}
+.disc-title{font-family:'Oswald',sans-serif;font-size:80px;line-height:.88;letter-spacing:.01em;margin:24px 0 16px}
+.disc-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute);letter-spacing:.15em;
+  text-transform:uppercase;margin-bottom:20px}
+.disc-body{color:var(--bone-2);font-size:14px;line-height:1.55;max-width:360px}
+.disc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:24px}
+.disc-tags .t{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;padding:5px 9px;border:1px solid var(--line);color:var(--mute-2)}
+.disc-arrow{position:absolute;top:48px;right:40px;font-family:'Oswald',sans-serif;font-size:36px;
+  color:var(--line-2);transition:color .2s,transform .2s}
+.disc:hover .disc-arrow{color:var(--red);transform:translateX(6px)}
+
+/* ============ ABOUT ============ */
+.about{padding:0;background:var(--ink)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.about-l{padding:88px 48px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.about-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:24px}
+.about-tag::before{content:'◢ ';color:var(--red)}
+.about-headline{font-family:'Oswald',sans-serif;font-size:84px;line-height:.88;letter-spacing:.01em;margin:0 0 28px}
+.about-headline em{color:var(--red);font-style:normal}
+.about-body{color:var(--bone-2);font-size:16px;line-height:1.6;margin-bottom:24px;max-width:520px}
+.about-body strong{color:var(--bone);font-weight:700}
+.about-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:40px}
+.about-stats div{padding:24px 16px 0 0}
+.about-stats .n{font-family:'Oswald',sans-serif;font-size:56px;line-height:1;color:var(--bone)}
+.about-stats .n em{color:var(--red);font-style:normal}
+.about-stats .l{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mute);letter-spacing:.12em;
+  text-transform:uppercase;margin-top:6px}
+
+.about-r{position:relative;min-height:680px;background:var(--ink-2);display:grid;
+  grid-template-rows:1fr 1fr;grid-template-columns:1fr 1fr}
+.about-r .ph-cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
+.about-r .ph-cell:nth-child(2){border-right:none}
+.about-r .ph-cell:nth-child(3){border-bottom:none}
+.about-r .ph-cell:nth-child(4){border-right:none;border-bottom:none}
+.about-r .big{grid-column:1/3;grid-row:1/2;border-right:none}
+
+/* ============ SCHEDULE ============ */
+.schedule{background:var(--bone);color:var(--ink);padding:0}
+.sched-head{display:grid;grid-template-columns:1fr auto;padding:48px;border-bottom:1px solid #d4d4d4;align-items:end}
+.sched-head .t1{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:16px}
+.sched-head h2{font-family:'Oswald',sans-serif;font-size:108px;line-height:.88;letter-spacing:.01em;margin:0}
+.sched-head h2 em{color:var(--red);font-style:normal}
+.sched-head .btn{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+.sched-head .btn:hover{background:var(--red);border-color:var(--red)}
+.sched-table{display:grid;grid-template-columns:80px 180px 1fr 200px 140px;border-bottom:1px solid #d4d4d4;
+  font-size:14px;align-items:center}
+.sched-table.head{background:#e7e5e0;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.15em;text-transform:uppercase;color:#525252}
+.sched-table>div{padding:22px 20px;border-right:1px solid #d4d4d4}
+.sched-table>div:last-child{border-right:none}
+.sched-table .day{font-family:'Oswald',sans-serif;font-size:28px;line-height:1;letter-spacing:.02em}
+.sched-table .loc{font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:13px}
+.sched-table .loc small{display:block;font-family:'JetBrains Mono',monospace;font-weight:400;
+  text-transform:uppercase;color:#737373;font-size:10px;letter-spacing:.12em;margin-top:4px}
+.sched-table .prog{font-weight:600;font-size:15px}
+.sched-table .prog small{display:block;color:#737373;font-weight:400;font-size:12px;margin-top:2px}
+.sched-table .time{font-family:'Oswald',sans-serif;font-size:24px;letter-spacing:.02em}
+.sched-table .group{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--red);font-weight:500}
+
+/* ============ WHY ============ */
+.why{background:var(--ink);padding:0}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.why-cell{padding:48px 32px 40px;border-right:1px solid var(--line);min-height:340px;
+  display:flex;flex-direction:column;justify-content:space-between;position:relative;transition:background .25s}
+.why-cell:last-child{border-right:none}
+.why-cell:hover{background:var(--ink-2)}
+.why-cell .n{font-family:'Oswald',sans-serif;font-size:72px;line-height:1;color:var(--line-2);
+  letter-spacing:.01em;margin-bottom:auto}
+.why-cell:hover .n{color:var(--red)}
+.why-cell h3{font-family:'Archivo',sans-serif;font-weight:800;font-stretch:80%;text-transform:uppercase;
+  letter-spacing:.02em;font-size:20px;line-height:1.1;margin:0 0 12px}
+.why-cell p{color:var(--mute-2);font-size:13px;line-height:1.55;margin:0}
+
+/* ============ CTA BANNER ============ */
+.cta-banner{background:var(--red);color:var(--bone);padding:0;border-bottom:1px solid var(--line)}
+.cta-grid{display:grid;grid-template-columns:1fr auto;padding:72px 48px;align-items:center;gap:48px;
+  max-width:1440px;margin:0 auto}
+.cta-grid h2{font-family:'Oswald',sans-serif;font-size:clamp(56px,6vw,96px);line-height:.88;
+  letter-spacing:.01em;margin:0}
+.cta-grid h2 span{color:#fecaca}
+.cta-grid .sub{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.15em;
+  text-transform:uppercase;margin-top:16px;color:#fecaca}
+.cta-grid .btn{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+.cta-grid .btn:hover{background:var(--bone);border-color:var(--bone);color:var(--ink)}
+
+/* ============ COACH ============ */
+.coach{background:var(--ink);padding:0}
+.coach-grid{display:grid;grid-template-columns:1fr 1.2fr;border-bottom:1px solid var(--line)}
+.coach-l{position:relative;min-height:640px;border-right:1px solid var(--line);background:var(--ink-2)}
+.coach-l .ph{position:absolute;inset:0;border:none}
+.coach-l .tag{position:absolute;top:24px;left:24px;z-index:3}
+.coach-l .badge{position:absolute;bottom:24px;left:24px;right:24px;z-index:3;
+  background:var(--ink);padding:16px 20px;border:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.coach-l .badge .k{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mute);letter-spacing:.15em}
+.coach-l .badge .v{font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:.02em}
+.coach-r{padding:72px 48px}
+.coach-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:20px}
+.coach-name{font-family:'Oswald',sans-serif;font-size:120px;line-height:.88;letter-spacing:.01em;margin:0 0 24px}
+.coach-role{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--red);font-size:14px;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.coach-body{color:var(--bone-2);font-size:15px;line-height:1.6;max-width:560px;margin:0 0 40px}
+.certs{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.cert{display:grid;grid-template-columns:60px 1fr auto;gap:24px;padding:20px 0;
+  border-bottom:1px solid var(--line);align-items:center}
+.cert .idx{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.15em}
+.cert .name{font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.03em}
+.cert .name small{display:block;font-weight:400;text-transform:none;letter-spacing:0;
+  color:var(--mute);font-size:12px;margin-top:4px;font-family:'Archivo',sans-serif}
+.cert .org{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--mute-2)}
+
+/* ============ LOCATIONS ============ */
+.locations{background:var(--ink);padding:0}
+.loc-head{padding:48px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.loc-head .tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:14px}
+.loc-head h2{font-family:'Oswald',sans-serif;font-size:96px;line-height:.88;letter-spacing:.01em;margin:0}
+.loc-head p{color:var(--bone-2);font-size:15px;line-height:1.55;max-width:440px;margin:0}
+.loc-grid{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line)}
+.loc-card{padding:0;border-right:1px solid var(--line);min-height:440px;position:relative;
+  display:flex;flex-direction:column;transition:background .25s;cursor:default}
+.loc-card:last-child{border-right:none}
+.loc-card:hover{background:var(--ink-2)}
+.loc-card .ph{height:220px;border:none;border-bottom:1px solid var(--line);position:relative}
+.loc-card-body{padding:28px 32px;flex:1;display:flex;flex-direction:column}
+.loc-card .nm{font-family:'Oswald',sans-serif;font-size:40px;line-height:.9;letter-spacing:.02em;margin:0 0 6px}
+.loc-card .addr{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px}
+.loc-card .slot{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:13px}
+.loc-card .slot:last-of-type{border-bottom:1px solid var(--line)}
+.loc-card .slot strong{color:var(--bone);font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:12px}
+.loc-card .slot span{font-family:'JetBrains Mono',monospace;color:var(--bone-2);font-size:11px;letter-spacing:.1em}
+.loc-card .num{position:absolute;top:20px;right:24px;font-family:'Oswald',sans-serif;
+  font-size:48px;color:var(--bone);line-height:1;z-index:3}
+.loc-card .num em{color:var(--red);font-style:normal}
+
+/* ============ GALLERY STRIP ============ */
+.gallery{background:var(--ink);padding:0;border-bottom:1px solid var(--line)}
+.gallery-head{padding:48px;display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--line)}
+.gallery-head h2{font-family:'Oswald',sans-serif;font-size:72px;line-height:.88;margin:0;letter-spacing:.01em}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;grid-template-rows:200px 200px;gap:0}
+.gallery-grid .ph{border:none;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gallery-grid .ph:nth-child(4n){border-right:none}
+.gallery-grid .ph:nth-last-child(-n+4){border-bottom:none}
+
+/* ============ FINAL CTA ============ */
+.final{background:var(--ink);padding:0}
+.final-inner{padding:120px 48px;text-align:center;max-width:1440px;margin:0 auto;position:relative}
+.final-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--red);letter-spacing:.25em;
+  text-transform:uppercase;margin-bottom:24px}
+.final h2{font-family:'Oswald',sans-serif;font-size:clamp(84px,12vw,200px);line-height:.85;
+  letter-spacing:.01em;margin:0 0 40px}
+.final h2 .stroke{-webkit-text-stroke:1.5px var(--bone);color:transparent;display:block}
+.final h2 em{color:var(--red);font-style:normal}
+.final p{color:var(--bone-2);font-size:16px;max-width:560px;margin:0 auto 40px}
+
+/* Striped caution border */
+.caution{height:22px;background:
+  repeating-linear-gradient(135deg,var(--red) 0 22px,var(--ink) 22px 44px);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* Responsive */
+@media (max-width:1100px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-left{border-right:none;border-bottom:1px solid var(--line)}
+  .hero-right{min-height:420px}
+  .disc-grid{grid-template-columns:1fr;border-top:none}
+  .disc{border-right:none;border-bottom:1px solid var(--line);min-height:auto}
+  .about-grid,.coach-grid{grid-template-columns:1fr}
+  .about-l{padding:48px 24px;border-right:none;border-bottom:1px solid var(--line)}
+  .about-r{min-height:400px}
+  .sched-table{grid-template-columns:60px 120px 1fr 80px}
+  .sched-table .time{display:none}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-cell:nth-child(2n){border-right:none}
+  .loc-grid{grid-template-columns:1fr}
+  .loc-card{border-right:none;border-bottom:1px solid var(--line)}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .cta-grid{grid-template-columns:1fr;padding:48px 24px}
+  .coach-r{padding:48px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="mark">V</div>
+      <div class="nav-brand-text">Victoria<br><small>CS · MARAMUREȘ · EST. 2021</small></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#" class="on">Prima pagină</a>
+      <a href="Antrenamente.html">Antrenamente</a>
+      <a href="#">Galerie</a>
+      <a href="#">Competiții</a>
+      <a href="#">Echipa</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="phone">+40 734 411 115</span>
+      <a class="btn btn-red" href="#cta">Sesiune probă<span class="arr"></span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="section-meta" style="border-bottom:none">
+    <span class="num">◆ 00 / HOME</span>
+    <span>CLUB SPORTIV VICTORIA MARAMUREȘ · KICKBOX · MUAY THAI · BJJ · FITNESS FUNCȚIONAL</span>
+    <span>BAIA MARE · 47.66°N 23.58°E</span>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-top">
+        <span class="chip chip-red">● LIVE · SESIUNI PROBĂ</span>
+        <span class="chip">AFILIAT FRFK</span>
+        <span class="chip">EST. 2021</span>
+      </div>
+
+      <h1 class="hero-headline">
+        <span>FIGHT</span>
+        <em>HARDER.</em>
+        <span class="stroke">TRAIN SMARTER.</span>
+      </h1>
+      <p class="hero-sub">
+        <strong>Clubul Sportiv Victoria Maramureș</strong> antrenează sportivi de performanță și oameni obișnuiți în Baia Mare, Poienile de sub Munte și Petrova. Kickboxing, Muay Thai, BJJ și fitness funcțional — pentru copii și adulți. Disciplină. Respect. Rezultate.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-red" href="#cta">Rezervă sesiune gratuită<span class="arr"></span></a>
+        <a class="btn btn-ghost" href="#orar">Vezi orarul</a>
+      </div>
+
+      <div class="hero-meta">
+        <div><div class="k">Ani activi</div><div class="v">05<em>+</em></div></div>
+        <div><div class="k">Sportivi</div><div class="v">100<em>+</em></div></div>
+        <div><div class="k">Locații</div><div class="v">03</div></div>
+        <div><div class="k">Medalii</div><div class="v">100<em>+</em></div></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="ph"><span class="ph-label">[ hero-01 · ring-scene.jpg ]</span></div>
+      <div class="fight-silhouette"></div>
+      <div class="xhair tl"></div><div class="xhair tr"></div>
+      <div class="xhair bl"></div><div class="xhair br"></div>
+      <div class="hero-r-overlay">
+        <div class="hero-r-top">
+          <span class="chip chip-bone">ROUND 01</span>
+          <span class="chip">REC · 00:03:47</span>
+        </div>
+        <div class="hero-r-bottom">
+          <div class="hero-r-big">
+            <span class="stroke">FREESTYLE</span>
+            <span>KICKBOX</span>
+            <em>MUAY · BJJ</em>
+          </div>
+          <div class="hero-r-sub">MODERN TRAINING · ELITE COACHING · COMMUNITY</div>
+        </div>
+      </div>
+      <div class="ticker"><span class="dot"></span>TRANSMISIUNE · FIT · BAIA MARE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>FREESTYLE KICKBOXING</span><span class="dot">◆</span>
+    <span>MUAY THAI</span><span class="dot">◆</span>
+    <span>BRAZILIAN JIU-JITSU</span><span class="dot">◆</span>
+    <span>FITNESS FUNCȚIONAL</span><span class="dot">◆</span>
+    <span>GRUPE COPII · ADULȚI · JUNIORI</span><span class="dot">◆</span>
+    <span>BAIA MARE · PETROVA · POIENILE DE SUB MUNTE</span><span class="dot">◆</span>
+    <span>FREESTYLE KICKBOXING</span><span class="dot">◆</span>
+    <span>MUAY THAI</span><span class="dot">◆</span>
+    <span>BRAZILIAN JIU-JITSU</span><span class="dot">◆</span>
+    <span>FITNESS FUNCȚIONAL</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- ============ DISCIPLINES ============ -->
+<section class="disciplines">
+  <div class="section-meta">
+    <span class="num">◆ 01 / 07</span>
+    <span>DISCIPLINE · CE ANTRENĂM</span>
+    <span>4 STILURI · 1 ECHIPĂ</span>
+  </div>
+  <div class="disc-grid">
+
+    <article class="disc">
+      <div class="disc-arrow">→</div>
+      <div>
+        <div class="disc-num">01 · STAND-UP</div>
+        <h3 class="disc-title">KICKBOX<br>MUAY THAI</h3>
+        <div class="disc-sub">STRIKING · LOVITURI · FREESTYLE</div>
+        <p class="disc-body">Freestyle kickboxing și Muay Thai — combinația între box, lovituri de picior, genunchi și coate. Construim sportivi care lovesc tare și gândesc clar.</p>
+      </div>
+      <div class="disc-tags">
+        <span class="t">6–12 ani</span><span class="t">13+</span><span class="t">adulți</span><span class="t">competiție</span>
+      </div>
+    </article>
+
+    <article class="disc">
+      <div class="disc-arrow">→</div>
+      <div>
+        <div class="disc-num">02 · GRAPPLING</div>
+        <h3 class="disc-title">BRAZILIAN<br>JIU-JITSU</h3>
+        <div class="disc-sub">GROUND GAME · CONTROL · SUBMISSION</div>
+        <p class="disc-body">Arta pârghiei și a răbdării. BJJ te învață să controlezi, să reziști și să rezolvi problema înainte ca ea să rezolve problema.</p>
+      </div>
+      <div class="disc-tags">
+        <span class="t">juniori</span><span class="t">adulți</span><span class="t">gi + no-gi</span>
+      </div>
+    </article>
+
+    <article class="disc">
+      <div class="disc-arrow">→</div>
+      <div>
+        <div class="disc-num">03 · CONDITIONING</div>
+        <h3 class="disc-title">FITNESS<br>FUNCȚIONAL</h3>
+        <div class="disc-sub">45–60 MIN · FULL BODY · TOATE NIVELURILE</div>
+        <p class="disc-body">Pregătire fizică personalizată — forță, rezistență, agilitate, mobilitate. Pentru toți cei care vor mai mult decât un abonament la sală.</p>
+      </div>
+      <div class="disc-tags">
+        <span class="t">începători</span><span class="t">intermediari</span><span class="t">avansați</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about">
+  <div class="section-meta">
+    <span class="num">◆ 02 / 07</span>
+    <span>DESPRE CLUB · FUNDAMENTE</span>
+    <span>EST. 2021 · FONDATOR IOAN MIHALCA</span>
+  </div>
+  <div class="about-grid">
+    <div class="about-l">
+      <div class="about-tag">Mandat</div>
+      <h2 class="about-headline">Sport de<br><em>performanță.</em><br>Sport pentru<br>toți.</h2>
+      <p class="about-body">A început ca un club mic al pasionaților de arte marțiale. Astăzi este o comunitate — copii, juniori și adulți antrenați de oameni certificați, afiliați la <strong>Federația Română de Freestyle Kickboxing</strong>. Organizăm sesiuni de probă gratuite în fiecare zi.</p>
+      <a class="btn" href="#">Citește manifestul<span class="arr"></span></a>
+
+      <div class="about-stats">
+        <div><div class="n">05<em>+</em></div><div class="l">Ani · activ</div></div>
+        <div><div class="n">100<em>+</em></div><div class="l">Sportivi · activi</div></div>
+        <div><div class="n">03</div><div class="l">Locații · MM</div></div>
+        <div><div class="n">100<em>+</em></div><div class="l">Medalii · 2021→</div></div>
+      </div>
+    </div>
+    <div class="about-r">
+      <div class="ph-cell big ph">
+        <span class="ph-label">[ about-01 · team-group.jpg ]</span>
+        <span class="ph-title">ECHIPA · 2025</span>
+      </div>
+      <div class="ph-cell ph ph-red">
+        <span class="ph-label" style="color:#fecaca">[ about-02 · medal-wall.jpg ]</span>
+        <span class="ph-title">MEDALII</span>
+      </div>
+      <div class="ph-cell ph">
+        <span class="ph-label">[ about-03 · ring-training.jpg ]</span>
+        <span class="ph-title">ANTRENAMENT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section class="schedule" id="orar">
+  <div class="section-meta" style="background:var(--bone);color:#525252;border-bottom:1px solid #d4d4d4">
+    <span class="num" style="color:var(--red)">◆ 03 / 07</span>
+    <span>ORAR SĂPTĂMÂNAL · SEZON 2025/26</span>
+    <span>ACTUALIZAT · 15 SEP 2025</span>
+  </div>
+  <div class="sched-head">
+    <div>
+      <div class="t1">Program</div>
+      <h2>Orar<br><em>antrenamente.</em></h2>
+    </div>
+    <a class="btn" href="#cta">Programează o probă<span class="arr"></span></a>
+  </div>
+
+  <div class="sched-table head">
+    <div>#</div><div>Zi</div><div>Program</div><div>Locație</div><div>Grupa</div>
+  </div>
+
+  <div class="sched-table">
+    <div class="day" style="color:var(--red)">01</div>
+    <div class="day">LUNI</div>
+    <div class="prog">Freestyle Kickboxing · copii<small>6–12 ani · striking de bază · coordonare · joc</small></div>
+    <div class="loc">Baia Mare<small>str. vasile lucaciu</small></div>
+    <div class="group">18:30 → 19:30</div>
+  </div>
+  <div class="sched-table">
+    <div class="day" style="color:var(--red)">02</div>
+    <div class="day">LUNI</div>
+    <div class="prog">Kickbox & Muay Thai · adulți + juniori mari<small>13+ · tehnică · sparring controlat · condiție</small></div>
+    <div class="loc">Baia Mare<small>str. vasile lucaciu</small></div>
+    <div class="group">19:35 → 21:00</div>
+  </div>
+  <div class="sched-table">
+    <div class="day" style="color:var(--red)">03</div>
+    <div class="day">MIERCURI</div>
+    <div class="prog">Freestyle Kickboxing · copii<small>6–12 ani · repetiție · drills · mănuși</small></div>
+    <div class="loc">Baia Mare<small>str. vasile lucaciu</small></div>
+    <div class="group">18:30 → 19:30</div>
+  </div>
+  <div class="sched-table">
+    <div class="day" style="color:var(--red)">04</div>
+    <div class="day">MIERCURI</div>
+    <div class="prog">Kickbox & Muay Thai · adulți + juniori mari<small>13+ · pregătire competițională · rounds</small></div>
+    <div class="loc">Baia Mare<small>str. vasile lucaciu</small></div>
+    <div class="group">19:35 → 21:00</div>
+  </div>
+  <div class="sched-table">
+    <div class="day" style="color:var(--red)">05</div>
+    <div class="day">VINERI</div>
+    <div class="prog">Grupă mixtă · toate vârstele<small>copii + adulți · striking · condiție · joc</small></div>
+    <div class="loc">Petrova<small>sala de sport</small></div>
+    <div class="group">18:30 → 20:00</div>
+  </div>
+  <div class="sched-table" style="border-bottom:none">
+    <div class="day" style="color:var(--red)">06</div>
+    <div class="day">SÂMBĂTĂ</div>
+    <div class="prog">Grupă mixtă · toate vârstele<small>copii + adulți · striking · condiție · joc</small></div>
+    <div class="loc">Poienile de sub Munte<small>sala de sport</small></div>
+    <div class="group">13:00 → 14:30</div>
+  </div>
+</section>
+
+<!-- Caution stripe -->
+<div class="caution"></div>
+
+<!-- ============ COACH ============ -->
+<section class="coach">
+  <div class="section-meta">
+    <span class="num">◆ 04 / 07</span>
+    <span>ANTRENOR PRINCIPAL · FONDATOR</span>
+    <span>PROFIL · 01 / 01</span>
+  </div>
+  <div class="coach-grid">
+    <div class="coach-l">
+      <div class="ph"><span class="ph-label">[ coach-01 · ioan-mihalca.jpg ]</span></div>
+      <span class="chip chip-red tag">ANTRENOR · FONDATOR</span>
+      <div class="badge">
+        <div><div class="k">Experiență</div><div class="v">10+ ani</div></div>
+        <div><div class="k">Centură</div><div class="v">2 DAN · FRFK</div></div>
+      </div>
+    </div>
+    <div class="coach-r">
+      <div class="coach-tag">Profil</div>
+      <h2 class="coach-name">IOAN<br>MIHALCA.</h2>
+      <div class="coach-role">Antrenor principal · Fondator CS Victoria Maramureș</div>
+      <p class="coach-body">Fondator și antrenor principal, cu peste 10 ani în arte marțiale și fitness funcțional. A construit clubul de la zero în 2021 pentru a promova sportul de performanță și un stil de viață sănătos în Maramureș.</p>
+
+      <div class="certs">
+        <div class="cert">
+          <div class="idx">C · 01</div>
+          <div class="name">Freestyle Kickboxing · 2 Dan<small>Centură Neagră · atestare antrenor</small></div>
+          <div class="org">FRFK · România</div>
+        </div>
+        <div class="cert">
+          <div class="idx">C · 02</div>
+          <div class="name">Instructor sportiv<small>Pregătire fizică · arte marțiale</small></div>
+          <div class="org">Asoc. Int. Jissen Do</div>
+        </div>
+        <div class="cert">
+          <div class="idx">C · 03</div>
+          <div class="name">Fitness & functional fitness<small>Programare · evaluare · antrenament personalizat</small></div>
+          <div class="org">Fitness Education School</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="why">
+  <div class="section-meta">
+    <span class="num">◆ 05 / 07</span>
+    <span>DE CE VICTORIA · METODA</span>
+    <span>04 PRINCIPII · 0 SCURTĂTURI</span>
+  </div>
+  <div class="why-grid">
+    <div class="why-cell">
+      <div class="n">01</div>
+      <div>
+        <h3>Pregătiți temeinic.<br>Implicați deplin.</h3>
+        <p>Pregătirea noastră temeinică, combinată cu pasiunea și dăruirea, se reflectă în fiecare sesiune de antrenament.</p>
+      </div>
+    </div>
+    <div class="why-cell">
+      <div class="n">02</div>
+      <div>
+        <h3>Comunitate înainte<br>de competiție.</h3>
+        <p>Respect reciproc, atmosferă motivantă. Toți sunt bineveniți — de la primul antrenament la prima centură.</p>
+      </div>
+    </div>
+    <div class="why-cell">
+      <div class="n">03</div>
+      <div>
+        <h3>Sală și echipament<br>dedicate.</h3>
+        <p>Sală de kickboxing în Baia Mare, special amenajată, cu toate echipamentele necesare unui antrenament serios.</p>
+      </div>
+    </div>
+    <div class="why-cell">
+      <div class="n">04</div>
+      <div>
+        <h3>Progres constant.<br>Dezvoltare reală.</h3>
+        <p>Nu doar fizic: încredere, disciplină, focus. Construim sportivi și oameni — cu rigoare, nu cu slogane.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="cta-banner" id="cta">
+  <div class="cta-grid">
+    <div>
+      <h2>Sesiune de probă —<br><span>gratuită, oricând.</span></h2>
+      <div class="sub">Organizăm sesiuni de probă gratuite în fiecare zi · fără abonament · fără obligații</div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="tel:+40734411115">Sună · 0734 411 115<span class="arr"></span></a>
+      <a class="btn" style="background:transparent;border-color:var(--bone);color:var(--bone)" href="#">Formular contact</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATIONS ============ -->
+<section class="locations">
+  <div class="section-meta">
+    <span class="num">◆ 06 / 07</span>
+    <span>LOCAȚII · UNDE NE GĂSEȘTI</span>
+    <span>MARAMUREȘ · ROMÂNIA</span>
+  </div>
+  <div class="loc-head">
+    <div>
+      <div class="tag">Rețeaua clubului</div>
+      <h2>3 săli.<br>1 federație.</h2>
+    </div>
+    <p>Suntem în Baia Mare pentru antrenament serios și în Petrova + Poienile de sub Munte pentru a duce sportul acolo unde e nevoie. Fără compromisuri pe calitatea pregătirii.</p>
+  </div>
+  <div class="loc-grid">
+    <article class="loc-card">
+      <div class="num"><em>◆</em> 01</div>
+      <div class="ph"><span class="ph-label">[ loc-baia-mare.jpg ]</span><span class="ph-title">BAIA MARE</span></div>
+      <div class="loc-card-body">
+        <h3 class="nm">Baia Mare</h3>
+        <div class="addr">◆ str. vasile lucaciu · sala principală</div>
+        <div class="slot"><strong>Luni · Miercuri · 18:30</strong><span>COPII</span></div>
+        <div class="slot"><strong>Luni · Miercuri · 19:35</strong><span>ADULȚI</span></div>
+      </div>
+    </article>
+    <article class="loc-card">
+      <div class="num"><em>◆</em> 02</div>
+      <div class="ph"><span class="ph-label">[ loc-petrova.jpg ]</span><span class="ph-title">PETROVA</span></div>
+      <div class="loc-card-body">
+        <h3 class="nm">Petrova</h3>
+        <div class="addr">◆ sala de sport · com. petrova, mm</div>
+        <div class="slot"><strong>Vineri · 18:30</strong><span>MIXT</span></div>
+        <div class="slot"><strong>Toate vârstele</strong><span>1:30 H</span></div>
+      </div>
+    </article>
+    <article class="loc-card">
+      <div class="num"><em>◆</em> 03</div>
+      <div class="ph"><span class="ph-label">[ loc-poienile.jpg ]</span><span class="ph-title">POIENILE DE SUB MUNTE</span></div>
+      <div class="loc-card-body">
+        <h3 class="nm">Poienile de sub Munte</h3>
+        <div class="addr">◆ sala de sport · com. poienile, mm</div>
+        <div class="slot"><strong>Sâmbătă · 13:00</strong><span>MIXT</span></div>
+        <div class="slot"><strong>Toate vârstele</strong><span>1:30 H</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="gallery">
+  <div class="gallery-head">
+    <div>
+      <div class="mono" style="font-size:11px;color:var(--red);letter-spacing:.2em;margin-bottom:10px">◆ 07 / 07 · GALERIE</div>
+      <h2>Din sală.<br>Din ring.</h2>
+    </div>
+    <a class="btn btn-ghost" href="#">Vezi toată galeria<span class="arr"></span></a>
+  </div>
+  <div class="gallery-grid">
+    <div class="ph"><span class="ph-label">[ ring-01 · striking.jpg ]</span><span class="ph-title">STRIKING</span></div>
+    <div class="ph"><span class="ph-label">[ copii-01 · grupa.jpg ]</span></div>
+    <div class="ph ph-red"><span class="ph-label" style="color:#fecaca">[ podium-2025.jpg ]</span><span class="ph-title">PODIUM</span></div>
+    <div class="ph"><span class="ph-label">[ bjj-01 · rolling.jpg ]</span><span class="ph-title">BJJ ROLL</span></div>
+    <div class="ph"><span class="ph-label">[ coach-01.jpg ]</span></div>
+    <div class="ph"><span class="ph-label">[ gala-02 · cortez.jpg ]</span><span class="ph-title">GALA</span></div>
+    <div class="ph"><span class="ph-label">[ team-03 · outdoor.jpg ]</span></div>
+    <div class="ph"><span class="ph-label">[ functional-01.jpg ]</span><span class="ph-title">FUNCȚIONAL</span></div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="final">
+  <div class="final-inner">
+    <div class="final-tag">◢ JOIN · VICTORIA MM · 2025</div>
+    <h2>
+      <span class="stroke">ÎNCEPE</span>
+      <em>ACUM.</em>
+    </h2>
+    <p>Prima ședință e gratuită. Vino, încearcă, vezi dacă-ți place. Dacă da, rămâi. Dacă nu, ai pierdut o oră și ai câștigat o poveste.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-red" href="#">Rezervă sesiune probă<span class="arr"></span></a>
+      <a class="btn btn-ghost" href="Antrenamente.html">Vezi antrenamentele</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-big">CS<br>VICTORIA <em>MM</em></div>
+      <p style="color:var(--mute-2);font-size:13px;max-width:380px;margin:0 0 20px">Club Sportiv Victoria Maramureș · înființat 2021 · afiliat Federația Română de Freestyle Kickboxing. Baia Mare · Petrova · Poienile de sub Munte.</p>
+      <div style="display:flex;gap:10px">
+        <span class="chip">TT</span><span class="chip">YT</span><span class="chip">FB</span><span class="chip">IG</span>
+      </div>
+    </div>
+    <div>
+      <h4>Navigare</h4>
+      <ul>
+        <li><a href="#">Prima pagină</a></li>
+        <li><a href="Antrenamente.html">Antrenamente</a></li>
+        <li><a href="#">Galerie</a></li>
+        <li><a href="#">Competiții</a></li>
+        <li><a href="#">Echipa</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Locații</h4>
+      <ul>
+        <li><a href="#">Baia Mare</a></li>
+        <li><a href="#">Petrova</a></li>
+        <li><a href="#">Poienile de sub Munte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+40734411115">+40 734 411 115</a></li>
+        <li><a href="mailto:contact@csvictoriamm.ro">contact@csvictoriamm.ro</a></li>
+        <li><a href="#">Formular contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>◆ CS VICTORIA MM · 2021 — 2026 · MARAMUREȘ</span>
+    <span>DESIGN · BRUTALIST-SPORT · V.01</span>
+  </div>
+</footer>
+
+<script>
+// rise-on-scroll
+const io = new IntersectionObserver((es)=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('in')),{threshold:.12});
+document.querySelectorAll('.rise').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

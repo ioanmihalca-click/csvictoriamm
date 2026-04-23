@@ -1,0 +1,147 @@
+/* ============================================================
+   CS VICTORIA MARAMUREȘ — BRUTALIST-SPORT SYSTEM
+   ============================================================ */
+
+:root{
+  --ink:#0a0a0a;
+  --ink-2:#141414;
+  --ink-3:#1a1a1a;
+  --line:#262626;
+  --line-2:#333;
+  --mute:#737373;
+  --mute-2:#a3a3a3;
+  --bone:#fafaf7;
+  --bone-2:#e7e5e0;
+  --red:#dc2626;
+  --red-2:#b91c1c;
+  --red-3:#7f1d1d;
+  --yellow:#fde047;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--ink);color:var(--bone);
+  font-family:'Archivo',system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+.mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.08em}
+.display{font-family:'Oswald',Impact,sans-serif;font-weight:400;letter-spacing:.01em;line-height:.88;text-transform:uppercase}
+.cond{font-family:'Archivo',sans-serif;font-stretch:75%;font-weight:900;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+
+/* ------------ UTILITY ------------ */
+.wrap{max-width:1440px;margin:0 auto;padding:0 32px}
+.hairline{border-top:1px solid var(--line)}
+.hairline-b{border-bottom:1px solid var(--line)}
+.hairline-x{border-left:1px solid var(--line);border-right:1px solid var(--line)}
+
+/* Section chrome */
+.section-meta{display:grid;grid-template-columns:80px 1fr auto;gap:24px;align-items:center;
+  padding:16px 32px;border-bottom:1px solid var(--line);font-size:11px;color:var(--mute)}
+.section-meta .num{color:var(--red);font-weight:700}
+
+/* ------------ MARQUEE ------------ */
+.marquee{overflow:hidden;white-space:nowrap;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--ink);padding:14px 0}
+.marquee-track{display:inline-flex;gap:48px;animation:marq 40s linear infinite;padding-left:48px}
+.marquee-track span{font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:.06em;color:var(--bone)}
+.marquee-track .dot{color:var(--red);font-family:system-ui}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ------------ BUTTON ------------ */
+.btn{display:inline-flex;align-items:center;gap:12px;padding:18px 28px;border:1px solid var(--bone);
+  background:var(--bone);color:var(--ink);font-family:'Archivo',sans-serif;font-weight:800;
+  text-transform:uppercase;letter-spacing:.08em;font-size:13px;transition:all .15s;cursor:pointer}
+.btn:hover{background:var(--red);border-color:var(--red);color:var(--bone)}
+.btn-red{background:var(--red);border-color:var(--red);color:var(--bone)}
+.btn-red:hover{background:var(--bone);border-color:var(--bone);color:var(--ink)}
+.btn-ghost{background:transparent;border-color:var(--line-2);color:var(--bone)}
+.btn-ghost:hover{background:var(--bone);border-color:var(--bone);color:var(--ink)}
+.btn .arr{width:18px;height:10px;position:relative}
+.btn .arr::after{content:'';position:absolute;inset:0;border-top:1px solid currentColor;border-right:1px solid currentColor;
+  transform:rotate(45deg);width:8px;height:8px;right:0;top:1px}
+.btn .arr::before{content:'';position:absolute;left:0;top:50%;width:18px;border-top:1px solid currentColor}
+
+/* ------------ CHIP ------------ */
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--line);
+  font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;
+  color:var(--mute-2);background:var(--ink-2)}
+.chip::before{content:'';width:6px;height:6px;background:var(--red);display:block}
+.chip-red{background:var(--red);border-color:var(--red);color:var(--bone)}
+.chip-red::before{background:var(--bone)}
+.chip-bone{background:var(--bone);border-color:var(--bone);color:var(--ink)}
+.chip-bone::before{background:var(--red)}
+
+/* ------------ NAV ------------ */
+.nav{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.nav-inner{max-width:1440px;margin:0 auto;padding:0 32px;display:grid;
+  grid-template-columns:auto 1fr auto;gap:32px;align-items:center;height:72px}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-brand .mark{width:40px;height:40px;border:1.5px solid var(--bone);display:grid;place-items:center;
+  font-family:'Oswald',sans-serif;font-size:22px;line-height:1;position:relative}
+.nav-brand .mark::after{content:'';position:absolute;inset:-4px;border:1px solid var(--red);opacity:.0}
+.nav-brand:hover .mark::after{opacity:.8}
+.nav-brand-text{font-family:'Oswald',sans-serif;font-size:18px;letter-spacing:.04em;line-height:1}
+.nav-brand-text small{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--mute);
+  letter-spacing:.15em;margin-top:2px}
+.nav-links{display:flex;gap:4px;justify-content:center}
+.nav-links a{padding:8px 14px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--bone-2);font-weight:700;font-family:'Archivo',sans-serif;position:relative}
+.nav-links a:hover{color:var(--bone)}
+.nav-links a.on{color:var(--red)}
+.nav-links a.on::before{content:'';position:absolute;left:14px;right:14px;bottom:0;height:2px;background:var(--red)}
+.nav-cta{display:flex;gap:8px;align-items:center}
+.nav-cta .phone{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--mute-2);
+  letter-spacing:.05em;padding-right:16px;border-right:1px solid var(--line);white-space:nowrap}
+.nav-cta .btn{padding:10px 18px;font-size:11px}
+
+/* ------------ FOOTER ------------ */
+footer{border-top:1px solid var(--line);background:var(--ink);margin-top:80px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding:64px 32px 40px;
+  max-width:1440px;margin:0 auto;border-bottom:1px solid var(--line)}
+.foot-grid h4{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;
+  color:var(--mute);text-transform:uppercase;margin:0 0 16px;font-weight:400}
+.foot-grid ul{list-style:none;padding:0;margin:0}
+.foot-grid li{margin:8px 0}
+.foot-grid li a{color:var(--bone-2);font-size:14px}
+.foot-grid li a:hover{color:var(--red)}
+.foot-big{font-family:'Oswald',sans-serif;font-size:56px;line-height:.9;letter-spacing:.01em;color:var(--bone);margin-bottom:18px}
+.foot-big em{color:var(--red);font-style:normal}
+.foot-bottom{max-width:1440px;margin:0 auto;padding:20px 32px;display:flex;
+  justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+
+/* ------------ PLACEHOLDERS ------------ */
+/* Diagonal stripe placeholder for imagery */
+.ph{position:relative;background:var(--ink-2);border:1px solid var(--line);overflow:hidden;color:var(--mute-2)}
+.ph::before{content:'';position:absolute;inset:0;opacity:.55;
+  background-image:repeating-linear-gradient(135deg,transparent 0 18px,rgba(255,255,255,.025) 18px 36px)}
+.ph-label{position:absolute;left:16px;top:16px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--mute);z-index:2}
+.ph-title{position:absolute;left:16px;bottom:16px;right:16px;font-family:'Oswald',sans-serif;
+  font-size:28px;letter-spacing:.02em;line-height:.95;color:var(--bone);z-index:2}
+.ph-red{background:var(--red-3);border-color:var(--red-2)}
+.ph-red::before{background-image:repeating-linear-gradient(135deg,transparent 0 18px,rgba(0,0,0,.12) 18px 36px)}
+
+/* Fight-silhouette decoration drawn with css only — minimal, not a figure */
+.corner-tag{position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--mute);
+  letter-spacing:.15em;text-transform:uppercase}
+
+/* ------------ SCROLL ANIM ------------ */
+.rise{opacity:0;transform:translateY(16px);transition:all .8s cubic-bezier(.2,.7,.2,1)}
+.rise.in{opacity:1;transform:none}
+.rise-d1{transition-delay:.08s}.rise-d2{transition-delay:.16s}.rise-d3{transition-delay:.24s}
+.rise-d4{transition-delay:.32s}.rise-d5{transition-delay:.4s}
+
+/* ------------ RESPONSIVE ------------ */
+@media (max-width:1100px){
+  .nav-links{display:none}
+  .nav-cta .phone{display:none}
+}
+@media (max-width:900px){
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px;padding:48px 24px 32px}
+  .section-meta{padding:14px 24px;grid-template-columns:60px 1fr auto;font-size:10px}
+  .wrap{padding:0 24px}
+}
