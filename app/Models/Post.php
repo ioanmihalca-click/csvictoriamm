@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use App\Services\PostStatsTracker;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
+use Spatie\LaravelMarkdown\MarkdownRenderer;
 
 class Post extends Model
 {
@@ -34,13 +38,21 @@ class Post extends Model
 
     protected $appends = ['read_time'];
 
-    // Automatically generate slug on save
+    // Automatically generate slug on save & invalidate plain-body cache
     protected static function booted()
     {
         parent::boot();
 
         static::saving(function (Post $post) {
             $post->slug = Str::slug($post->title);
+        });
+
+        static::saved(function (Post $post) {
+            Cache::forget("post:{$post->id}:plain-body");
+        });
+
+        static::deleted(function (Post $post) {
+            Cache::forget("post:{$post->id}:plain-body");
         });
     }
 
@@ -53,16 +65,38 @@ class Post extends Model
     // Accessors
     public function getReadTimeAttribute()
     {
-        $words = str_word_count(strip_tags($this->body));
-        $minutes = ceil($words / 200); // Average reading speed: 200 words/minute
+        $words = Str::wordCount(strip_tags($this->body ?? ''));
+        $minutes = max(1, (int) ceil($words / 200)); // Average reading speed: 200 words/minute
 
         return $minutes.' min read';
     }
 
-    public function getSummaryAttribute()
+    /**
+     * First 30 words of the article body as plain text (markdown stripped).
+     * Memoized per request via once() to avoid repeated cache lookups when the
+     * accessor is read multiple times in the same response cycle.
+     */
+    public function getSummaryAttribute(): string
     {
-        // Convert markdown to HTML first, then strip tags
-        return Str::words(strip_tags(Str::markdown($this->body)), 30); // Show the first 30 words as summary
+        return once(fn () => Str::words($this->plain_body, 30));
+    }
+
+    /**
+     * The article body rendered to HTML, then stripped to plain text — used
+     * for OG/Twitter meta tags, JSON-LD `articleBody`, and word counts.
+     * Cached with stale-while-revalidate (fresh 1h, stale up to 24h).
+     */
+    public function getPlainBodyAttribute(): string
+    {
+        return once(fn () => Cache::flexible(
+            "post:{$this->id}:plain-body",
+            [3600, 86400],
+            fn () => trim(strip_tags(
+                app(MarkdownRenderer::class)
+                    ->disableAnchors()
+                    ->toHtml($this->body ?? '')
+            ))
+        ));
     }
 
     public function getUrlAttribute()
@@ -71,21 +105,21 @@ class Post extends Model
     }
 
     // Statistics Methods
-    public function trackView(\Illuminate\Http\Request $request): void
+    public function trackView(Request $request): void
     {
-        $tracker = new \App\Services\PostStatsTracker;
+        $tracker = new PostStatsTracker;
         $tracker->trackView($this, $request);
     }
 
     public function trackShare(string $platform): void
     {
-        $tracker = new \App\Services\PostStatsTracker;
+        $tracker = new PostStatsTracker;
         $tracker->trackShare($this, $platform);
     }
 
     public function getStatsSummary(): array
     {
-        $tracker = new \App\Services\PostStatsTracker;
+        $tracker = new PostStatsTracker;
 
         return $tracker->getStatsSummary($this);
     }

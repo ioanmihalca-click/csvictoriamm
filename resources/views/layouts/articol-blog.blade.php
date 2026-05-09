@@ -33,7 +33,7 @@
     <!-- Open Graph Tags for Social Media Sharing -->
     <meta property="og:title" content="{{ $post->title }}">
     <meta property="og:description"
-        content="{{ $post->meta['description'] ?? Str::limit(strip_tags($post->body), 150) }}">
+        content="{{ $post->meta['description'] ?? Str::limit($post->plain_body, 150) }}">
     <meta property="og:image" content="{{ asset('storage/' . $post->featured_image) }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -52,7 +52,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $post->title }}">
     <meta name="twitter:description"
-        content="{{ $post->meta['description'] ?? Str::limit(strip_tags($post->body), 150) }}">
+        content="{{ $post->meta['description'] ?? Str::limit($post->plain_body, 150) }}">
     <meta name="twitter:image" content="{{ asset('storage/' . $post->featured_image) }}">
     <meta name="twitter:image:alt" content="{{ $post->title }}">
 
@@ -118,9 +118,9 @@
                 "height": 60
             }
         },
-        "description": "{{ $post->meta['description'] ?? Str::limit(strip_tags($post->body), 150) }}",
-        "articleBody": "{{ strip_tags($post->body) }}",
-        "wordCount": {{ str_word_count(strip_tags($post->body)) }},
+        "description": "{{ $post->meta['description'] ?? Str::limit($post->plain_body, 150) }}",
+        "articleBody": "{{ $post->plain_body }}",
+        "wordCount": {{ Str::wordCount($post->plain_body) }},
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "{{ route('blog.show', $post->slug) }}"

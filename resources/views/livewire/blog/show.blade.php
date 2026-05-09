@@ -46,7 +46,7 @@
         @endif
 
         <div class="prose text-gray-800 max-w-none" itemprop="articleBody">
-            {!! Str::markdown($post->body) !!}
+            <x-markdown>{!! $post->body !!}</x-markdown>
         </div>
 
         {{-- Butoane Share --}}
@@ -122,7 +122,7 @@
                                     {{ $post->published_at->format('j F Y') }}
                                 </time>
                                 <p class="mt-3 text-gray-600 line-clamp-3">
-                                    {{ strip_tags(Str::markdown($post->summary)) }}
+                                    {{ $post->summary }}
                                 </p>
                             </div>
                         </a>
