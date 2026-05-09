@@ -1,4 +1,8 @@
-<header class="nav" x-data="{ isOpen: false }" @keydown.escape.window="isOpen = false">
+<header class="nav"
+        x-data="{ isOpen: false, scrolled: window.scrollY > 20 }"
+        x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 20, { passive: true })"
+        :class="{ 'scrolled': scrolled }"
+        @keydown.escape.window="isOpen = false">
     <div class="nav-inner">
         <a wire:navigate href="{{ route('prima-pagina') }}" class="nav-brand">
             <img src="{{ asset('assets/CS-Victoria-Maramures.webp') }}" alt="CS Victoria Maramureș" class="nav-logo">
@@ -29,15 +33,17 @@
         </div>
     </div>
 
-    <div x-show="isOpen" x-cloak x-transition.opacity.duration.200ms class="nav-mobile" @click.self="isOpen = false">
-        <a wire:navigate href="{{ route('prima-pagina') }}" @click="isOpen = false" class="{{ request()->routeIs('prima-pagina') ? 'on' : '' }}">Prima pagină<span>◆</span></a>
-        <a wire:navigate href="{{ route('antrenamente') }}" @click="isOpen = false" class="{{ request()->routeIs('antrenamente') ? 'on' : '' }}">Antrenamente<span>◆</span></a>
-        <a wire:navigate href="{{ route('galerie') }}" @click="isOpen = false" class="{{ request()->routeIs('galerie') ? 'on' : '' }}">Galerie<span>◆</span></a>
-        <a wire:navigate href="{{ route('competitii') }}" @click="isOpen = false" class="{{ request()->routeIs('competitii') ? 'on' : '' }}">Competiții<span>◆</span></a>
-        <a wire:navigate href="{{ route('echipa') }}" @click="isOpen = false" class="{{ request()->routeIs('echipa') ? 'on' : '' }}">Echipa<span>◆</span></a>
-        <a wire:navigate href="{{ route('sponsori') }}" @click="isOpen = false" class="{{ request()->routeIs('sponsori') ? 'on' : '' }}">Sponsori<span>◆</span></a>
-        <a wire:navigate href="{{ route('blog.index') }}" @click="isOpen = false" class="{{ request()->routeIs('blog.*') ? 'on' : '' }}">Blog<span>◆</span></a>
-        <a href="tel:+40734411115" class="nav-mobile-phone">+40 734 411 115</a>
-        <a wire:navigate href="{{ route('contact') }}" @click="isOpen = false" class="nav-mobile-cta">Sesiune probă gratuită</a>
-    </div>
+    <template x-teleport="body">
+        <div x-show="isOpen" x-cloak x-transition.opacity.duration.200ms class="nav-mobile" @click.self="isOpen = false">
+            <a wire:navigate href="{{ route('prima-pagina') }}" @click="isOpen = false" class="{{ request()->routeIs('prima-pagina') ? 'on' : '' }}">Prima pagină<span>◆</span></a>
+            <a wire:navigate href="{{ route('antrenamente') }}" @click="isOpen = false" class="{{ request()->routeIs('antrenamente') ? 'on' : '' }}">Antrenamente<span>◆</span></a>
+            <a wire:navigate href="{{ route('galerie') }}" @click="isOpen = false" class="{{ request()->routeIs('galerie') ? 'on' : '' }}">Galerie<span>◆</span></a>
+            <a wire:navigate href="{{ route('competitii') }}" @click="isOpen = false" class="{{ request()->routeIs('competitii') ? 'on' : '' }}">Competiții<span>◆</span></a>
+            <a wire:navigate href="{{ route('echipa') }}" @click="isOpen = false" class="{{ request()->routeIs('echipa') ? 'on' : '' }}">Echipa<span>◆</span></a>
+            <a wire:navigate href="{{ route('sponsori') }}" @click="isOpen = false" class="{{ request()->routeIs('sponsori') ? 'on' : '' }}">Sponsori<span>◆</span></a>
+            <a wire:navigate href="{{ route('blog.index') }}" @click="isOpen = false" class="{{ request()->routeIs('blog.*') ? 'on' : '' }}">Blog<span>◆</span></a>
+            <a href="tel:+40734411115" class="nav-mobile-phone">+40 734 411 115</a>
+            <a wire:navigate href="{{ route('contact') }}" @click="isOpen = false" class="nav-mobile-cta">Sesiune probă gratuită</a>
+        </div>
+    </template>
 </header>

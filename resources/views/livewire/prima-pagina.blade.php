@@ -15,12 +15,12 @@
                 </div>
 
                 <h1 class="hero-headline">
-                    <span>FIGHT</span>
-                    <em>HARDER.</em>
-                    <span class="stroke">TRAIN SMARTER.</span>
+                    <span>VICTORIA</span>
+                    <em>MARAMURES.</em>
+                    <span class="stroke">CLUB SPORTIV.</span>
                 </h1>
                 <p class="hero-sub">
-                    <strong>Clubul Sportiv Victoria Maramureș</strong> antrenează sportivi de performanță și oameni obișnuiți în Baia Mare, Poienile de sub Munte și Petrova. Kickboxing, Muay Thai, BJJ și fitness funcțional — pentru copii și adulți. Disciplină. Respect. Rezultate.
+                    Promovăm <strong>sportul de performanță</strong> și <strong>sportul pentru toți</strong> în Baia-Mare, Poienile de sub Munte și Petrova. Antrenamente de <strong>Kickboxing &amp; Muay Thai, BJJ și Fitness Funcțional</strong> în Baia Mare | Grupe de copii și adulți.
                 </p>
 
                 <div class="hero-cta">
@@ -52,12 +52,11 @@
                         <div class="hero-r-big">
                             <span class="stroke">FREESTYLE</span>
                             <span>KICKBOX</span>
-                            <em>MUAY · BJJ</em>
+                            <em>MUAY THAI · BJJ</em>
                         </div>
                         <div class="hero-r-sub">ANTRENAMENT MODERN · COACHING ELITE · COMUNITATE</div>
                     </div>
                 </div>
-                <div class="ticker"><span class="dot"></span>TRANSMISIUNE · FIT · BAIA MARE</div>
             </div>
         </div>
     </section>
@@ -181,7 +180,7 @@
             </div>
             <div class="about-r">
                 <div class="ph-cell big ph">
-                    <img src="{{ asset('assets/csvictoriamm-colaj.webp') }}" alt="Echipa CS Victoria Maramureș" class="ph-img">
+                    <img src="{{ asset('assets/unsplash-image.webp') }}" alt="Echipa CS Victoria Maramureș" class="ph-img">
                     <span class="ph-title">ECHIPA · 2025</span>
                 </div>
                 <div class="ph-cell ph ph-red">
@@ -271,7 +270,9 @@
         </div>
         <div class="coach-grid">
             <div class="coach-l">
-                <div class="ph"><span class="ph-label">ANTRENOR · PORTRET</span></div>
+                <div class="ph">
+                    <img src="{{ asset('assets/antrenor.webp') }}" alt="Ioan Mihalca — antrenor principal CS Victoria Maramureș" class="ph-img">
+                </div>
                 <span class="chip chip-red tag">ANTRENOR · FONDATOR</span>
                 <div class="badge">
                     <div><div class="k">Experiență</div><div class="v">10+ ani</div></div>
