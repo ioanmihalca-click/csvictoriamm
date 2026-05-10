@@ -1,4 +1,8 @@
 <div>
+    @php
+        $sezonStart = now()->month >= 9 ? now()->year : now()->year - 1;
+        $sezon = $sezonStart.'/'.substr((string) ($sezonStart + 1), -2);
+    @endphp
     {{-- ============ PAGE HERO ============ --}}
     <section class="phero">
         <div class="section-meta">
@@ -56,7 +60,7 @@
     {{-- ============ FACTS ============ --}}
     <section class="facts">
         <div class="facts-grid">
-            <div class="fact"><div class="k">Discipline</div><div class="v">04</div></div>
+            <div class="fact"><div class="k">Disciplinele</div><div class="v">04</div></div>
             <div class="fact"><div class="k">Sesiuni / săpt</div><div class="v">06</div></div>
             <div class="fact"><div class="k">Vârsta minimă</div><div class="v">06 <em>ani</em></div></div>
             <div class="fact"><div class="k">Sportivi activi</div><div class="v">100<em>+</em></div></div>
@@ -73,7 +77,7 @@
         </div>
         <div class="prog-head">
             <div>
-                <div class="tag">Discipline</div>
+                <div class="tag">Disciplinele</div>
                 <h2>Programele<br><em>noastre.</em></h2>
             </div>
             <p>Fiecare program e construit în jurul a trei lucruri: tehnica corectă, condiția fizică și atitudinea potrivită. Lucrăm diferențiat pe grupe de vârstă și nivel — fără lecții copy-paste.</p>
@@ -185,7 +189,7 @@
         <div class="section-meta" style="background:var(--bone);color:#525252;border-bottom:1px solid #d4d4d4">
             <span class="num" style="color:var(--red)">◆ 03 / 05</span>
             <span>ORAR VIZUAL · SĂPTĂMÂNAL</span>
-            <span>SEZON · 2025/26</span>
+            <span>SEZON · {{ $sezon }}</span>
         </div>
         <div class="week-head">
             <div>

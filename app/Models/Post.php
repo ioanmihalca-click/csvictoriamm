@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
+use App\Services\MarkdownRenderer;
 use App\Services\PostStatsTracker;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
-use Spatie\LaravelMarkdown\MarkdownRenderer;
 
 class Post extends Model
 {
@@ -48,10 +48,12 @@ class Post extends Model
         });
 
         static::saved(function (Post $post) {
+            Cache::forget("post:{$post->id}:rendered-body");
             Cache::forget("post:{$post->id}:plain-body");
         });
 
         static::deleted(function (Post $post) {
+            Cache::forget("post:{$post->id}:rendered-body");
             Cache::forget("post:{$post->id}:plain-body");
         });
     }
@@ -82,21 +84,27 @@ class Post extends Model
     }
 
     /**
-     * The article body rendered to HTML, then stripped to plain text — used
-     * for OG/Twitter meta tags, JSON-LD `articleBody`, and word counts.
-     * Cached with stale-while-revalidate (fresh 1h, stale up to 24h).
+     * The article body rendered as HTML — used pe pagina articolului.
+     * Cached with stale-while-revalidate (fresh 1h, stale up to 24h);
+     * cheia se invalidează automat la save/delete.
+     */
+    public function getRenderedBodyAttribute(): string
+    {
+        return once(fn () => Cache::flexible(
+            "post:{$this->id}:rendered-body",
+            [3600, 86400],
+            fn () => app(MarkdownRenderer::class)->toHtml($this->body ?? '')
+        ));
+    }
+
+    /**
+     * Plain text al articolului — folosit pentru OG/Twitter meta tags,
+     * JSON-LD `articleBody`, și word counts. Derivat din rendered_body
+     * (deja cache-uit), așa că nu necesită cache propriu.
      */
     public function getPlainBodyAttribute(): string
     {
-        return once(fn () => Cache::flexible(
-            "post:{$this->id}:plain-body",
-            [3600, 86400],
-            fn () => trim(strip_tags(
-                app(MarkdownRenderer::class)
-                    ->disableAnchors()
-                    ->toHtml($this->body ?? '')
-            ))
-        ));
+        return once(fn () => trim(strip_tags($this->rendered_body)));
     }
 
     public function getUrlAttribute()

@@ -1,4 +1,8 @@
 <div>
+    @php
+        $sezonStart = now()->month >= 9 ? now()->year : now()->year - 1;
+        $sezon = $sezonStart.'/'.substr((string) ($sezonStart + 1), -2);
+    @endphp
     {{-- ============ HERO ============ --}}
     <section class="hero">
         <div class="section-meta" style="border-bottom:none">
@@ -81,8 +85,8 @@
     <section class="disciplines">
         <div class="section-meta">
             <span class="num">◆ 01 / 07</span>
-            <span>DISCIPLINE · CE ANTRENĂM</span>
-            <span>4 STILURI · 1 ECHIPĂ</span>
+            <span>DISCIPLINELE · CE ANTRENĂM</span>
+            <span>3 STILURI · CONDIȚIE FIZICĂ · 1 ECHIPĂ</span>
         </div>
         <div class="disc-grid">
             <article class="disc">
@@ -180,15 +184,16 @@
             </div>
             <div class="about-r">
                 <div class="ph-cell big ph">
-                    <img src="{{ asset('assets/unsplash-image.webp') }}" alt="Echipa CS Victoria Maramureș" class="ph-img">
-                    <span class="ph-title">ECHIPA · 2025</span>
+                    <img src="{{ asset('assets/echipa.webp') }}" alt="Echipa CS Victoria Maramureș" class="ph-img">
+                    <span class="ph-title">ECHIPA · {{ now()->year }}</span>
                 </div>
                 <div class="ph-cell ph ph-red">
+                    <img src="{{ asset('assets/medalii.webp') }}" alt="Medalii câștigate de CS Victoria Maramureș" class="ph-img">
                     <span class="ph-label" style="color:#fecaca">Medalii</span>
                     <span class="ph-title">MEDALII</span>
                 </div>
                 <div class="ph-cell ph">
-                    <img src="{{ asset('assets/antrenamente.webp') }}" alt="Antrenament în sală" class="ph-img">
+                    <img src="{{ asset('assets/antrenament-img.webp') }}" alt="Antrenament în sală" class="ph-img">
                     <span class="ph-title">ANTRENAMENT</span>
                 </div>
             </div>
@@ -211,7 +216,7 @@
     <section class="schedule" id="orar">
         <div class="section-meta" style="background:var(--bone);color:#525252;border-bottom:1px solid #d4d4d4">
             <span class="num" style="color:var(--red)">◆ 03 / 07</span>
-            <span>ORAR SĂPTĂMÂNAL · SEZON 2025/26</span>
+            <span>ORAR SĂPTĂMÂNAL · SEZON {{ $sezon }}</span>
             <span>ACTUALIZAT · SEP 2025</span>
         </div>
         <div class="sched-head">

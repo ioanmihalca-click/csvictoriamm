@@ -40,7 +40,7 @@
     {{-- ============ ARTICLE BODY ============ --}}
     <article class="post-article" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="post-body" itemprop="articleBody">
-            <x-markdown>{!! $post->body !!}</x-markdown>
+            {!! $post->rendered_body !!}
         </div>
 
         {{-- Share buttons --}}
