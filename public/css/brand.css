@@ -858,6 +858,10 @@ footer{border-top:1px solid var(--line);background:var(--ink);margin-top:80px}
 @media (max-width:900px){
   .latest .lp-grid{grid-template-columns:1fr}
 }
+.latest .lp-foot{padding:32px 48px;border-bottom:1px solid var(--line);display:flex;justify-content:center}
+@media (max-width:768px){
+  .latest .lp-foot{padding:24px 16px}
+}
 
 /* ============================================================
    PAGINA — CONTACT
@@ -1521,7 +1525,7 @@ footer{border-top:1px solid var(--line);background:var(--ink);margin-top:80px}
 .post-cover img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Article body */
-.post-article{background:var(--ink);padding:64px 48px 48px;max-width:920px;margin:0 auto}
+.post-article{background:var(--ink);padding:64px 48px 48px;max-width:920px}
 .post-body{color:var(--bone-2);font-size:17px;line-height:1.8;font-family:'Archivo',sans-serif}
 .post-body p{margin:0 0 22px}
 .post-body p:last-child{margin-bottom:0}

@@ -42,7 +42,7 @@
 
             <div class="hero-right">
                 <div class="ph">
-                    <img src="{{ asset('assets/hero-victoria.webp') }}" alt="CS Victoria Maramureș — antrenament" class="ph-img">
+                    <img src="{{ asset('assets/hero-ok.webp') }}" alt="CS Victoria Maramureș — antrenament" class="ph-img">
                 </div>
                 <div class="fight-silhouette"></div>
                 <div class="xhair tl"></div><div class="xhair tr"></div>
@@ -445,9 +445,7 @@
             <span>ULTIMELE ARTICOLE · DE LA VICTORIA</span>
             <span>ACTUALIZAT · AUTO</span>
         </div>
-        <div class="latest-inner">
-            <livewire:latest-posts />
-        </div>
+        <livewire:latest-posts />
     </section>
 
     {{-- ============ FINAL ============ --}}

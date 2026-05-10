@@ -3,7 +3,7 @@
     <section class="phero">
         <div class="section-meta">
             <span class="num">◆ 07 / PAGINĂ</span>
-            <span>BLOG · ARTICOLE · ȘTIRI · GHIDURI</span>
+            <span>BLOG · COMPETIȚII · REZULTATE · EVENIMENTE</span>
             <span>{{ $posts->total() }} ARTICOLE</span>
         </div>
         <div class="phero-grid">
@@ -13,7 +13,7 @@
                 </div>
                 <h1>Cuvinte<br><em>din ring.</em></h1>
                 <p class="lead">
-                    <strong>Articole, ghiduri, perspective.</strong> De la antrenori, sportivi și prietenii clubului — texte despre kickboxing, antrenament, recuperare, mentalitate și viața în jurul clubului. Fără filtre PR, fără click-bait.
+                    <strong>Rezultate, competiții, evenimente.</strong> Tot ce se întâmplă în jurul clubului — cupe naționale, campionate, seminarii și pregătirea sportivilor pentru sezonul următor. Direct de la sursă.
                 </p>
                 <div class="phero-cta">
                     <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Vino în sală<span class="arr"></span></a>
@@ -47,13 +47,13 @@
     {{-- ============ MARQUEE ============ --}}
     <div class="marquee">
         <div class="marquee-track">
-            <span>ARTICOLE DESPRE KICKBOXING</span><span class="dot">◆</span>
-            <span>GHIDURI DE ANTRENAMENT</span><span class="dot">◆</span>
-            <span>POVEȘTI DIN CLUB</span><span class="dot">◆</span>
-            <span>PALMARES · COMPETIȚII</span><span class="dot">◆</span>
-            <span>ARTICOLE DESPRE KICKBOXING</span><span class="dot">◆</span>
-            <span>GHIDURI DE ANTRENAMENT</span><span class="dot">◆</span>
-            <span>POVEȘTI DIN CLUB</span><span class="dot">◆</span>
+            <span>COMPETIȚII · CUPE NAȚIONALE</span><span class="dot">◆</span>
+            <span>REZULTATE · MEDALII</span><span class="dot">◆</span>
+            <span>EVENIMENTE · SEMINARII</span><span class="dot">◆</span>
+            <span>PALMARES · SPORTIVII NOȘTRI</span><span class="dot">◆</span>
+            <span>COMPETIȚII · CUPE NAȚIONALE</span><span class="dot">◆</span>
+            <span>REZULTATE · MEDALII</span><span class="dot">◆</span>
+            <span>EVENIMENTE · SEMINARII</span><span class="dot">◆</span>
         </div>
     </div>
 
@@ -107,17 +107,4 @@
         @endif
     </section>
 
-    {{-- ============ CTA BANNER ============ --}}
-    <section class="cta-banner">
-        <div class="cta-grid">
-            <div>
-                <h2>Ai o poveste<br><span>din clubul nostru?</span></h2>
-                <div class="sub">Trimite-ne · publicăm · împărtășim</div>
-            </div>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <a class="btn" wire:navigate href="{{ route('contact') }}">Trimite mesaj<span class="arr"></span></a>
-                <a class="btn" wire:navigate href="{{ route('prima-pagina') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Pagina principală</a>
-            </div>
-        </div>
-    </section>
 </div>
