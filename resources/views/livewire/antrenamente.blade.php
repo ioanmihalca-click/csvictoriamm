@@ -26,17 +26,7 @@
             </div>
             <div class="phero-r">
                 <div class="ph">
-                    <img src="{{ asset('assets/antrenamente.webp') }}" alt="Antrenamente CS Victoria Maramureș" class="ph-img">
-                </div>
-                <div class="overlay">
-                    <div style="display:flex;justify-content:flex-end">
-                        <span class="chip chip-red">ACTIV · 6 SESIUNI / SĂPT</span>
-                    </div>
-                    <div class="big-side">
-                        <div>ANTRENEAZĂ-TE</div>
-                        <div class="stroke">CU</div>
-                        <div><em>VICTORIA</em></div>
-                    </div>
+                    <img src="{{ asset('assets/hero-ok.webp') }}" alt="Antrenamente CS Victoria Maramureș" class="ph-img">
                 </div>
             </div>
         </div>

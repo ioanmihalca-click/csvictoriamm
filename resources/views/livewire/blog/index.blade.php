@@ -24,21 +24,7 @@
             </div>
             <div class="phero-r">
                 <div class="ph">
-                    @if ($posts->isNotEmpty() && $posts->first()->featured_image)
-                        <img src="{{ asset('storage/' . $posts->first()->featured_image) }}" alt="{{ $posts->first()->title }}" class="ph-img">
-                    @else
-                        <img src="{{ asset('assets/Kickboxing-Baia-Mare.webp') }}" alt="Blog CS Victoria Maramureș" class="ph-img">
-                    @endif
-                </div>
-                <div class="overlay">
-                    <div style="display:flex;justify-content:flex-end">
-                        <span class="chip chip-red">{{ $posts->total() }} ARTICOLE · LIVE</span>
-                    </div>
-                    <div class="big-side">
-                        <div>SCRIS</div>
-                        <div class="stroke">DIN</div>
-                        <div><em>SALĂ.</em></div>
-                    </div>
+                    <img src="{{ asset('assets/hero-ok.webp') }}" alt="Blog CS Victoria Maramureș" class="ph-img">
                 </div>
             </div>
         </div>

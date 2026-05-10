@@ -85,7 +85,7 @@
     <section class="disciplines">
         <div class="section-meta">
             <span class="num">◆ 01 / 06</span>
-            <span>DISCIPLINELE · CE ANTRENĂM</span>
+            <span>DISCIPLINELE · CE LE ANTRENĂM</span>
             <span>3 STILURI · CONDIȚIE FIZICĂ · 1 ECHIPĂ</span>
         </div>
         <div class="disc-grid">
