@@ -292,7 +292,8 @@
                 </div>
                 <span class="chip chip-red tag">ANTRENOR · FONDATOR</span>
                 <div class="badge">
-                    <div><div class="k">Experiență</div><div class="v">10+ ani</div></div>
+                    <div><div class="k">Antrenor</div><div class="v">7+ ani</div></div>
+                    <div><div class="k">Sportiv</div><div class="v">20+ ani</div></div>
                     <div><div class="k">Centură</div><div class="v">2 DAN · FRFK</div></div>
                 </div>
             </div>
@@ -301,7 +302,7 @@
                 <h2 class="coach-name">IOAN<br>MIHALCA.</h2>
                 <div class="coach-role">Antrenor principal · Fondator CS Victoria Maramureș</div>
                 <p class="coach-body">
-                    Fondator și antrenor principal, cu peste 10 ani în arte marțiale și fitness funcțional. A construit clubul de la zero în 2021 pentru a promova sportul de performanță și un stil de viață sănătos în Maramureș.
+                    Fondator și antrenor principal, cu peste 7 ani în meseria de antrenor. A construit clubul de la zero în 2021 pentru a promova sportul de performanță și un stil de viață sănătos în Maramureș.
                 </p>
 
                 <div class="certs">
