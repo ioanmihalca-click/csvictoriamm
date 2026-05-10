@@ -195,6 +195,18 @@
         </div>
     </section>
 
+    {{-- ============ REVIEWS (Elfsight) — credibilitate imediată după secțiunea „Despre noi" ============ --}}
+    <section class="reviews">
+        <div class="section-meta">
+            <span class="num">◆ EXT / GOOGLE</span>
+            <span>REVIEW-URI · CE SPUN SPORTIVII &amp; PĂRINȚII</span>
+            <span>SURSĂ · GOOGLE BUSINESS · LIVE</span>
+        </div>
+        <div class="reviews-inner">
+            <div class="elfsight-app-630db31d-36a2-4674-90a9-e4b40d06b39e" data-elfsight-app-lazy></div>
+        </div>
+    </section>
+
     {{-- ============ SCHEDULE ============ --}}
     <section class="schedule" id="orar">
         <div class="section-meta" style="background:var(--bone);color:#525252;border-bottom:1px solid #d4d4d4">
@@ -457,18 +469,6 @@
                 <img src="{{ asset('assets/unsplash-image1.webp') }}" alt="Fitness funcțional" class="ph-img">
                 <span class="ph-title">FUNCȚIONAL</span>
             </div>
-        </div>
-    </section>
-
-    {{-- ============ REVIEWS (Elfsight) ============ --}}
-    <section class="reviews">
-        <div class="section-meta">
-            <span class="num">◆ EXT / GOOGLE</span>
-            <span>REVIEW-URI · SPORTIVI &amp; PĂRINȚI</span>
-            <span>SURSĂ · GOOGLE BUSINESS</span>
-        </div>
-        <div class="reviews-inner">
-            <div class="elfsight-app-630db31d-36a2-4674-90a9-e4b40d06b39e" data-elfsight-app-lazy></div>
         </div>
     </section>
 

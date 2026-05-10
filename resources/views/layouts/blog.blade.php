@@ -56,29 +56,22 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
-    <!-- Font Roboto -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <!-- Brutalist-sport system fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-
+    {{-- brand.css trebuie încărcat DUPĂ Tailwind preflight --}}
+    <link rel="stylesheet" href="{{ asset('css/brand.css') }}?v={{ filemtime(public_path('css/brand.css')) }}">
 
     <style>
-        /* Custom scrollbar styling */
-        body::-webkit-scrollbar {
-            width: 9px;
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background-color: #7F1D1D;
-            border-radius: 3px;
-        }
-
-        body::-webkit-scrollbar-track {
-            background-color: #d1d5db;
-            border-radius: 3px;
-        }
+        body::-webkit-scrollbar{width:10px}
+        body::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#7F1D1D,#991B1B);border-radius:5px}
+        body::-webkit-scrollbar-track{background-color:#0a0a0a;border-radius:5px}
+        [x-cloak]{display:none !important}
     </style>
 
     <!-- Enhanced Schema.org for Blog & SportsClub -->
@@ -222,28 +215,21 @@
     }
 }" x-init="Livewire.on('navigating', () => { pageLoading = true });
 Livewire.on('navigated', () => { pageLoading = false });" @navigate.window="pageLoading = true"
-    @navigated.window="pageLoading = false" class="font-sans antialiased bg-white">
-    <div>
-        <livewire:header-nav />
-    </div>
+    @navigated.window="pageLoading = false" class="antialiased">
+    <livewire:header-nav />
 
     <!-- Transition wrapper -->
     <div x-show="pageLoading" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-75">
-        <!-- Loading indicator -->
-        <svg class="w-16 h-16 text-red-900 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
-            </circle>
-            <path class="opacity-75" fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-            </path>
+        class="fixed inset-0 z-50 flex items-center justify-center" style="background:rgba(10,10,10,.85)">
+        <svg class="w-12 h-12 animate-spin" style="color:var(--red)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
         </svg>
     </div>
 
-    <main class="container px-4 py-4 mx-auto">
+    <main>
         {{ $slot }}
     </main>
 

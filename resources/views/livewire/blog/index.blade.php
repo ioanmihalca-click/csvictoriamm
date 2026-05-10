@@ -1,69 +1,123 @@
-<section class="px-4 py-8 mx-auto md:py-12 max-w-7xl sm:px-6 lg:px-8">
-    <!-- Breadcrumbs -->
-    <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center space-x-2 text-sm" itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a href="{{ route('prima-pagina') }}" class="text-gray-600 hover:text-red-900" itemprop="item">
-                    <span itemprop="name">Acasă</span>
-                </a>
-                <meta itemprop="position" content="1" />
-            </li>
-            <li class="text-gray-400">/</li>
-            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span class="text-gray-900" itemprop="name" aria-current="page">Blog</span>
-                <meta itemprop="position" content="2" />
-            </li>
-        </ol>
-    </nav>
-
-    <h1 class="mb-12 text-4xl font-extrabold text-center text-red-900 font-roboto-condensed">Articole pe Blog</h1>
-
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        @foreach ($posts as $post)
-            <article
-                class="overflow-hidden transition-all duration-300 bg-white shadow-lg group rounded-2xl hover:shadow-xl">
-                <a href="{{ route('blog.show', $post->slug) }}" class="block">
-                    @if ($post->featured_image)
-                        <div class="relative overflow-hidden aspect-w-16 aspect-h-9">
-                            <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}"
-                                width="400" height="225" loading="lazy"
-                                class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105">
-                            <div
-                                class="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/60 to-transparent group-hover:opacity-100">
-                            </div>
-                        </div>
+<div>
+    {{-- ============ PAGE HERO ============ --}}
+    <section class="phero">
+        <div class="section-meta">
+            <span class="num">◆ 07 / PAGINĂ</span>
+            <span>BLOG · ARTICOLE · ȘTIRI · GHIDURI</span>
+            <span>{{ $posts->total() }} ARTICOLE</span>
+        </div>
+        <div class="phero-grid">
+            <div class="phero-l">
+                <div class="phero-crumb">
+                    <a wire:navigate href="{{ route('prima-pagina') }}">/ acasă</a> → <span class="on">/ blog</span>
+                </div>
+                <h1>Cuvinte<br><em>din ring.</em></h1>
+                <p class="lead">
+                    <strong>Articole, ghiduri, perspective.</strong> De la antrenori, sportivi și prietenii clubului — texte despre kickboxing, antrenament, recuperare, mentalitate și viața în jurul clubului. Fără filtre PR, fără click-bait.
+                </p>
+                <div class="phero-cta">
+                    <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Vino în sală<span class="arr"></span></a>
+                    @if ($posts->isNotEmpty())
+                        <a href="#articole" class="btn btn-ghost">Citește articolele</a>
                     @endif
-
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold text-red-900 transition-colors duration-300 line-clamp-3 group-hover:text-gray-500"
-                            itemprop="headline">
-                            {{ $post->title }}
-                        </h2>
-                        <time datetime="{{ $post->published_at->toDateString() }}"
-                            class="block mt-2 text-sm text-gray-500" itemprop="datePublished">
-                            {{ $post->published_at->format('j F Y') }}
-                        </time>
-                        <p class="mt-3 text-gray-600 line-clamp-3" itemprop="description">
-                            {{ $post->summary }}
-                        </p>
+                </div>
+            </div>
+            <div class="phero-r">
+                <div class="ph">
+                    @if ($posts->isNotEmpty() && $posts->first()->featured_image)
+                        <img src="{{ asset('storage/' . $posts->first()->featured_image) }}" alt="{{ $posts->first()->title }}" class="ph-img">
+                    @else
+                        <img src="{{ asset('assets/Kickboxing-Baia-Mare.webp') }}" alt="Blog CS Victoria Maramureș" class="ph-img">
+                    @endif
+                </div>
+                <div class="overlay">
+                    <div style="display:flex;justify-content:flex-end">
+                        <span class="chip chip-red">{{ $posts->total() }} ARTICOLE · LIVE</span>
                     </div>
-                </a>
-            </article>
-        @endforeach
+                    <div class="big-side">
+                        <div>SCRIS</div>
+                        <div class="stroke">DIN</div>
+                        <div><em>SALĂ.</em></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ============ MARQUEE ============ --}}
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>ARTICOLE DESPRE KICKBOXING</span><span class="dot">◆</span>
+            <span>GHIDURI DE ANTRENAMENT</span><span class="dot">◆</span>
+            <span>POVEȘTI DIN CLUB</span><span class="dot">◆</span>
+            <span>PALMARES · COMPETIȚII</span><span class="dot">◆</span>
+            <span>ARTICOLE DESPRE KICKBOXING</span><span class="dot">◆</span>
+            <span>GHIDURI DE ANTRENAMENT</span><span class="dot">◆</span>
+            <span>POVEȘTI DIN CLUB</span><span class="dot">◆</span>
+        </div>
     </div>
 
-    <div class="mt-12">
-        {{ $posts->links() }}
-    </div>
+    {{-- ============ POSTS LIST ============ --}}
+    <section class="blog-list" id="articole">
+        <div class="section-meta">
+            <span class="num">◆ 02 / 02</span>
+            <span>TOATE ARTICOLELE · ORDINE CRONOLOGICĂ</span>
+            <span>PAGINA {{ $posts->currentPage() }} / {{ $posts->lastPage() }}</span>
+        </div>
 
-    <div class="mt-12 text-center">
-        <a href="/" class="inline-flex items-center text-blue-500 transition-colors duration-300 hover:underline">
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
-                </path>
-            </svg>
-            Pagina principala
-        </a>
-    </div>
-</section>
+        @if ($posts->isEmpty())
+            <div class="bl-empty">
+                <div class="mono" style="color:var(--red);font-size:11px;letter-spacing:.2em;margin-bottom:14px">◆ ARHIVĂ GOALĂ</div>
+                <h2>Nu există articole<br><em>publicate încă.</em></h2>
+                <p>Revino în curând — pregătim primele articole.</p>
+            </div>
+        @else
+            <div class="bl-grid">
+                @foreach ($posts as $post)
+                    <article class="bl-card">
+                        <a wire:navigate href="{{ route('blog.show', $post->slug) }}" class="bl-card-link">
+                            <div class="bl-card-img">
+                                @if ($post->featured_image)
+                                    <img src="{{ asset('storage/' . $post->featured_image) }}" alt="{{ $post->title }}" loading="lazy">
+                                @else
+                                    <div class="ph">
+                                        <span class="ph-label">◆ {{ str_pad((string) $loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="bl-card-body">
+                                <div class="bl-card-meta">
+                                    <time datetime="{{ $post->published_at->toDateString() }}" itemprop="datePublished">
+                                        ◆ {{ $post->published_at->isoFormat('DD MMM YYYY') }}
+                                    </time>
+                                    <span class="bl-card-num">{{ str_pad((string) $loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                                </div>
+                                <h2 class="bl-card-title" itemprop="headline">{{ $post->title }}</h2>
+                                <p class="bl-card-summary" itemprop="description">{{ $post->summary }}</p>
+                                <span class="bl-card-cta">Citește articolul<span class="arr"></span></span>
+                            </div>
+                        </a>
+                    </article>
+                @endforeach
+            </div>
+
+            <div class="bl-pagination">
+                {{ $posts->links() }}
+            </div>
+        @endif
+    </section>
+
+    {{-- ============ CTA BANNER ============ --}}
+    <section class="cta-banner">
+        <div class="cta-grid">
+            <div>
+                <h2>Ai o poveste<br><span>din clubul nostru?</span></h2>
+                <div class="sub">Trimite-ne · publicăm · împărtășim</div>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+                <a class="btn" wire:navigate href="{{ route('contact') }}">Trimite mesaj<span class="arr"></span></a>
+                <a class="btn" wire:navigate href="{{ route('prima-pagina') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Pagina principală</a>
+            </div>
+        </div>
+    </section>
+</div>

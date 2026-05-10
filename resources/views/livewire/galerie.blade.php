@@ -1,87 +1,170 @@
 <div>
-   <div class="p-2 mt-2" x-data="{
-        imageGalleryOpened: false,
-        imageGalleryActiveUrl: null,
-        imageGalleryImageIndex: null,
-        imageGallery: [
-            @foreach($galleryItems as $item)
-            {
-                'photo': '{{ $item->photo_url }}',
-                'alt': '{{ $item->alt_text }}'
-            },
-            @endforeach
-        ],
-
-    imageGalleryOpen(event) {
-        this.imageGalleryImageIndex = event.target.dataset.index;
-        this.imageGalleryActiveUrl = event.target.dataset.fullsize || event.target.src;
-        this.imageGalleryOpened = true;
-    },
-    imageGalleryClose() {
-        this.imageGalleryOpened = false;
-        setTimeout(() => this.imageGalleryActiveUrl = null, 300);
-    },
-    imageGalleryNext(){
-        this.imageGalleryImageIndex = (this.imageGalleryImageIndex == this.imageGallery.length) ? 1 : (parseInt(this.imageGalleryImageIndex) + 1);
-        const nextImg = this.$refs.gallery.querySelector(`[data-index='${this.imageGalleryImageIndex}']`);
-        this.imageGalleryActiveUrl = nextImg.dataset.fullsize || nextImg.src;
-    },
-    imageGalleryPrev() {
-        this.imageGalleryImageIndex = (this.imageGalleryImageIndex == 1) ? this.imageGallery.length : (parseInt(this.imageGalleryImageIndex) - 1);
-        const prevImg = this.$refs.gallery.querySelector(`[data-index='${this.imageGalleryImageIndex}']`);
-        this.imageGalleryActiveUrl = prevImg.dataset.fullsize || prevImg.src;
-    }
-}" 
-@image-gallery-next.window="imageGalleryNext()" 
-@image-gallery-prev.window="imageGalleryPrev()" 
-@keyup.right.window="imageGalleryNext();" 
-@keyup.left.window="imageGalleryPrev();"
-class="w-full h-full select-none">
-    <div class="max-w-6xl mx-auto duration-1000 delay-300 opacity-0 select-none ease animate-fade-in-view" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-        <ul x-ref="gallery" id="gallery" class="grid grid-cols-2 gap-5 lg:grid-cols-5">
-            <template x-for="(image, index) in imageGallery">
-                <li>
-                    <img x-on:click="imageGalleryOpen" 
-                         :src="image.photo" 
-                         :alt="image.alt" 
-                         :data-index="index+1"
-                         :data-fullsize="image.photo"
-                         class="object-cover w-full h-auto bg-gray-200 rounded cursor-zoom-in aspect-[5/6] lg:aspect-[2/3] xl:aspect-[3/4]">
-                </li>
-            </template>
-        </ul>
-    </div>
-    <template x-teleport="body">
-        <div 
-            x-show="imageGalleryOpened" 
-            x-transition:enter="transition ease-in-out duration-300" 
-            x-transition:enter-start="opacity-0" 
-            x-transition:leave="transition ease-in-in duration-300" 
-            x-transition:leave-end="opacity-0" 
-            @click="imageGalleryClose" 
-            @keydown.window.escape="imageGalleryClose" 
-            x-trap.inert.noscroll="imageGalleryOpened"
-            class="fixed inset-0 z-[99] flex items-center justify-center bg-black bg-opacity-90 select-none cursor-zoom-out" 
-            x-cloak>
-            <div class="relative flex items-center justify-center w-full h-full p-4">
-                <div @click="$event.stopPropagation(); $dispatch('image-gallery-prev')" class="absolute flex items-center justify-center text-white rounded-full cursor-pointer left-4 bg-white/10 w-14 h-14 hover:bg-white/20">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+    {{-- ============ PAGE HERO ============ --}}
+    <section class="phero">
+        <div class="section-meta">
+            <span class="num">◆ 05 / PAGINĂ</span>
+            <span>GALERIE · DIN SALĂ · DIN RING · DIN COMPETIȚII</span>
+            <span>{{ $galleryItems->count() }} IMAGINI</span>
+        </div>
+        <div class="phero-grid">
+            <div class="phero-l">
+                <div class="phero-crumb">
+                    <a wire:navigate href="{{ route('prima-pagina') }}">/ acasă</a> → <span class="on">/ galerie</span>
                 </div>
-                <img 
-                    x-show="imageGalleryOpened" 
-                    x-transition:enter="transition ease-in-out duration-300" 
-                    x-transition:enter-start="opacity-0 transform scale-95" 
-                    x-transition:leave="transition ease-in-in duration-300" 
-                    x-transition:leave-end="opacity-0 transform scale-95" 
-                    class="object-contain max-w-full max-h-full select-none cursor-zoom-out" 
-                    :src="imageGalleryActiveUrl" 
-                    alt=""
-                    style="display: none;">
-                <div @click="$event.stopPropagation(); $dispatch('image-gallery-next');" class="absolute flex items-center justify-center text-white rounded-full cursor-pointer right-4 bg-white/10 w-14 h-14 hover:bg-white/20">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                <h1>Din sală.<br><em>Din ring.</em></h1>
+                <p class="lead">
+                    <strong>{{ $galleryItems->count() }} de momente.</strong> Antrenamente, gale, podiumuri, echipă. Fără filtre, fără pose. Doar muncă, sportivi și clubul în acțiune.
+                </p>
+                <div class="phero-cta">
+                    <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Vino în echipă<span class="arr"></span></a>
+                    <a href="#galerie-grid" class="btn btn-ghost">Vezi galeria</a>
+                </div>
+            </div>
+            <div class="phero-r">
+                <div class="ph">
+                    @if ($galleryItems->isNotEmpty())
+                        <img src="{{ $galleryItems->first()->photo_url }}" alt="{{ $galleryItems->first()->alt_text ?? 'Galerie CS Victoria Maramureș' }}" class="ph-img">
+                    @else
+                        <img src="{{ asset('assets/Kickboxing-Baia-Mare.webp') }}" alt="Galerie CS Victoria Maramureș" class="ph-img">
+                    @endif
+                </div>
+                <div class="overlay">
+                    <div style="display:flex;justify-content:flex-end">
+                        <span class="chip chip-red">CLICK · ZOOM</span>
+                    </div>
+                    <div class="big-side">
+                        <div>VICTORIA</div>
+                        <div class="stroke">ÎN</div>
+                        <div><em>IMAGINI.</em></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </template>
-</div>
+    </section>
+
+    {{-- ============ MARQUEE ============ --}}
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>ANTRENAMENT · COMPETIȚII · GALE</span><span class="dot">◆</span>
+            <span>{{ $galleryItems->count() }} IMAGINI</span><span class="dot">◆</span>
+            <span>BAIA MARE · PETROVA · POIENILE</span><span class="dot">◆</span>
+            <span>CLICK PE IMAGINE PENTRU ZOOM</span><span class="dot">◆</span>
+            <span>ANTRENAMENT · COMPETIȚII · GALE</span><span class="dot">◆</span>
+            <span>{{ $galleryItems->count() }} IMAGINI</span><span class="dot">◆</span>
+        </div>
+    </div>
+
+    {{-- ============ GALLERY GRID ============ --}}
+    <section class="gal" id="galerie-grid"
+        x-data="{
+            opened: false,
+            activeUrl: null,
+            index: null,
+            total: {{ $galleryItems->count() }},
+            open(event) {
+                const t = event.currentTarget;
+                this.index = parseInt(t.dataset.index);
+                this.activeUrl = t.dataset.fullsize;
+                this.opened = true;
+            },
+            close() {
+                this.opened = false;
+                setTimeout(() => this.activeUrl = null, 300);
+            },
+            goTo(i) {
+                this.index = i;
+                const el = document.querySelector(`#galerie-grid [data-index='${i}']`);
+                if (el) this.activeUrl = el.dataset.fullsize;
+            },
+            next() { this.goTo(this.index >= this.total ? 1 : this.index + 1); },
+            prev() { this.goTo(this.index <= 1 ? this.total : this.index - 1); }
+        }"
+        @keyup.right.window="opened && next()"
+        @keyup.left.window="opened && prev()"
+        @keydown.escape.window="opened && close()">
+
+        <div class="section-meta">
+            <span class="num">◆ 02 / 02</span>
+            <span>TOATE IMAGINILE · CLICK PENTRU ZOOM</span>
+            <span>NAVIGHEAZĂ CU ← →</span>
+        </div>
+
+        @if ($galleryItems->isEmpty())
+            <div class="gal-empty">
+                <div class="mono" style="color:var(--red);font-size:11px;letter-spacing:.2em;margin-bottom:14px">◆ GALERIE GOALĂ</div>
+                <h2>Nu există imagini<br><em>încă încărcate.</em></h2>
+                <p>Revino în curând — adăugăm conținut în mod regulat.</p>
+            </div>
+        @else
+            <div class="gal-grid">
+                @foreach ($galleryItems as $item)
+                    <button type="button"
+                        class="gal-cell"
+                        @click="open"
+                        data-index="{{ $loop->iteration }}"
+                        data-fullsize="{{ $item->photo_url }}">
+                        <img src="{{ $item->photo_url }}"
+                            alt="{{ $item->alt_text ?? 'Galerie CS Victoria Maramureș' }}"
+                            data-index="{{ $loop->iteration }}"
+                            data-fullsize="{{ $item->photo_url }}"
+                            loading="lazy">
+                        <span class="gal-num">◆ {{ str_pad((string) $loop->iteration, 2, '0', STR_PAD_LEFT) }}</span>
+                    </button>
+                @endforeach
+            </div>
+        @endif
+
+        {{-- ============ LIGHTBOX ============ --}}
+        <template x-teleport="body">
+            <div x-show="opened"
+                x-cloak
+                x-transition:enter="transition ease-in-out duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:leave="transition ease-in-in duration-300"
+                x-transition:leave-end="opacity-0"
+                @click="close"
+                x-trap.inert.noscroll="opened"
+                class="gal-lightbox">
+
+                <div class="gal-lb-meta">
+                    <span class="mono">◆ <span x-text="index"></span> / <span x-text="items.length"></span></span>
+                    <button type="button" class="gal-lb-close" @click.stop="close" aria-label="Închide">×</button>
+                </div>
+
+                <button type="button" class="gal-lb-nav gal-lb-prev"
+                    @click.stop="prev" aria-label="Imaginea anterioară">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5L8 12l7 7"/></svg>
+                </button>
+
+                <img x-show="opened"
+                    x-transition:enter="transition ease-in-out duration-300"
+                    x-transition:enter-start="opacity-0 transform scale-95"
+                    x-transition:leave="transition ease-in-in duration-300"
+                    x-transition:leave-end="opacity-0 transform scale-95"
+                    class="gal-lb-img"
+                    :src="activeUrl"
+                    alt=""
+                    @click.stop>
+
+                <button type="button" class="gal-lb-nav gal-lb-next"
+                    @click.stop="next" aria-label="Imaginea următoare">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </template>
+    </section>
+
+    {{-- ============ CTA BANNER ============ --}}
+    <section class="cta-banner">
+        <div class="cta-grid">
+            <div>
+                <h2>Vrei să fii<br><span>în următoarea galerie?</span></h2>
+                <div class="sub">Vino la antrenament · primă sesiune gratuită</div>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+                <a class="btn" wire:navigate href="{{ route('contact') }}">Programează<span class="arr"></span></a>
+                <a class="btn" wire:navigate href="{{ route('antrenamente') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Vezi antrenamentele</a>
+            </div>
+        </div>
+    </section>
 </div>

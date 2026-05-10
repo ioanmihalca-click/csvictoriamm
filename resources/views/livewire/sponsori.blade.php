@@ -1,65 +1,177 @@
-<section id="sponsori" class="py-16 bg-gray-100">
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 class="mb-12 text-4xl font-extrabold text-center text-red-900 font-roboto-condensed">Parteneriate și Sponsorizări</h2>
-        <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
-            <div class="space-y-8">
-                <div class="overflow-hidden bg-white shadow-md rounded-xl">
-                    <div class="p-6">
-                        <h3 class="mb-4 text-2xl font-bold text-red-900">Investiții în Performanța Sportivă</h3>
-                        <p class="text-gray-600">Succesul Clubului Sportiv Victoria Maramureș se datorează nu doar talentului și dedicării sportivilor noștri, ci și sprijinului generos al sponsorilor care cred în potențialul tinerilor noștri campioni. Fiecare contribuție ne ajută să participăm la competiții naționale și internaționale, oferind sportivilor noștri șansa de a străluci pe cele mai prestigioase scene ale kickboxing-ului.</p>
-                    </div>
+<div>
+    {{-- ============ PAGE HERO ============ --}}
+    <section class="phero">
+        <div class="section-meta">
+            <span class="num">◆ 04 / PAGINĂ</span>
+            <span>SPONSORI · PARTENERIATE · DONAȚII</span>
+            <span>INVESTIȚIE ÎN VIITORUL SPORTULUI</span>
+        </div>
+        <div class="phero-grid">
+            <div class="phero-l">
+                <div class="phero-crumb">
+                    <a wire:navigate href="{{ route('prima-pagina') }}">/ acasă</a> → <span class="on">/ sponsori</span>
                 </div>
-                <div class="overflow-hidden bg-white shadow-md rounded-xl">
-                    <div class="p-6">
-                        <h3 class="mb-4 text-2xl font-bold text-red-900">De ce să deveniți Sponsor?</h3>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 mr-2 text-red-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <span>Vizibilitate: Logo-ul dumneavoastră va fi afișat pe echipamentele sportivilor și în materialele promoționale ale clubului.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 mr-2 text-red-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <span>Impact social: Contribuiți la dezvoltarea tinerelor talente și promovați un stil de viață sănătos în comunitatea noastră.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 mr-2 text-red-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <span>Parteneriat cu performanța: Numele dumneavoastră va fi legat de performanțele unuia dintre cele mai promițătoare cluburi de kickboxing juvenil din Maramures.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 mr-2 text-red-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <span>Deduceri fiscale: Sponsorizările pot fi deduse din impozitul pe profit, conform legislației în vigoare.</span>
-                            </li>
-                        </ul>
-                    </div>
+                <h1>Devino<br><em>sponsor.</em></h1>
+                <p class="lead">
+                    <strong>Fiecare contribuție duce un sportiv la rampă.</strong> Costurile de competiție — transport, cazare, echipament — sunt reale. La fel sunt și rezultatele când există susținere. Hai să construim performanța împreună.
+                </p>
+                <div class="phero-cta">
+                    <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Discutăm direct<span class="arr"></span></a>
+                    <a href="#donatii" class="btn btn-ghost">Vezi datele bancare</a>
                 </div>
             </div>
-            <div class="space-y-8">
-                <div class="overflow-hidden bg-white shadow-md rounded-xl">
-                    <div class="p-6">
-                        <h3 class="mb-4 text-2xl font-bold text-red-900">Cum puteți ajuta?</h3>
-                        <p class="mb-4 text-gray-600">Fiecare deplasare la competiții reprezintă o oportunitate pentru tinerii noștri sportivi de a-și demonstra valoarea și de a aduce glorie clubului și comunității noastre. Însă costurile asociate cu participarea la aceste evenimente - transport, cazare, echipament - pot fi considerabile.</p>
-                        <p class="text-gray-600">Prin sponsorizarea Clubului Sportiv Victoria Maramureș, nu investiți doar în sport, ci în viitorul unor tineri talentați, disciplinati și ambițioși. Contribuția dumneavoastră, indiferent de mărime, poate face diferența.</p>
-                    </div>
+            <div class="phero-r">
+                <div class="ph">
+                    <img src="{{ asset('assets/csvictoriamm-colaj.webp') }}" alt="Sponsorizare CS Victoria Maramureș" class="ph-img">
                 </div>
-                <div class="overflow-hidden bg-white shadow-md rounded-xl">
-                    <div class="p-6">
-                        <h3 class="mb-4 text-2xl font-bold text-red-900">Detalii pentru Donații</h3>
-                        <div class="p-4 mb-4 bg-gray-100 rounded-lg">
-                            <p class="mb-2"><strong>Titular cont:</strong> CLUB SPORTIV VICTORIA MARAMURES</p>
-                            <p class="mb-2"><strong>IBAN:</strong> RO25CECEB00030RON2739983</p>
-                            <p class="mb-2"><strong>Banca:</strong> CEC Bank</p>
-                            <p class="mb-2"><strong>Moneda:</strong> RON</p>
-                            <p><strong>Cod SWIFT:</strong> CECEROBUXXX</p>
-                        </div>
-                        <p class="font-semibold text-gray-600">Important:</p>
-                        <ul class="mb-4 text-gray-600 list-disc list-inside">
-                            <li>Vă rugăm să menționați "Donație" în descrierea tranzacției.</li>
-                            <li>Pentru donații corporative sau sponsorizări mai substanțiale, vă invităm să ne contactați direct.</li>
-                        </ul>
-                        <p class="text-gray-600">Vă mulțumim pentru generozitatea dumneavoastră și pentru că alegeți să investiți în viitorul sportului românesc!</p>
+                <div class="overlay">
+                    <div style="display:flex;justify-content:flex-end">
+                        <span class="chip chip-red">PARTENERIAT · TRANSPARENT</span>
+                    </div>
+                    <div class="big-side">
+                        <div>SUSȚINE</div>
+                        <div class="stroke">PERFORMANȚA</div>
+                        <div><em>VICTORIA.</em></div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    {{-- ============ MARQUEE ============ --}}
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>VIZIBILITATE BRAND</span><span class="dot">◆</span>
+            <span>IMPACT SOCIAL</span><span class="dot">◆</span>
+            <span>DEDUCERI FISCALE</span><span class="dot">◆</span>
+            <span>PARTENERIAT TRANSPARENT</span><span class="dot">◆</span>
+            <span>VIITORUL SPORTULUI ROMÂNESC</span><span class="dot">◆</span>
+            <span>VIZIBILITATE BRAND</span><span class="dot">◆</span>
+            <span>IMPACT SOCIAL</span><span class="dot">◆</span>
+            <span>DEDUCERI FISCALE</span><span class="dot">◆</span>
+        </div>
     </div>
-</section>
+
+    {{-- ============ WHY SPONSOR ============ --}}
+    <section class="why-sponsor">
+        <div class="section-meta">
+            <span class="num">◆ 02 / 04</span>
+            <span>DE CE SĂ DEVENIȚI SPONSOR · 4 ARGUMENTE</span>
+            <span>CONCRETE · MĂSURABILE</span>
+        </div>
+        <div class="ws-head">
+            <div>
+                <div class="tag">Beneficii reale</div>
+                <h2>De ce<br><em>contează.</em></h2>
+            </div>
+            <p>Nu vindem expunere generică. Sponsorizarea unui club sportiv local înseamnă patru lucruri concrete — fiecare cu rezultat verificabil.</p>
+        </div>
+
+        <div class="ws-grid">
+            <article class="ws-cell">
+                <div class="ws-n">01</div>
+                <h3>Vizibilitate brand</h3>
+                <p>Logo-ul vostru pe echipamentele sportivilor, în materialele promoționale și pe site. Fiecare gală, fiecare antrenament — o expunere reală în comunitatea locală și online.</p>
+            </article>
+            <article class="ws-cell">
+                <div class="ws-n">02</div>
+                <h3>Impact social</h3>
+                <p>Investiție directă în dezvoltarea tinerilor sportivi din Maramureș. Sport, disciplină, autoapărare, comunitate — toate sprijinite de contribuția voastră.</p>
+            </article>
+            <article class="ws-cell">
+                <div class="ws-n">03</div>
+                <h3>Parteneriat cu performanța</h3>
+                <p>Numele firmei legat de unul dintre cele mai active cluburi juvenile de kickboxing din regiune. Rezultate la gale naționale, palmares verificabil.</p>
+            </article>
+            <article class="ws-cell">
+                <div class="ws-n">04</div>
+                <h3>Deduceri fiscale</h3>
+                <p>Sponsorizările sunt deductibile din impozitul pe profit, conform legislației în vigoare (Legea 32/1994 și Codul Fiscal). Procedură simplă, contract transparent.</p>
+            </article>
+        </div>
+    </section>
+
+    {{-- ============ INVESTMENT + HOW ============ --}}
+    <section class="invest">
+        <div class="section-meta">
+            <span class="num">◆ 03 / 04</span>
+            <span>INVESTIȚIE ÎN PERFORMANȚĂ · CUM AJUTAȚI</span>
+            <span>CONCRET · TRANSPARENT</span>
+        </div>
+        <div class="inv-grid">
+            <article class="inv-cell">
+                <div class="inv-tag">◆ Misiune</div>
+                <h3>Investiție în<br>performanța sportivă.</h3>
+                <p>Succesul Clubului Sportiv Victoria Maramureș se datorează nu doar talentului și dedicării sportivilor noștri, ci și sprijinului celor care cred în potențialul tinerilor noștri campioni.</p>
+                <p>Fiecare contribuție ne ajută să participăm la <strong>competiții naționale și internaționale</strong>, oferind sportivilor șansa de a urca pe cele mai prestigioase scene ale kickboxing-ului românesc.</p>
+            </article>
+            <article class="inv-cell">
+                <div class="inv-tag">◆ Cum puteți ajuta</div>
+                <h3>Costurile<br>care contează.</h3>
+                <p>Fiecare deplasare la competiții înseamnă <strong>transport, cazare, taxe de înscriere și echipament</strong>. Pentru un club de juniori, aceste sume sunt considerabile — și se acumulează rapid.</p>
+                <p>Prin sponsorizarea CS Victoria Maramureș nu investiți doar în sport, ci în viitorul unor tineri disciplinați, talentați și ambițioși. Contribuția voastră — indiferent de mărime — face diferența.</p>
+            </article>
+        </div>
+    </section>
+
+    {{-- ============ BANK DETAILS ============ --}}
+    <section class="bank" id="donatii">
+        <div class="section-meta">
+            <span class="num">◆ 04 / 04</span>
+            <span>DETALII BANCARE · DONAȚII DIRECTE</span>
+            <span>CEC BANK · IBAN RON</span>
+        </div>
+        <div class="bank-grid">
+            <div class="bank-l">
+                <div class="bank-tag">◆ Cont oficial</div>
+                <h2>Donează<br><em>direct.</em></h2>
+                <p>Pentru donații corporative sau sponsorizări mai substanțiale, vă invităm să ne contactați direct — pregătim contract de sponsorizare cu detaliile fiscale necesare.</p>
+                <a wire:navigate href="{{ route('contact') }}" class="btn btn-red">Contactează-ne<span class="arr"></span></a>
+            </div>
+            <div class="bank-r">
+                <div class="bank-row">
+                    <span class="k">Titular cont</span>
+                    <strong>CLUB SPORTIV VICTORIA MARAMUREȘ</strong>
+                </div>
+                <div class="bank-row bank-iban">
+                    <span class="k">IBAN</span>
+                    <code>RO25CECEB00030RON2739983</code>
+                </div>
+                <div class="bank-row">
+                    <span class="k">Banca</span>
+                    <strong>CEC Bank</strong>
+                </div>
+                <div class="bank-row">
+                    <span class="k">Moneda</span>
+                    <strong>RON</strong>
+                </div>
+                <div class="bank-row">
+                    <span class="k">Cod SWIFT</span>
+                    <code>CECEROBUXXX</code>
+                </div>
+                <div class="bank-note">
+                    <span class="bn-label">◆ Important</span>
+                    <ul>
+                        <li>Menționați <strong>„Donație"</strong> în descrierea tranzacției.</li>
+                        <li>Pentru sponsorizări corporative, contactați-ne direct pentru contract.</li>
+                        <li>Eliberăm chitanță / factură conform legislației în vigoare.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- ============ CTA BANNER ============ --}}
+    <section class="cta-banner">
+        <div class="cta-grid">
+            <div>
+                <h2>Construim<br><span>împreună?</span></h2>
+                <div class="sub">Parteneriat · sponsorizare · donație unică</div>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+                <a class="btn" href="tel:+40734411115">Sună · 0734 411 115<span class="arr"></span></a>
+                <a class="btn" wire:navigate href="{{ route('contact') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Trimite mesaj</a>
+            </div>
+        </div>
+    </section>
+</div>
