@@ -84,7 +84,7 @@
     {{-- ============ DISCIPLINES ============ --}}
     <section class="disciplines">
         <div class="section-meta">
-            <span class="num">◆ 01 / 07</span>
+            <span class="num">◆ 01 / 06</span>
             <span>DISCIPLINELE · CE ANTRENĂM</span>
             <span>3 STILURI · CONDIȚIE FIZICĂ · 1 ECHIPĂ</span>
         </div>
@@ -133,7 +133,7 @@
     {{-- ============ ABOUT — DESPRE NOI (text intact) ============ --}}
     <section class="about" id="despre-noi">
         <div class="section-meta">
-            <span class="num">◆ 02 / 07</span>
+            <span class="num">◆ 02 / 06</span>
             <span>DESPRE CLUB · FUNDAMENTE</span>
             <span>EST. 2021 · FONDATOR IOAN MIHALCA</span>
         </div>
@@ -215,7 +215,7 @@
     {{-- ============ SCHEDULE ============ --}}
     <section class="schedule" id="orar">
         <div class="section-meta" style="background:var(--bone);color:#525252;border-bottom:1px solid #d4d4d4">
-            <span class="num" style="color:var(--red)">◆ 03 / 07</span>
+            <span class="num" style="color:var(--red)">◆ 03 / 06</span>
             <span>ORAR SĂPTĂMÂNAL · SEZON {{ $sezon }}</span>
             <span>ACTUALIZAT · SEP 2025</span>
         </div>
@@ -281,7 +281,7 @@
     {{-- ============ COACH ============ --}}
     <section class="coach">
         <div class="section-meta">
-            <span class="num">◆ 04 / 07</span>
+            <span class="num">◆ 04 / 06</span>
             <span>ANTRENOR PRINCIPAL · FONDATOR</span>
             <span>PROFIL · 01 / 01</span>
         </div>
@@ -329,7 +329,7 @@
     {{-- ============ WHY ============ --}}
     <section class="why">
         <div class="section-meta">
-            <span class="num">◆ 05 / 07</span>
+            <span class="num">◆ 05 / 06</span>
             <span>DE CE VICTORIA · METODA</span>
             <span>04 PRINCIPII · 0 SCURTĂTURI</span>
         </div>
@@ -382,7 +382,7 @@
     {{-- ============ LOCATIONS ============ --}}
     <section class="locations">
         <div class="section-meta">
-            <span class="num">◆ 06 / 07</span>
+            <span class="num">◆ 06 / 06</span>
             <span>LOCAȚII · UNDE NE GĂSEȘTI</span>
             <span>MARAMUREȘ · ROMÂNIA</span>
         </div>
@@ -397,7 +397,7 @@
             <article class="loc-card">
                 <div class="num"><em>◆</em> 01</div>
                 <div class="ph">
-                    <img src="{{ asset('assets/Kickboxing-Baia-Mare.webp') }}" alt="Sala Baia Mare" class="ph-img">
+                    <img src="{{ asset('assets/sala-bm.webp') }}" alt="Sala Baia Mare" class="ph-img">
                     <span class="ph-title">BAIA MARE</span>
                 </div>
                 <div class="loc-card-body">
@@ -410,6 +410,7 @@
             <article class="loc-card">
                 <div class="num"><em>◆</em> 02</div>
                 <div class="ph">
+                    <img src="{{ asset('assets/sala-petrova.webp') }}" alt="Sala Petrova" class="ph-img">
                     <span class="ph-label">Petrova</span>
                     <span class="ph-title">PETROVA</span>
                 </div>
@@ -423,6 +424,7 @@
             <article class="loc-card">
                 <div class="num"><em>◆</em> 03</div>
                 <div class="ph">
+                    <img src="{{ asset('assets/sala-poieni.webp') }}" alt="Sala Poienile de sub Munte" class="ph-img">
                     <span class="ph-label">Poienile de sub Munte</span>
                     <span class="ph-title">POIENILE DE SUB MUNTE</span>
                 </div>
@@ -433,48 +435,6 @@
                     <div class="slot"><strong>Toate vârstele</strong><span>1:30 H</span></div>
                 </div>
             </article>
-        </div>
-    </section>
-
-    {{-- ============ GALLERY ============ --}}
-    <section class="gallery">
-        <div class="gallery-head">
-            <div>
-                <div class="mono" style="font-size:11px;color:var(--red);letter-spacing:.2em;margin-bottom:10px">◆ 07 / 07 · GALERIE</div>
-                <h2>Din sală.<br>Din ring.</h2>
-            </div>
-            <a wire:navigate href="{{ route('galerie') }}" class="btn btn-ghost">Vezi toată galeria<span class="arr"></span></a>
-        </div>
-        <div class="gallery-grid">
-            <div class="ph">
-                <img src="{{ asset('assets/Kickboxing-Baia-Mare.webp') }}" alt="Striking — ring" class="ph-img">
-                <span class="ph-title">STRIKING</span>
-            </div>
-            <div class="ph">
-                <img src="{{ asset('assets/antrenamente-copii.webp') }}" alt="Grupa copii" class="ph-img">
-            </div>
-            <div class="ph ph-red">
-                <span class="ph-label" style="color:#fecaca">Podium 2025</span>
-                <span class="ph-title">PODIUM</span>
-            </div>
-            <div class="ph">
-                <img src="{{ asset('assets/unsplash-image.webp') }}" alt="Brazilian Jiu-Jitsu" class="ph-img">
-                <span class="ph-title">BJJ</span>
-            </div>
-            <div class="ph">
-                <span class="ph-label">Antrenor · portret</span>
-            </div>
-            <div class="ph">
-                <span class="ph-label">Galā · 2025</span>
-                <span class="ph-title">GALĂ</span>
-            </div>
-            <div class="ph">
-                <img src="{{ asset('assets/antrenamente.webp') }}" alt="Echipa · outdoor" class="ph-img">
-            </div>
-            <div class="ph">
-                <img src="{{ asset('assets/unsplash-image1.webp') }}" alt="Fitness funcțional" class="ph-img">
-                <span class="ph-title">FUNCȚIONAL</span>
-            </div>
         </div>
     </section>
 
