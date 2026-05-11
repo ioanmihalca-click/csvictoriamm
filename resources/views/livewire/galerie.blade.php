@@ -22,21 +22,7 @@
             </div>
             <div class="phero-r">
                 <div class="ph">
-                    @if ($galleryItems->isNotEmpty())
-                        <img src="{{ $galleryItems->first()->photo_url }}" alt="{{ $galleryItems->first()->alt_text ?? 'Galerie CS Victoria Maramureș' }}" class="ph-img">
-                    @else
-                        <img src="{{ asset('assets/Kickboxing-Baia-Mare.webp') }}" alt="Galerie CS Victoria Maramureș" class="ph-img">
-                    @endif
-                </div>
-                <div class="overlay">
-                    <div style="display:flex;justify-content:flex-end">
-                        <span class="chip chip-red">CLICK · ZOOM</span>
-                    </div>
-                    <div class="big-side">
-                        <div>VICTORIA</div>
-                        <div class="stroke">ÎN</div>
-                        <div><em>IMAGINI.</em></div>
-                    </div>
+                    <img src="{{ asset('assets/hero-ok.webp') }}" alt="Galerie CS Victoria Maramureș" class="ph-img">
                 </div>
             </div>
         </div>
@@ -154,17 +140,4 @@
         </template>
     </section>
 
-    {{-- ============ CTA BANNER ============ --}}
-    <section class="cta-banner">
-        <div class="cta-grid">
-            <div>
-                <h2>Vrei să fii<br><span>în următoarea galerie?</span></h2>
-                <div class="sub">Vino la antrenament · primă sesiune gratuită</div>
-            </div>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <a class="btn" wire:navigate href="{{ route('contact') }}">Programează<span class="arr"></span></a>
-                <a class="btn" wire:navigate href="{{ route('antrenamente') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Vezi antrenamentele</a>
-            </div>
-        </div>
-    </section>
 </div>

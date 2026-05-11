@@ -22,17 +22,7 @@
             </div>
             <div class="phero-r">
                 <div class="ph">
-                    <img src="{{ asset('assets/csvictoriamm-colaj.webp') }}" alt="Echipa CS Victoria Maramureș" class="ph-img">
-                </div>
-                <div class="overlay">
-                    <div style="display:flex;justify-content:flex-end">
-                        <span class="chip chip-red">100+ SPORTIVI ACTIVI</span>
-                    </div>
-                    <div class="big-side">
-                        <div>O ECHIPĂ.</div>
-                        <div class="stroke">UN CLUB.</div>
-                        <div><em>VICTORIA.</em></div>
-                    </div>
+                    <img src="{{ asset('assets/hero-ok.webp') }}" alt="Echipa CS Victoria Maramureș" class="ph-img">
                 </div>
             </div>
         </div>
@@ -161,17 +151,4 @@
         </div>
     </section>
 
-    {{-- ============ CTA BANNER ============ --}}
-    <section class="cta-banner">
-        <div class="cta-grid">
-            <div>
-                <h2>Vrei să faci<br><span>parte din echipă?</span></h2>
-                <div class="sub">Sesiune probă gratuită · fără obligații · oricând</div>
-            </div>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <a class="btn" wire:navigate href="{{ route('contact') }}">Programează sesiunea<span class="arr"></span></a>
-                <a class="btn" wire:navigate href="{{ route('antrenamente') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Vezi antrenamentele</a>
-            </div>
-        </div>
-    </section>
 </div>

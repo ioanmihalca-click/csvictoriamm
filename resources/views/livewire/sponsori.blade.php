@@ -22,17 +22,7 @@
             </div>
             <div class="phero-r">
                 <div class="ph">
-                    <img src="{{ asset('assets/csvictoriamm-colaj.webp') }}" alt="Sponsorizare CS Victoria Maramureș" class="ph-img">
-                </div>
-                <div class="overlay">
-                    <div style="display:flex;justify-content:flex-end">
-                        <span class="chip chip-red">PARTENERIAT · TRANSPARENT</span>
-                    </div>
-                    <div class="big-side">
-                        <div>SUSȚINE</div>
-                        <div class="stroke">PERFORMANȚA</div>
-                        <div><em>VICTORIA.</em></div>
-                    </div>
+                    <img src="{{ asset('assets/hero-ok.webp') }}" alt="Sponsorizare CS Victoria Maramureș" class="ph-img">
                 </div>
             </div>
         </div>
@@ -161,17 +151,4 @@
         </div>
     </section>
 
-    {{-- ============ CTA BANNER ============ --}}
-    <section class="cta-banner">
-        <div class="cta-grid">
-            <div>
-                <h2>Construim<br><span>împreună?</span></h2>
-                <div class="sub">Parteneriat · sponsorizare · donație unică</div>
-            </div>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <a class="btn" href="tel:+40734411115">Sună · 0734 411 115<span class="arr"></span></a>
-                <a class="btn" wire:navigate href="{{ route('contact') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Trimite mesaj</a>
-            </div>
-        </div>
-    </section>
 </div>

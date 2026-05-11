@@ -22,17 +22,7 @@
             </div>
             <div class="phero-r">
                 <div class="ph">
-                    <img src="{{ asset('assets/Kickboxing-Baia-Mare.webp') }}" alt="CS Victoria Maramureș — antrenament" class="ph-img">
-                </div>
-                <div class="overlay">
-                    <div style="display:flex;justify-content:flex-end">
-                        <span class="chip chip-red">RĂSPUNS RAPID · 24H</span>
-                    </div>
-                    <div class="big-side">
-                        <div>SCRIE-NE.</div>
-                        <div class="stroke">VINO.</div>
-                        <div><em>ANTRENEAZĂ.</em></div>
-                    </div>
+                    <img src="{{ asset('assets/hero-ok.webp') }}" alt="CS Victoria Maramureș — antrenament" class="ph-img">
                 </div>
             </div>
         </div>
@@ -266,17 +256,4 @@
         </div>
     </section>
 
-    {{-- ============ CTA BANNER ============ --}}
-    <section class="cta-banner">
-        <div class="cta-grid">
-            <div>
-                <h2>Ești gata?<br><span>Vino la sală.</span></h2>
-                <div class="sub">Gratuit · fără abonament · fără obligații · oricând</div>
-            </div>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <a class="btn" href="tel:+40734411115">Sună · 0734 411 115<span class="arr"></span></a>
-                <a class="btn" href="mailto:csvictoriamm@gmail.com" style="background:transparent;border-color:var(--bone);color:var(--bone)">Email direct</a>
-            </div>
-        </div>
-    </section>
 </div>

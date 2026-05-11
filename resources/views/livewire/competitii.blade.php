@@ -24,17 +24,7 @@
             </div>
             <div class="phero-r">
                 <div class="ph">
-                    <img src="{{ asset('assets/Kickboxing-Baia-Mare.webp') }}" alt="Competiții CS Victoria Maramureș" class="ph-img">
-                </div>
-                <div class="overlay">
-                    <div style="display:flex;justify-content:flex-end">
-                        <span class="chip chip-red">PALMARES · LIVE</span>
-                    </div>
-                    <div class="big-side">
-                        <div>VICTORIA</div>
-                        <div class="stroke">PE</div>
-                        <div><em>RING.</em></div>
-                    </div>
+                    <img src="{{ asset('assets/hero-ok.webp') }}" alt="Competiții CS Victoria Maramureș" class="ph-img">
                 </div>
             </div>
         </div>
@@ -163,17 +153,4 @@
         </section>
     @endforelse
 
-    {{-- ============ CTA BANNER ============ --}}
-    <section class="cta-banner">
-        <div class="cta-grid">
-            <div>
-                <h2>Vrei să concurezi<br><span>pentru Victoria?</span></h2>
-                <div class="sub">Grupa de performanță · cantonament · gale · cupe</div>
-            </div>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <a class="btn" wire:navigate href="{{ route('contact') }}">Programează<span class="arr"></span></a>
-                <a class="btn" wire:navigate href="{{ route('echipa') }}" style="background:transparent;border-color:var(--bone);color:var(--bone)">Vezi grupa</a>
-            </div>
-        </div>
-    </section>
 </div>
