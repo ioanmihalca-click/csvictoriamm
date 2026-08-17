@@ -1,15 +1,18 @@
 {
     "agents": [
-        "claude_code"
+        "claude_code",
+        "opencode"
     ],
+    "cloud": false,
     "guidelines": true,
     "mcp": true,
-    "nightwatch_mcp": false,
+    "nightwatch": false,
     "packages": [
         "filament/filament"
     ],
     "sail": false,
     "skills": [
+        "infer-conventions",
         "laravel-best-practices",
         "livewire-development",
         "tailwindcss-development"
