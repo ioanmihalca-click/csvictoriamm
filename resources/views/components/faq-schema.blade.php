@@ -17,7 +17,7 @@
       "name": "Unde se află sala de kickboxing în Baia Mare?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sala de kickboxing CS Victoria Maramureș se află pe Strada Vasile Lucaciu din Baia Mare, Maramureș, România. Avem de asemenea locații în Poienile de sub Munte și Petrova."
+        "text": "Sala de kickboxing CS Victoria Maramureș se află pe Strada Carpați nr. 29 (Piața Izvoare) din Baia Mare, Maramureș, România. Avem de asemenea locații în Poienile de sub Munte și Petrova."
       }
     },
     {

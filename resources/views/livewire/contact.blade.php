@@ -170,7 +170,7 @@
                 <article class="cs-loc">
                     <div class="cs-num"><em>◆</em> 01</div>
                     <h4>Baia Mare</h4>
-                    <div class="cs-addr">str. Vasile Lucaciu · sala principală</div>
+                    <div class="cs-addr">str. Carpați nr. 29 (Piața Izvoare) · sala principală</div>
                     <div class="cs-slot"><strong>Luni · Miercuri · 18:30</strong><span>COPII</span></div>
                     <div class="cs-slot"><strong>Luni · Miercuri · 19:35</strong><span>ADULȚI</span></div>
                 </article>

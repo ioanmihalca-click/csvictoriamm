@@ -25,7 +25,7 @@
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Str. Vasile Lucaciu",
+    "streetAddress": "Str. Carpați nr. 29",
     "addressLocality": "Baia Mare",
     "addressRegion": "Maramureș",
     "postalCode": "430341",

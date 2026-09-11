@@ -206,7 +206,7 @@
   "url": "https://csvictoriamm.ro",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Str. Vasile Lucaciu",
+    "streetAddress": "Str. Carpați nr. 29",
     "addressLocality": "Baia Mare",
     "postalCode": "430341",
     "addressRegion": "Maramureș",
@@ -244,7 +244,7 @@
       "name": "Sala de Kickboxing Baia Mare",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Str. Vasile Lucaciu",
+        "streetAddress": "Str. Carpați nr. 29",
         "addressLocality": "Baia Mare",
         "postalCode": "430341",
         "addressRegion": "Maramureș",

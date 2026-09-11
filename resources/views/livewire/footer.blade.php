@@ -36,7 +36,7 @@
             <h4>Locații</h4>
             <ul>
                 <li><strong style="color:var(--bone);font-family:'Oswald',sans-serif;font-size:16px">Baia Mare</strong></li>
-                <li style="color:var(--mute-2);font-size:12px">Str. Vasile Lucaciu</li>
+                <li style="color:var(--mute-2);font-size:12px">Str. Carpați nr. 29 · Piața Izvoare</li>
                 <li style="color:var(--mute-2);font-size:12px">Luni & Miercuri · 18:30 / 19:35</li>
                 <li style="height:10px"></li>
                 <li><strong style="color:var(--bone);font-family:'Oswald',sans-serif;font-size:16px">Petrova</strong></li>

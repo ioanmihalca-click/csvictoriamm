@@ -235,28 +235,28 @@
             <div class="day" style="color:var(--red)">01</div>
             <div class="day">LUNI</div>
             <div class="prog">Freestyle Kickboxing · copii<small>6–12 ani · striking de bază · coordonare · joc</small></div>
-            <div class="loc">Baia Mare<small>str. vasile lucaciu</small></div>
+            <div class="loc">Baia Mare<small>str. carpați nr. 29</small></div>
             <div class="group">18:30 → 19:30</div>
         </div>
         <div class="sched-table">
             <div class="day" style="color:var(--red)">02</div>
             <div class="day">LUNI</div>
             <div class="prog">Kickbox &amp; Muay Thai · adulți + juniori mari<small>13+ · tehnică · sparring controlat · condiție</small></div>
-            <div class="loc">Baia Mare<small>str. vasile lucaciu</small></div>
+            <div class="loc">Baia Mare<small>str. carpați nr. 29</small></div>
             <div class="group">19:35 → 21:00</div>
         </div>
         <div class="sched-table">
             <div class="day" style="color:var(--red)">03</div>
             <div class="day">MIERCURI</div>
             <div class="prog">Freestyle Kickboxing · copii<small>6–12 ani · repetiție · drills · mănuși</small></div>
-            <div class="loc">Baia Mare<small>str. vasile lucaciu</small></div>
+            <div class="loc">Baia Mare<small>str. carpați nr. 29</small></div>
             <div class="group">18:30 → 19:30</div>
         </div>
         <div class="sched-table">
             <div class="day" style="color:var(--red)">04</div>
             <div class="day">MIERCURI</div>
             <div class="prog">Kickbox &amp; Muay Thai · adulți + juniori mari<small>13+ · pregătire competițională · rounds</small></div>
-            <div class="loc">Baia Mare<small>str. vasile lucaciu</small></div>
+            <div class="loc">Baia Mare<small>str. carpați nr. 29</small></div>
             <div class="group">19:35 → 21:00</div>
         </div>
         <div class="sched-table">
@@ -402,7 +402,7 @@
                 </div>
                 <div class="loc-card-body">
                     <h3 class="nm">Baia Mare</h3>
-                    <div class="addr">◆ str. vasile lucaciu · sala principală</div>
+                    <div class="addr">◆ str. carpați nr. 29 (piața izvoare) · sala principală</div>
                     <div class="slot"><strong>Luni · Miercuri · 18:30</strong><span>COPII</span></div>
                     <div class="slot"><strong>Luni · Miercuri · 19:35</strong><span>ADULȚI</span></div>
                 </div>
